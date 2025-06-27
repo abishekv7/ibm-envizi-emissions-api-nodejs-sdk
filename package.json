@@ -1,0 +1,31 @@
+{
+  "name": "ibm-ghg-sdk",
+  "version": "1.0.0",
+  "description": "sdk for IBM GHG APIs",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "npm test",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/fd4b-agrotech/ibm-envizi-carbon-engine-nodejs-sdk-internal"
+  },
+  "keywords": [
+    "IBM",
+    "GHG",
+    "IBMGHG",
+    "SDK",
+    "IBM-SDK"
+  ],
+  "author": "steffan.taylor@uk.ibm.com,santhosh.ramalingam.t@ibm.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "typescript": "^5.8.3"
+  }
+}
