@@ -66,4 +66,8 @@ export class Client {
     if (!res.data?.access_token) throw new Error('Token response missing "access_token" field');
     return res.data.access_token;
   }
+
 }
+
+
+
