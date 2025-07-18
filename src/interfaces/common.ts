@@ -9,7 +9,7 @@ export interface Time {
 }
 
 export interface Activity {
-    type?: string;
+    type: string;
     value: number;
-    unit?: string; 
+    unit: string; 
 }

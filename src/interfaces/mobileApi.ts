@@ -6,5 +6,5 @@ export interface MobileRequest {
     location : Location;
     time?: Time;
     activity: Activity;
-    includeDetails: boolean;
+    includeDetails?: boolean;
 } 

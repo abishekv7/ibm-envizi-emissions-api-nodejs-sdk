@@ -1,9 +1,11 @@
 import { Activity, Location , Time } from "./common";
 
 
+type LocationActivity = Partial<Pick<Activity, 'type' | 'unit'>> & Pick<Activity, 'value'>;
+
 export interface LocationRequest {
     location : Location;
     time?: Time;
-    activity: Activity;
-    includeDetails: boolean;
+    activity: LocationActivity;
+    includeDetails?: boolean;
 } 

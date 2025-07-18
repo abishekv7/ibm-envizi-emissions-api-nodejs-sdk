@@ -1,3 +1,4 @@
+import { API_DOMAIN, STATIONARY_API_PATH } from "../Constants";
 import { StationaryRequest } from "../interfaces/stationaryApi";
 import { makeApiRequest } from "../request";
 
@@ -5,9 +6,10 @@ export async function calculate(
   payload: StationaryRequest,
   useProxy: boolean = false
 ): Promise<string> {
+
   const url = useProxy
-    ? '/v3/carbon/stationary'
-    : 'https://foundation-staging.agtech.ibm.com/v3/carbon/stationary';
+         ? STATIONARY_API_PATH
+         : API_DOMAIN + STATIONARY_API_PATH;
 
   return makeApiRequest<string>({
     method: 'POST',

@@ -6,5 +6,5 @@ export interface FugitiveRequest {
     location : Location;
     time?: Time;
     activity: Activity;
-    includeDetails: boolean;
+    includeDetails?: boolean;
 } 
