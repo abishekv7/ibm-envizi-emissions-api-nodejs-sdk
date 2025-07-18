@@ -33,7 +33,7 @@ export class Client {
 
   public static getInstance(): Client {
     if (!Client.instance) {
-      throw new Error('Client is not initialized. Call Client.init() first.');
+      throw new Error('Client is not initialized. Call Client.getClient() first.');
     }
     return Client.instance;
   }
