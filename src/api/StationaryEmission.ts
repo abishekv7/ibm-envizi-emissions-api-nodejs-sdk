@@ -1,13 +1,13 @@
-import { LocationRequest } from "../interfaces/locationApi";
+import { StationaryRequest } from "../interfaces/stationaryApi";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: LocationRequest,
+  payload: StationaryRequest,
   useProxy: boolean = false
 ): Promise<string> {
   const url = useProxy
-    ? '/v3/carbon/location'
-    : 'https://foundation-staging.agtech.ibm.com/v3/carbon/location';
+    ? '/v3/carbon/stationary'
+    : 'https://foundation-staging.agtech.ibm.com/v3/carbon/stationary';
 
   return makeApiRequest<string>({
     method: 'POST',

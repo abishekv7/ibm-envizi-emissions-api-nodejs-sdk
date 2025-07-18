@@ -1,7 +1,8 @@
 import { Activity, Location , Time } from "./common";
 
 
-export interface LocationRequest {
+
+export interface MobileRequest {
     location : Location;
     time?: Time;
     activity: Activity;
