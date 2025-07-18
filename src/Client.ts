@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ClientConfig } from './interfaces/Config'
 import { findExpireTime } from './utils';
+import { TOKEN_GENERATION_API} from './Constants';
 
 export class Client {
   private static instance: Client | null = null;
@@ -25,7 +26,7 @@ export class Client {
     this.expiresAt = exp;
   }
 
-  public static async init(config: ClientConfig): Promise<void> {
+  public static async getClient(config: ClientConfig): Promise<void> {
     const token = await Client.requestToken(config);
     Client.instance = new Client(token, config);
   }
@@ -53,7 +54,7 @@ export class Client {
 
   private static async requestToken(config: ClientConfig): Promise<string> {
     const res = await axios.post<{ access_token: string }>(
-      'https://stg.auth-b2b-twc.ibm.com/Auth/GetBearerForClient',
+      TOKEN_GENERATION_API,
       {
         apiKey: config.apiKey,
         clientId: config.clientId,
