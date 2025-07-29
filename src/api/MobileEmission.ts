@@ -1,9 +1,9 @@
-import { MobileRequest } from "../interfaces/mobileApi";
 import { makeApiRequest } from "../request";
 import { API_DOMAIN, MOBILE_API_PATH } from "../Constants";
+import { CommonRequest } from "../interfaces/Api";
 
 export async function calculate(
-  payload: MobileRequest,
+  payload: CommonRequest,
   useProxy: boolean = false
 ): Promise<string> {
   

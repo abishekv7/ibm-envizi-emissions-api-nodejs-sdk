@@ -1,5 +1,5 @@
 import { API_DOMAIN, LOCATION_API_PATH } from "../Constants";
-import { LocationRequest } from "../interfaces/locationApi";
+import { LocationRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
