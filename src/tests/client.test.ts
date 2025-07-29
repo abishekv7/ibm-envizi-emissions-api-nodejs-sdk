@@ -30,6 +30,8 @@ describe("Client initialization and Header Authorization", () => {
 
   it("Should throw if getInstance called before initiating client", () => {
     Client["instance"] = null;
-    expect(() => Client.getInstance()).toThrow("Client is not initialized. Call Client.getClient() first.");
+    expect(() => Client.getInstance()).toThrow(
+      "Client is not initialized. Call Client.getClient() first."
+    );
   });
 });
