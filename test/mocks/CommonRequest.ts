@@ -1,4 +1,4 @@
-import { CommonRequest } from '../interfaces/Api';
+import { CommonRequest } from '../../src/interfaces/Api';
 
 const commonPayload: CommonRequest = {
   location: {
