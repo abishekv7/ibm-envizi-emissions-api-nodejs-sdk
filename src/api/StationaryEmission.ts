@@ -1,9 +1,9 @@
 import { API_DOMAIN, STATIONARY_API_PATH } from "../Constants";
-import { StationaryRequest } from "../interfaces/stationaryApi";
+import { CommonRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: StationaryRequest,
+  payload: CommonRequest,
   useProxy: boolean = false
 ): Promise<string> {
 

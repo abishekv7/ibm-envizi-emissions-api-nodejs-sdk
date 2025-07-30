@@ -1,9 +1,9 @@
 import { API_DOMAIN, FUGITIVE_API_PATH } from "../Constants";
-import { FugitiveRequest } from "../interfaces/fugitiveApi";
+import { CommonRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: FugitiveRequest,
+  payload: CommonRequest,
   useProxy: boolean = false
 ): Promise<string> {
 
