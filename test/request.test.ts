@@ -1,7 +1,7 @@
 import axios, { Method } from "axios";
-import { makeApiRequest } from "../request";
-import { Client } from "../Client";
-import { RequestConfig } from "../interfaces/Config";
+import { makeApiRequest } from "../src/request";
+import { Client } from "../src/Client";
+import { RequestConfig } from "../src/interfaces/Config";
 
 jest.mock("axios");
 
