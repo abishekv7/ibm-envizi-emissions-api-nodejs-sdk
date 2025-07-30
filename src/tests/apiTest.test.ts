@@ -1,8 +1,8 @@
-import * as requestModule from "../src/request";
-import * as locationApi from "../src/api/LocationEmission";
-import * as fugitiveApi from "../src/api/FugitiveEmission";
-import * as mobileApi from "../src/api/MobileEmission";
-import * as stationaryApi from "../src/api/StationaryEmission";
+import * as requestModule from "../request";
+import * as locationApi from "../api/LocationEmission";
+import * as fugitiveApi from "../api/FugitiveEmission";
+import * as mobileApi from "../api/MobileEmission";
+import * as stationaryApi from "../api/StationaryEmission";
 
 import {
   LOCATION_API_PATH,
@@ -10,9 +10,9 @@ import {
   STATIONARY_API_PATH,
   MOBILE_API_PATH,
   API_DOMAIN,
-} from "../src/Constants";
-import locationPayload from "./mocks/LocationRequest";
-import commonpayload from "./mocks/CommonRequest";
+} from "../Constants";
+import locationPayload from "../mocks/LocationRequest";
+import commonpayload from "../mocks/CommonRequest";
 
 type ApiTestCase = {
   name: string;

@@ -1,7 +1,7 @@
-import { Client } from "../src/Client";
+import { Client } from "../Client";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { TOKEN_GENERATION_API } from "../src/Constants";
+import { TOKEN_GENERATION_API } from "../Constants";
 
 const mock = new MockAdapter(axios);
 
