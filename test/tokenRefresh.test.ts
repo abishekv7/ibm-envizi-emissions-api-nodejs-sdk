@@ -1,9 +1,9 @@
-import { Client } from "../Client";
-import * as utils from "../utils";
+import { Client } from "../src/Client";
+import * as utils from "../src/utils";
 import mockAxios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { generateMockjwt } from "./testUtils";
-import { TOKEN_GENERATION_API } from "../Constants";
+import { TOKEN_GENERATION_API } from "../src/Constants";
 
 const mock = new MockAdapter(mockAxios);
 describe("Token refreshing", () => {

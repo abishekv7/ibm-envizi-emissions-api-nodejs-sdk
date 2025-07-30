@@ -1,4 +1,4 @@
-import { LocationRequest } from "../interfaces/Api";
+import { LocationRequest } from '../../src/interfaces/Api';
 
 const locationPayload: LocationRequest = {
   location: {
