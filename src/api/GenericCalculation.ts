@@ -1,4 +1,5 @@
-import { API_DOMAIN, GENERIC_CALCULATION_API_PATH } from "../Constants";
+import { Client } from "../Client";
+import { GENERIC_CALCULATION_API_PATH } from "../Constants";
 import { CommonRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
@@ -6,13 +7,13 @@ export async function calculate(
   payload: CommonRequest,
   useProxy: boolean = false
 ): Promise<string> {
-  
- const url = useProxy
-     ? GENERIC_CALCULATION_API_PATH
-     : API_DOMAIN + GENERIC_CALCULATION_API_PATH;
+  const client = Client.getInstance();
+  const url = useProxy
+    ? GENERIC_CALCULATION_API_PATH
+    : client.getDomain() + GENERIC_CALCULATION_API_PATH;
 
   return makeApiRequest<string>({
-    method: 'POST',
+    method: "POST",
     url,
     data: payload,
   });
