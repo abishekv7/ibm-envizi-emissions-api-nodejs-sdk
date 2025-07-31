@@ -14,4 +14,5 @@ export interface ClientConfig {
     tenantId?: string;
     orgId?: string;
     legacy?: boolean;
+    useStaging?: boolean;
 }
