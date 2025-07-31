@@ -17,7 +17,7 @@ export class Client {
   private tokenDomain: string;
 
   private constructor(token: string, config: ClientConfig) {
-        const {apiKey, clientId , tenantId, orgId, legacy=false, host , tokenHost} = config;
+        const {apiKey, clientId , tenantId, orgId, legacy=false, host , authUrl} = config;
     this.token = token;
     this.apiKey = apiKey;
     this.clientId = clientId;
@@ -27,14 +27,14 @@ export class Client {
     const exp  = findExpireTime(token);
     this.expiresAt = exp;
     this.domain= host ?? API_DOMAIN;
-    this.tokenDomain = tokenHost ?? TOKEN_GENERATION_API;
+    this.tokenDomain = authUrl ?? TOKEN_GENERATION_API;
 
   }
 
   public static async getClient(config: ClientConfig): Promise<void> {
-    if (config.host && !config.tokenHost) {
+    if (config.host && !config.authUrl) {
     throw new Error(
-      'If custom "host" is provided, "tokenHost" must also be provided.'
+      'If custom "host" is provided, "authUrl" must also be provided.'
     );
   }
     const token = await Client.requestToken(config);
@@ -56,7 +56,7 @@ export class Client {
     const now = Math.floor(Date.now() / 1000);
     if (this.expiresAt - now < 60) {
       console.log('[SDK] Refreshing token...');
-      const token = await Client.requestToken({ apiKey: this.apiKey, clientId: this.clientId , tokenHost: this.tokenDomain,});
+      const token = await Client.requestToken({ apiKey: this.apiKey, clientId: this.clientId , authUrl: this.tokenDomain,});
       this.token = token;
       this.expiresAt = findExpireTime(token);
     }
@@ -67,7 +67,7 @@ export class Client {
   }
 
   private static async requestToken(config: ClientConfig): Promise<string> {
-    const tokenUrl = config.tokenHost ?? TOKEN_GENERATION_API;
+    const tokenUrl = config.authUrl ?? TOKEN_GENERATION_API;
     const res = await axios.post<{ access_token: string }>(
       tokenUrl,
       {

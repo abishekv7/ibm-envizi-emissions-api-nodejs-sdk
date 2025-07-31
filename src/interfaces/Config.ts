@@ -15,5 +15,5 @@ export interface ClientConfig {
     orgId?: string;
     legacy?: boolean;
     host?: string;        
-    tokenHost?: string;
+    authUrl?: string;
 }
