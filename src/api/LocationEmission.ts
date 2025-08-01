@@ -1,4 +1,5 @@
-import { API_DOMAIN, LOCATION_API_PATH } from "../Constants";
+import { Client } from "../Client";
+import { LOCATION_API_PATH } from "../Constants";
 import { LocationRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
@@ -6,13 +7,13 @@ export async function calculate(
   payload: LocationRequest,
   useProxy: boolean = false
 ): Promise<string> {
-  
- const url = useProxy
-     ? LOCATION_API_PATH
-     : API_DOMAIN + LOCATION_API_PATH;
+  const client = Client.getInstance();
+  const url = useProxy
+    ? LOCATION_API_PATH
+    : client.getDomain() + LOCATION_API_PATH;
 
   return makeApiRequest<string>({
-    method: 'POST',
+    method: "POST",
     url,
     data: payload,
   });
