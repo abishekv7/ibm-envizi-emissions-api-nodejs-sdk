@@ -1,6 +1,7 @@
-export const API_DOMAIN = "https://foundation-staging.agtech.ibm.com";
-// export const TOKEN_GENERATION_API = "https://stg.auth-b2b-twc.ibm.com/Auth/GetBearerForClient";
-export const TOKEN_GENERATION_API = "/Auth/GetBearerForClient";
+export const STAGING_API_DOMAIN = "https://foundation-staging.agtech.ibm.com";
+export const PRODUCTION_API_DOMAIN = "PROD_URL";
+export const TOKEN_GENERATION_API = "https://stg.auth-b2b-twc.ibm.com/Auth/GetBearerForClient";
+// export const TOKEN_GENERATION_API = "/Auth/GetBearerForClient";
 export const MOBILE_API_PATH = "/v3/carbon/mobile";
 export const LOCATION_API_PATH = "/v3/carbon/location";
 export const FUGITIVE_API_PATH = "/v3/carbon/fugitive";
