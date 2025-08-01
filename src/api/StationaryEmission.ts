@@ -1,5 +1,5 @@
 import { Client } from "../Client";
-import { STATIONARY_API_PATH } from "../Constants";
+import { POST, STATIONARY_API_PATH } from "../Constants";
 import { CommonRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
@@ -13,7 +13,7 @@ export async function calculate(
     : client.getDomain() + STATIONARY_API_PATH;
 
   return makeApiRequest<string>({
-    method: 'POST',
+    method: POST,
     url,
     data: payload,
   });
