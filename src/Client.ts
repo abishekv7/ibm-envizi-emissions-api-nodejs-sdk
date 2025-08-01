@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ClientConfig } from './interfaces/Config'
 import { findExpireTime } from './utils';
-import { PRODUCTION_API_DOMAIN, STAGING_API_DOMAIN, TOKEN_GENERATION_API} from './Constants';
+import { TOKEN_GENERATION_API} from './Constants';
 
 export class Client {
   private static instance: Client | null = null;
@@ -13,10 +13,9 @@ export class Client {
   private orgId?: string;
   private expiresAt: number;
   private legacy: boolean;
-  private domain: string;
 
   private constructor(token: string, config: ClientConfig) {
-        const {apiKey, clientId , tenantId, orgId, legacy=false , useStaging = false} = config;
+        const {apiKey, clientId , tenantId, orgId, legacy=false} = config;
     this.token = token;
     this.apiKey = apiKey;
     this.clientId = clientId;
@@ -25,7 +24,6 @@ export class Client {
     this.legacy = legacy;
     const exp  = findExpireTime(token);
     this.expiresAt = exp;
-    this.domain = useStaging ? STAGING_API_DOMAIN : PRODUCTION_API_DOMAIN;
   }
 
   public static async getClient(config: ClientConfig): Promise<void> {
@@ -38,10 +36,6 @@ export class Client {
       throw new Error('Client is not initialized. Call Client.getClient() first.');
     }
     return Client.instance;
-  }
-
-  public getDomain(): string {
-    return this.domain;
   }
 
   public async refreshToken(): Promise<void> {
