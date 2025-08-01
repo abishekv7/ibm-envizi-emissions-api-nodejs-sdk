@@ -13,3 +13,14 @@ export interface Activity {
     value: number;
     unit: string; 
 }
+
+export interface CombinedUnitsActivity {
+    type: string;
+    value: number | number[];
+    unit: string | string[]; 
+}
+
+export interface FactorActivity {
+    type: string;
+    unit?: string; 
+}
