@@ -13,7 +13,6 @@ export interface ClientConfig {
     clientId?: string;
     tenantId?: string;
     orgId?: string;
-    legacy?: boolean;
     host?: string;        
     authUrl?: string;
 }

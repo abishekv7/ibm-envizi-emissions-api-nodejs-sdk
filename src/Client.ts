@@ -12,18 +12,16 @@ export class Client {
   private tenantId?: string;
   private orgId?: string;
   private expiresAt: number;
-  private legacy: boolean;
   private domain: string;
   private tokenDomain: string;
 
   private constructor(token: string, config: ClientConfig) {
-        const {apiKey, clientId , tenantId, orgId, legacy=false, host , authUrl} = config;
+        const {apiKey, clientId , tenantId, orgId, host , authUrl} = config;
     this.token = token;
     this.apiKey = apiKey;
     this.clientId = clientId;
     this.tenantId = tenantId;
     this.orgId = orgId;
-    this.legacy = legacy;
     const exp  = findExpireTime(token);
     this.expiresAt = exp;
     this.domain= host ?? API_DOMAIN;
