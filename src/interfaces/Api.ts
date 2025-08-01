@@ -1,4 +1,4 @@
-import { Activity, Location , Time } from "./common";
+import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity } from "./common";
 
 
 
@@ -18,3 +18,16 @@ export interface CommonRequest {
     includeDetails?: boolean;
 } 
 
+export interface GenericCalculationRequest {
+    location : Location;
+    time?: Time;
+    activity: CombinedUnitsActivity;
+    includeDetails?: boolean;
+}
+export interface FactorRequest {
+    location : Location;
+    time?: Time;
+    activity: FactorActivity;
+    factorSet? : String;
+    factorVersion? : String;
+}
