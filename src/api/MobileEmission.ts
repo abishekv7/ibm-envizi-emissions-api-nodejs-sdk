@@ -1,5 +1,5 @@
 import { makeApiRequest } from "../request";
-import { MOBILE_API_PATH } from "../Constants";
+import { MOBILE_API_PATH, POST } from "../Constants";
 import { CommonRequest } from "../interfaces/Api";
 import { Client } from "../Client";
 
@@ -11,7 +11,7 @@ export async function calculate(
   const url = useProxy ? MOBILE_API_PATH : client.getDomain() + MOBILE_API_PATH;
 
   return makeApiRequest<string>({
-    method: "POST",
+    method: POST,
     url,
     data: payload,
   });
