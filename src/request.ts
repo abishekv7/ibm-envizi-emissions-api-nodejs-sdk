@@ -15,6 +15,7 @@ export async function makeApiRequest<T>(config: RequestConfig): Promise<T> {
       ...client.getAuthHeader(),
       ...config.headers,
       'Content-Type': 'application/json',
+      'X-IBM-Client-Id': `ghgemissions-${client.getClientId()}`
     },
   };
 
