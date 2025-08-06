@@ -62,7 +62,8 @@ describe("API Test calculate functions", () => {
 
     Client.getClient({
       apiKey: "mock-api-key",
-      clientId: "mock-client-id"
+      clientId: "mock-client-id",
+      orgId: "mock-org-id"
     });
     spy = jest
       .spyOn(requestModule, "makeApiRequest")
