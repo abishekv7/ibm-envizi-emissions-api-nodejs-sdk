@@ -82,11 +82,11 @@ export class Client {
       },
       params: {
         orgId: config.orgId
-      },
+      }
     });
 
     if (!res.data)
       throw new Error('Token response is empty');
-    return res.data;
+    return String(res.data).trim();
   }
 }
