@@ -14,10 +14,10 @@ describe("Client initialization and Header Authorization", () => {
   ).toString("base64url");
   const mockToken = `${base64Header}.${base64Payload}.Signature`;
 
-  const config = { apiKey: " somerandomkey", clientId: "emptyclient" };
+  const config = { apiKey: " somerandomkey", clientId: "emptyclient" , orgId: "OrgId"};
   beforeEach(() => {
     mock.reset();
-    mock.onPost(TOKEN_GENERATION_API).reply(200, { access_token: mockToken });
+    mock.onGet(TOKEN_GENERATION_API).reply(200, mockToken);
   });
 
   it("should initialize client and return auth header", async () => {
