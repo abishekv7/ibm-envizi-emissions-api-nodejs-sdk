@@ -8,24 +8,28 @@ jest.mock("axios");
 describe("makeApiRequest", () => {
   const mockRefreshToken = jest.fn();
   const mockGetAuthHeader = jest.fn();
+  const mockGetClientId = jest.fn();
   const mockAxiosRequest = axios.request as jest.Mock;
 
   beforeEach(() => {
-    mockRefreshToken.mockReset();
-    mockAxiosRequest.mockReset();
-    mockGetAuthHeader.mockReset();
+    jest.clearAllMocks();
 
     const mockClient = {
       refreshToken: mockRefreshToken,
       getAuthHeader: mockGetAuthHeader,
+      getClientId: mockGetClientId,
     };
 
-    jest.spyOn(Client, "getInstance").mockReturnValue(mockClient as any);
     mockGetAuthHeader.mockReturnValue({ Authorization: "Bearer mock-token" });
+    mockGetClientId.mockReturnValue("mock-client-id");
+
+    jest.spyOn(Client, "getInstance").mockReturnValue(mockClient as any);
   });
-  it("should make success API call with full config)", async () => {
+
+  it("should make a successful API call with full config", async () => {
     const expectedResponse = { data: { success: true } };
     mockAxiosRequest.mockResolvedValue(expectedResponse);
+
     const config: RequestConfig = {
       method: "POST" as Method,
       url: "/test-route",
@@ -33,10 +37,13 @@ describe("makeApiRequest", () => {
       params: { id: 1 },
       headers: { custom: "header" },
     };
+
     const result = await makeApiRequest<typeof expectedResponse.data>(config);
 
     expect(mockRefreshToken).toHaveBeenCalled();
     expect(mockGetAuthHeader).toHaveBeenCalled();
+    expect(mockGetClientId).toHaveBeenCalled();
+
     expect(mockAxiosRequest).toHaveBeenCalledWith({
       method: "POST",
       url: "/test-route",
@@ -46,19 +53,24 @@ describe("makeApiRequest", () => {
         Authorization: "Bearer mock-token",
         custom: "header",
         "Content-Type": "application/json",
+        "X-IBM-Client-Id": "ghgemissions-mock-client-id",
       },
     });
+
     expect(result).toEqual(expectedResponse.data);
   });
 
-  it("should make a request with min config also", async () => {
+  it("should make a request with minimal config", async () => {
     const expectedResponse = { data: { message: "ok" } };
     mockAxiosRequest.mockResolvedValue(expectedResponse);
+
     const config: RequestConfig = {
       method: "GET" as Method,
       url: "/test-route",
     };
+
     const result = await makeApiRequest<typeof expectedResponse.data>(config);
+
     expect(mockAxiosRequest).toHaveBeenCalledWith({
       method: "GET",
       url: "/test-route",
@@ -67,10 +79,13 @@ describe("makeApiRequest", () => {
       headers: {
         Authorization: "Bearer mock-token",
         "Content-Type": "application/json",
+        "X-IBM-Client-Id": "ghgemissions-mock-client-id",
       },
     });
+
     expect(result).toEqual(expectedResponse.data);
   });
+
   it("should throw an error if axios request fails", async () => {
     const error = new Error("Network failure");
     mockAxiosRequest.mockRejectedValue(error);
@@ -81,6 +96,7 @@ describe("makeApiRequest", () => {
     };
 
     await expect(makeApiRequest(config)).rejects.toThrow("Network failure");
+
     expect(mockRefreshToken).toHaveBeenCalled();
     expect(mockAxiosRequest).toHaveBeenCalled();
   });
