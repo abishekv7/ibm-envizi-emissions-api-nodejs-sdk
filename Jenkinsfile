@@ -9,6 +9,9 @@ sterlingPipeline {
     agentDINDCPULimits = '4'
     detectSecretsEnabled = true
     dockerBuildEnabled = false
+    uploadArtifactEnabled = false
+    semanticReleaseBuildFiles = true
+    deploymentEnabled = false
     
     // Exclude BOMs from SonarQube analysis 
     sonarQubeAdditionalProperties = {[
