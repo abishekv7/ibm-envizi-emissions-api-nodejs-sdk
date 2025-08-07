@@ -7,7 +7,7 @@ import { TOKEN_GENERATION_API } from "../src/Constants";
 
 const mock = new MockAdapter(mockAxios);
 describe("Token refreshing", () => {
-  const config = { apiKey: "abc", clientId: "234" };
+  const config = { apiKey: "abc", clientId: "234", orgId:"123" };
   beforeEach(() => {
     jest.clearAllMocks();
     mock.reset();
@@ -15,7 +15,7 @@ describe("Token refreshing", () => {
 
   it("should not refresh if token is still valid", async () => {
     const freshToken = generateMockjwt(600);
-    mock.onPost(TOKEN_GENERATION_API).reply(200, { access_token: freshToken });
+    mock.onGet(TOKEN_GENERATION_API).reply(200, { freshToken });
 
     jest
       .spyOn(utils, "findExpireTime")
@@ -34,8 +34,8 @@ describe("Token refreshing", () => {
     const shortLiveToken = generateMockjwt(1);
     const refreshToken = generateMockjwt(600);
     mock
-      .onPost(TOKEN_GENERATION_API)
-      .reply(200, { access_token: refreshToken });
+      .onGet(TOKEN_GENERATION_API)
+      .reply(200, { refreshToken });
 
     jest
       .spyOn(utils, "findExpireTime")
