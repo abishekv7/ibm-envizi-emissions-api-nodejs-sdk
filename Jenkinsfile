@@ -14,7 +14,4 @@ sterlingPipeline {
     sonarQubeAdditionalProperties = {[
         "sonar.exclusions":"boms/**"
     ]}
-
-    acceptableFailedStageList = getValue(delegate, 'acceptableFailedStageList') + getValue(delegate, 'stageNameDockerTest')
-
 }
