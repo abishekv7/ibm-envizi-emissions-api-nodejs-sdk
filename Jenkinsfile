@@ -14,4 +14,7 @@ sterlingPipeline {
     sonarQubeAdditionalProperties = {[
         "sonar.exclusions":"boms/**"
     ]}
+
+    acceptableFailedStageList = null
+
 }
