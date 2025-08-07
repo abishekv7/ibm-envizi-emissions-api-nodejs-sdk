@@ -12,7 +12,6 @@ sterlingPipeline {
     uploadArtifactEnabled = false
     semanticReleaseBuildFiles = true
     deploymentEnabled = false
-    
     // Exclude BOMs from SonarQube analysis 
     sonarQubeAdditionalProperties = {[
         "sonar.exclusions":"boms/**"
