@@ -4,6 +4,7 @@ import * as fugitiveApi from "../src/api/FugitiveEmission";
 import * as mobileApi from "../src/api/MobileEmission";
 import * as stationaryApi from "../src/api/StationaryEmission";
 import * as GenericCalculation from "../src/api/GenericCalculation";
+import * as TransportationDistributionApi from "../src/api/TransportationDistributionEmission";
 import * as Factors from "../src/api/Factors";
 
 import {
@@ -12,7 +13,8 @@ import {
   STATIONARY_API_PATH,
   MOBILE_API_PATH,
   GENERIC_CALCULATION_API_PATH,
-  FACTOR_API_PATH,
+  TRANSPORTATION_AND_DISTRIBUTION_API_PATH,
+  FACTOR_API_PATH
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -80,6 +82,13 @@ const testCases: ApiTestCase[] = [
     payload: "factor-id-123",
     method: "GET",
   },
+  {
+    name: "Transportation and Distribution API",
+    func: TransportationDistributionApi.calculate,
+    path: TRANSPORTATION_AND_DISTRIBUTION_API_PATH,
+    payload: GenericCalculationPayload,
+    method: "POST",
+  }
 ];
 
 describe("API Test calculate functions", () => {

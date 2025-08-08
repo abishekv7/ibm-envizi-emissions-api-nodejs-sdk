@@ -7,5 +7,6 @@ export const STATIONARY_API_PATH = "/v3/carbon/stationary";
 export const GENERIC_CALCULATION_API_PATH = "/v3/carbon/calculation";
 export const TRANSPORTATION_AND_DISTRIBUTION_API_PATH = "/v3/carbon/transportation-and-distribution";
 export const FACTOR_API_PATH = "/v3/carbon/factor";
+export const FACTOR_SET_API_PATH = "/v3/carbon/factorset";
 export const GET = "GET";
 export const POST = "POST";
