@@ -1,4 +1,4 @@
-import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity } from "./common";
+import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination } from "./common";
 
 
 
@@ -31,3 +31,10 @@ export interface FactorRequest {
     factorSet? : String;
     factorVersion? : String;
 }
+
+export interface SearchRequest {
+    location : Location;
+    time?: Time;
+    activity: SearchActivity;
+    pagination?: Pagination
+} 
