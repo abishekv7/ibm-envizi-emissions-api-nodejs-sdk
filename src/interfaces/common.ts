@@ -24,3 +24,11 @@ export interface FactorActivity {
     type: string;
     unit?: string; 
 }
+export interface SearchActivity {
+    search: string;
+}
+export interface Pagination {
+    page: number;
+    size: number
+
+}

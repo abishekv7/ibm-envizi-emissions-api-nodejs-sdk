@@ -1,6 +1,6 @@
 import { Client } from "../Client";
-import { FACTOR_API_PATH, FACTOR_SET_API_PATH, GET, POST } from "../Constants";
-import { FactorRequest } from "../interfaces/Api";
+import { FACTOR_API_PATH, FACTOR_SET_API_PATH, GET, POST, SEARCH_API_PATH } from "../Constants";
+import { FactorRequest, SearchRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function retrieveFactor(
@@ -46,5 +46,21 @@ const client = Client.getInstance();
   return makeApiRequest<string>({
     method: GET,
     url
+  });
+}
+
+export async function Search(
+  payload: SearchRequest,
+  useProxy: boolean = false
+): Promise<string> {
+  const client = Client.getInstance();
+  const url = useProxy
+    ? SEARCH_API_PATH
+    : client.getDomain() + SEARCH_API_PATH;
+
+  return makeApiRequest<string>({
+    method: POST,
+    url,
+    data: payload,
   });
 }
