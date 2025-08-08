@@ -14,19 +14,23 @@ import {
   MOBILE_API_PATH,
   GENERIC_CALCULATION_API_PATH,
   TRANSPORTATION_AND_DISTRIBUTION_API_PATH,
-  FACTOR_API_PATH
+  FACTOR_API_PATH,
+  FACTOR_SET_API_PATH,
+  SEARCH_API_PATH,
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
 import { Client } from "../src/Client";
 import GenericCalculationPayload from "./mocks/GenericCalculationRequest";
 import FactorPayload from "./mocks/FactorRequest";
+import SearchPayload from "./mocks/SearchRequest";
 
 type ApiTestCase = {
   name: string;
-  func: (payload: any, useProxy?: boolean) => Promise<string>;
+  func: (payload?: any, useProxy?: boolean) => Promise<string>;
   path: string;
-  payload: any;
+  payload?: any;
+  pathParams?: string | string[];
   method: "GET" | "POST";
 };
 
@@ -79,7 +83,7 @@ const testCases: ApiTestCase[] = [
     name: "FactorID API",
     func: Factors.getFactorById,
     path: FACTOR_API_PATH,
-    payload: "factor-id-123",
+    pathParams: "factor-id-123",
     method: "GET",
   },
   {
@@ -88,7 +92,20 @@ const testCases: ApiTestCase[] = [
     path: TRANSPORTATION_AND_DISTRIBUTION_API_PATH,
     payload: GenericCalculationPayload,
     method: "POST",
-  }
+  },
+  {
+    name: "FactorSet API",
+    func: Factors.getFactorSets,
+    path: FACTOR_SET_API_PATH,
+    method: "GET",
+  },
+  {
+    name: "Search API",
+    func: Factors.Search,
+    path: SEARCH_API_PATH,
+    payload: SearchPayload,
+    method: "POST",
+  },
 ];
 
 describe("API Test calculate functions", () => {
@@ -119,33 +136,66 @@ describe("API Test calculate functions", () => {
     tokenSpy.mockRestore();
     spy.mockRestore();
   });
-  describe.each(testCases)("$name", ({ func, path, payload, method }) => {
-    it("should call makeApiRequest with url", async () => {
-      const result = await func(payload, true);
-      const expectedUrl = method === "GET" ? `${path}/${payload}` : path;
-      const expectedRequest: any = {
-        method,
-        url: expectedUrl,
-      };
-      if (method === "POST") expectedRequest.data = payload;
-      expect(spy).toHaveBeenCalledWith(expectedRequest);
-      expect(result).toBe(mockResp);
-    });
-    it("Should call makeApiRequest with full API url", async () => {
-      const result = await func(payload, false);
-      const clientDomain = Client.getInstance().getDomain();
-      const expectedUrl =
-        method === "GET"
-          ? `${clientDomain}${path}/${payload}`
-          : `${clientDomain}${path}`;
+  describe.each(testCases)(
+    "$name",
+    ({ func, path, payload, pathParams, method }) => {
+      it("should call makeApiRequest with url", async () => {
+        let result;
+        if (method === "POST") {
+          result = await func(payload, true);
+        } else {
+          result =
+            pathParams !== undefined
+              ? await func(pathParams, true)
+              : await func(true);
+        }
 
-      const expectedRequest: any = {
-        method,
-        url: expectedUrl,
-      };
-      if (method === "POST") expectedRequest.data = payload;
-      expect(spy).toHaveBeenCalledWith(expectedRequest);
-      expect(result).toBe(mockResp);
-    });
-  });
+        let urlWithParams = path;
+        if (method === "GET" && pathParams) {
+          urlWithParams = `${path}/${
+            Array.isArray(pathParams) ? pathParams.join("/") : pathParams
+          }`;
+        }
+
+        const expectedUrl = method === "GET" ? urlWithParams : path;
+        const expectedRequest: any = {
+          method,
+          url: expectedUrl,
+        };
+        if (method === "POST") expectedRequest.data = payload;
+        expect(spy).toHaveBeenCalledWith(expectedRequest);
+        expect(result).toBe(mockResp);
+      });
+      it("Should call makeApiRequest with full API url", async () => {
+        let result;
+        if (method === "POST") {
+          result = await func(payload);
+        } else {
+          result =
+            pathParams !== undefined
+              ? await func(pathParams)
+              : await func();
+        }
+        const clientDomain = Client.getInstance().getDomain();
+
+        let UrlWithParams = `${clientDomain}${path}`;
+        if (method === "GET" && pathParams) {
+          UrlWithParams = `${clientDomain}${path}/${
+            Array.isArray(pathParams) ? pathParams.join("/") : pathParams
+          }`;
+        }
+
+        const expectedUrl =
+          method === "GET" ? UrlWithParams : `${clientDomain}${path}`;
+
+        const expectedRequest: any = {
+          method,
+          url: expectedUrl,
+        };
+        if (method === "POST") expectedRequest.data = payload;
+        expect(spy).toHaveBeenCalledWith(expectedRequest);
+        expect(result).toBe(mockResp);
+      });
+    }
+  );
 });
