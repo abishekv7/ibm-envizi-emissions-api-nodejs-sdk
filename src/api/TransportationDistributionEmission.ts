@@ -4,13 +4,10 @@ import { GenericCalculationRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: GenericCalculationRequest,
-  useProxy: boolean = false
+  payload: GenericCalculationRequest
 ): Promise<string> {
   const client = Client.getInstance();
-  const url = useProxy
-    ? TRANSPORTATION_AND_DISTRIBUTION_API_PATH
-    : client.getDomain() + TRANSPORTATION_AND_DISTRIBUTION_API_PATH;
+  const url = client.getDomain() + TRANSPORTATION_AND_DISTRIBUTION_API_PATH;
 
   return makeApiRequest<string>({
     method: POST,
