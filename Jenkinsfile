@@ -7,6 +7,7 @@ sterlingPipeline {
     buildCommand = null
     unitTestCommand = null
     detectSecretsEnabled = true
+    dockerScanForVulnerabilitiesEnabled = true
     dockerBuildEnabled = false
     uploadArtifactEnabled = false
     semanticReleaseBuildFiles = true
