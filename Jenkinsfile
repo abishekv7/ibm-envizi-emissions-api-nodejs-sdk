@@ -5,6 +5,8 @@ sterlingPipeline {
     minikubeTestEnabled = false
     agentLabel = null
     nodeversion = '22'
+    yarnLintCommand = null
+    yarnBuildCommand = { sh 'yarn build' }
     detectSecretsEnabled = true
     dockerScanForVulnerabilitiesEnabled = true
     dockerBuildEnabled = false
