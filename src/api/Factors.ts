@@ -4,13 +4,10 @@ import { FactorRequest, SearchRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function retrieveFactor(
-  payload: FactorRequest,
-  useProxy: boolean = false
+  payload: FactorRequest
 ): Promise<string> {
   const client = Client.getInstance();
-  const url = useProxy
-    ? FACTOR_API_PATH
-    : client.getDomain() + FACTOR_API_PATH;
+  const url =  client.getDomain() + FACTOR_API_PATH;
 
   return makeApiRequest<string>({
     method: POST,
@@ -20,14 +17,11 @@ export async function retrieveFactor(
 }
 
 export async function getFactorById(
-    id: String,
-    useProxy: boolean = false
+    id: String
   ): Promise<string> {
   const client = Client.getInstance();
   const path =`/${id}`;
-  const url = useProxy
-    ? FACTOR_API_PATH + path
-    : client.getDomain() + FACTOR_API_PATH + path;
+  const url =  client.getDomain() + FACTOR_API_PATH + path;
 
   return makeApiRequest<string>({
     method: GET,
@@ -36,12 +30,9 @@ export async function getFactorById(
 }
 
 export async function getFactorSets(
-  useProxy: boolean = false
 ): Promise<string> {
 const client = Client.getInstance();
-  const url = useProxy
-    ? FACTOR_SET_API_PATH
-    : client.getDomain() + FACTOR_SET_API_PATH;
+  const url = client.getDomain() + FACTOR_SET_API_PATH;
 
   return makeApiRequest<string>({
     method: GET,
@@ -50,13 +41,10 @@ const client = Client.getInstance();
 }
 
 export async function Search(
-  payload: SearchRequest,
-  useProxy: boolean = false
+  payload: SearchRequest
 ): Promise<string> {
   const client = Client.getInstance();
-  const url = useProxy
-    ? SEARCH_API_PATH
-    : client.getDomain() + SEARCH_API_PATH;
+  const url = client.getDomain() + SEARCH_API_PATH;
 
   return makeApiRequest<string>({
     method: POST,

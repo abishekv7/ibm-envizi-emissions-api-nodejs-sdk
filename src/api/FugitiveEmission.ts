@@ -4,13 +4,10 @@ import { CommonRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: CommonRequest,
-  useProxy: boolean = false
+  payload: CommonRequest
 ): Promise<string> {
   const client = Client.getInstance();
-  const url = useProxy
-    ? FUGITIVE_API_PATH
-    : client.getDomain() + FUGITIVE_API_PATH;
+  const url =  client.getDomain() + FUGITIVE_API_PATH;
 
   return makeApiRequest<string>({
     method: POST,

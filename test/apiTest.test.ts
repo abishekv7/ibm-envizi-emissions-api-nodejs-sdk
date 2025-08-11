@@ -27,7 +27,7 @@ import SearchPayload from "./mocks/SearchRequest";
 
 type ApiTestCase = {
   name: string;
-  func: (payload?: any, useProxy?: boolean) => Promise<string>;
+  func: (payload?: any) => Promise<string>;
   path: string;
   payload?: any;
   pathParams?: string | string[];
@@ -139,34 +139,7 @@ describe("API Test calculate functions", () => {
   describe.each(testCases)(
     "$name",
     ({ func, path, payload, pathParams, method }) => {
-      it("should call makeApiRequest with url", async () => {
-        let result;
-        if (method === "POST") {
-          result = await func(payload, true);
-        } else {
-          result =
-            pathParams !== undefined
-              ? await func(pathParams, true)
-              : await func(true);
-        }
-
-        let urlWithParams = path;
-        if (method === "GET" && pathParams) {
-          urlWithParams = `${path}/${
-            Array.isArray(pathParams) ? pathParams.join("/") : pathParams
-          }`;
-        }
-
-        const expectedUrl = method === "GET" ? urlWithParams : path;
-        const expectedRequest: any = {
-          method,
-          url: expectedUrl,
-        };
-        if (method === "POST") expectedRequest.data = payload;
-        expect(spy).toHaveBeenCalledWith(expectedRequest);
-        expect(result).toBe(mockResp);
-      });
-      it("Should call makeApiRequest with full API url", async () => {
+      it("Should call makeApiRequest with API url", async () => {
         let result;
         if (method === "POST") {
           result = await func(payload);

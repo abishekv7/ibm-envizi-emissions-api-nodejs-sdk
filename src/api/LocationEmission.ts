@@ -4,13 +4,10 @@ import { LocationRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 export async function calculate(
-  payload: LocationRequest,
-  useProxy: boolean = false
+  payload: LocationRequest
 ): Promise<string> {
   const client = Client.getInstance();
-  const url = useProxy
-    ? LOCATION_API_PATH
-    : client.getDomain() + LOCATION_API_PATH;
+  const url = client.getDomain() + LOCATION_API_PATH;
 
   return makeApiRequest<string>({
     method: POST,
