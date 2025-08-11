@@ -4,7 +4,7 @@ sterlingPipeline {
     repoName = "ibm-envizi-emissions-api-nodejs-sdk-internal"
     minikubeTestEnabled = false
     agentLabel = null
-    buildCommand = { sh 'npm run build' }
+    buildCommand = { sh 'npx tsc' }
     unitTestCommand = { sh 'npm run test' }
     detectSecretsEnabled = true
     dockerScanForVulnerabilitiesEnabled = true
