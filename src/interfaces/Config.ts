@@ -9,9 +9,10 @@ export interface RequestConfig {
 }
 
 export interface ClientConfig {
-    apiKey: string;
+    apiKey?: string;
     clientId: string;
-    orgId: string;
+    orgId?: string;
     host?: string;        
     authUrl?: string;
+    token?: string;
 }
