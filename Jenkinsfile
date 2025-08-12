@@ -9,6 +9,7 @@ sterlingPipeline {
     yarnBuildCommand = { sh 'yarn build'}
     detectSecretsEnabled = true
     dockerBuildEnabled = false
+    repoValidationEnabled = false
     uploadArtifactEnabled = false
     semanticReleaseBuildFiles = true
     deploymentEnabled = false
