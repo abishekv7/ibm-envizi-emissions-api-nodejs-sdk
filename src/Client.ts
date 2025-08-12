@@ -7,23 +7,35 @@ export class Client {
   private static instance: Client | null = null;
 
   private token: string;
-  private apiKey: string;
-  private clientId: string;
-  private orgId: string;
+  private readonly apiKey: string;
+  private readonly clientId: string;
+  private readonly orgId: string;
   private expiresAt: number;
   private readonly domain: string;
   private readonly tokenDomain: string;
+  private readonly isUserProvidedToken: boolean;
 
-  private constructor(token: string, config: ClientConfig) {
-    const { apiKey, clientId, orgId, host, authUrl } = config;
+  private constructor(
+    token: string,
+    config: ClientConfig,
+    isUserProvidedToken = false
+  ) {
+    const { apiKey="", clientId, orgId="", host, authUrl } = config;
     this.token = token;
-    this.apiKey = apiKey;
     this.clientId = clientId;
-    this.orgId = orgId;
+    if (isUserProvidedToken) {
+      this.apiKey = "";
+      this.orgId = "";
+    } else {
+      this.apiKey = apiKey;
+      this.orgId = orgId;
+    }
+
     const exp = findExpireTime(token);
     this.expiresAt = exp;
     this.domain = host ?? API_DOMAIN;
     this.tokenDomain = authUrl ?? TOKEN_GENERATION_API;
+    this.isUserProvidedToken = isUserProvidedToken;
   }
 
   public static async getClient(config: ClientConfig): Promise<void> {
@@ -32,8 +44,24 @@ export class Client {
         'If custom "host" is provided, "authUrl" must also be provided.'
       );
     }
-    const token = await Client.requestToken(config);
-    Client.instance = new Client(token, config);
+    if (config.token && !config.clientId) {
+      throw new Error(
+        'If token is provided directly, "clientId" must also be provided.'
+      );
+    }
+    if(config.apiKey && (!config.orgId || !config.clientId)){
+      throw new Error(
+        'If apiKey is provided , "clientId" and "OrgId" must also be provided.'
+      );
+    }
+    let token: string;
+    let isUserProvidedToken = false;
+
+    if (config.token && config.clientId) {
+      token = config.token;
+      isUserProvidedToken = true;
+    } else token = await Client.requestToken(config);
+    Client.instance = new Client(token, config,isUserProvidedToken);
   }
 
   public getDomain(): string {
@@ -50,27 +78,28 @@ export class Client {
   }
 
   public async refreshToken(): Promise<void> {
-    const now = Math.floor(Date.now() / 1000);
-    if (this.expiresAt - now < 60) {
-      console.log("[SDK] Refreshing token...");
-      const token = await Client.requestToken({
-        apiKey: this.apiKey,
-        clientId: this.clientId,
-        orgId: this.orgId,
-        authUrl: this.tokenDomain,
-      });
-      this.token = token;
-      this.expiresAt = findExpireTime(token);
+    if (!this.isUserProvidedToken) {
+      const now = Math.floor(Date.now() / 1000);
+      if (this.expiresAt - now < 60) {
+        console.log("[SDK] Refreshing token...");
+        const token = await Client.requestToken({
+          apiKey: this.apiKey,
+          clientId: this.clientId,
+          orgId: this.orgId,
+          authUrl: this.tokenDomain,
+        });
+        this.token = token;
+        this.expiresAt = findExpireTime(token);
+      }
     }
   }
 
   public getAuthHeader(): Record<string, string> {
     return { Authorization: `Bearer ${this.token}` };
   }
-  public getClientId(): string{
+  public getClientId(): string {
     return this.clientId;
   }
-
 
   private static async requestToken(config: ClientConfig): Promise<string> {
     const tokenUrl = config.authUrl ?? TOKEN_GENERATION_API;
@@ -85,8 +114,7 @@ export class Client {
       }
     });
 
-    if (!res.data)
-      throw new Error('Token response is empty');
+    if (!res.data) throw new Error("Token response is empty");
     return String(res.data).trim();
   }
 }
