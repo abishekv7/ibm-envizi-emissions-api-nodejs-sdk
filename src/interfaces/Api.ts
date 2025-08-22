@@ -15,7 +15,7 @@ export interface LocationRequestWithoutFactorId {
 } 
 
 export interface LocationRequestWithFactorId {
-    activity: LocationActivity;
+    activity: LocationActivityWithFactorId;
     includeDetails?: boolean;
 } 
 
