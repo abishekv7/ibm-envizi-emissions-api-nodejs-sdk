@@ -17,7 +17,7 @@ export async function retrieveFactor(
 }
 
 export async function getFactorById(
-    id: String
+    id: string
   ): Promise<string> {
   const client = Client.getInstance();
   const path =`/${id}`;

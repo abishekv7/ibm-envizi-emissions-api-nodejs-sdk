@@ -1,36 +1,59 @@
-import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination } from "./common";
+import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination, FactorActivityWithFactorId, CombinedUnitsActivityWithFactorId, ActivityWithFactorId } from "./common";
 
 
 
 type LocationActivity = Partial<Pick<Activity, 'type' | 'unit'>> & Pick<Activity, 'value'>;
+type LocationActivityWithFactorId = {
+  factorId: number;
+} & Partial<Pick<Activity, 'unit'>> & Pick<Activity, 'value'>;
 
-export interface LocationRequest {
+export interface LocationRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: LocationActivity;
     includeDetails?: boolean;
 } 
 
-export interface CommonRequest {
+export interface LocationRequestWithFactorId {
+    activity: LocationActivityWithFactorId;
+    includeDetails?: boolean;
+} 
+
+export interface CommonRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: Activity;
     includeDetails?: boolean;
 } 
 
-export interface GenericCalculationRequest {
+export interface CommonRequestWithFactorId {
+    activity: ActivityWithFactorId;
+    includeDetails?: boolean;
+} 
+
+export interface GenericCalculationRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: CombinedUnitsActivity;
     includeDetails?: boolean;
 }
-export interface FactorRequest {
+
+export interface GenericCalculationRequestWithFactorId {
+    activity: CombinedUnitsActivityWithFactorId;
+    includeDetails?: boolean;
+}
+export interface FactorRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: FactorActivity;
-    factorSet? : String;
-    factorVersion? : String;
+    factorSet? : string;
+    factorVersion? : string;
 }
+
+export interface FactorRequestWithFactorId {
+    activity: FactorActivityWithFactorId;
+}
+
 
 export interface SearchRequest {
     location : Location;
@@ -38,3 +61,10 @@ export interface SearchRequest {
     activity: SearchActivity;
     pagination?: Pagination
 } 
+
+
+
+export type FactorRequest = FactorRequestWithoutFactorId | FactorRequestWithFactorId;
+export type GenericCalculationRequest = GenericCalculationRequestWithoutFactorId | GenericCalculationRequestWithFactorId;
+export type CommonRequest = CommonRequestWithoutFactorId | CommonRequestWithFactorId;
+export type LocationRequest = LocationRequestWithoutFactorId | LocationRequestWithFactorId;
