@@ -54,12 +54,6 @@ export interface FactorRequestWithFactorId {
     activity: FactorActivityWithFactorId;
 }
 
-export interface SearchRequestWithoutFactorId {
-    location : Location;
-    time?: Time;
-    activity: SearchActivity;
-    pagination?: Pagination
-} 
 
 export interface SearchRequest {
     location : Location;
