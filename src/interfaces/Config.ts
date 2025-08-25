@@ -15,4 +15,5 @@ export interface ClientConfig {
     host?: string;        
     authUrl?: string;
     token?: string;
+    isExcelAddIn?: boolean;  
 }
