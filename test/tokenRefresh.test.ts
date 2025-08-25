@@ -18,7 +18,7 @@ describe("Token refreshing", () => {
     mock.onGet(TOKEN_GENERATION_API).reply(200, { freshToken });
 
     jest
-      .spyOn(utils, "findExpireTime")
+      .spyOn(utils, "findExpiryTime")
       .mockReturnValue(Math.floor(Date.now() / 1000) + 600);
 
     await Client.getClient(config);
@@ -38,7 +38,7 @@ describe("Token refreshing", () => {
       .reply(200, { refreshToken });
 
     jest
-      .spyOn(utils, "findExpireTime")
+      .spyOn(utils, "findExpiryTime")
       .mockReturnValue(Math.floor(Date.now() / 1000) + 1);
 
     await Client.getClient(config);
