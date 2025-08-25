@@ -11,3 +11,6 @@ export const FACTOR_SET_API_PATH = "/v3/carbon/factorset";
 export const SEARCH_API_PATH = "/v3/carbon/factor/search";
 export const GET = "GET";
 export const POST = "POST";
+export const CLIENT_SOURCE_HEADER = "X-Client-Source";
+export const CLIENT_SOURCE_EXCEL = "excel";
+export const CLIENT_SOURCE_SDK = "node-sdk";
