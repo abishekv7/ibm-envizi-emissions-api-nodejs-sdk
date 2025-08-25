@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ClientConfig } from "./interfaces/Config";
-import { findExpireTime } from "./utils";
-import { API_DOMAIN, TOKEN_GENERATION_API } from "./Constants";
+import { findExpiryTime } from "./utils";
+import { API_DOMAIN, TOKEN_GENERATION_API, CLIENT_SOURCE_EXCEL, CLIENT_SOURCE_SDK } from "./Constants";
 
 export class Client {
   private static instance: Client | null = null;
@@ -14,13 +14,14 @@ export class Client {
   private readonly domain: string;
   private readonly tokenDomain: string;
   private readonly isUserProvidedToken: boolean;
+  private readonly clientSource: string;
 
   private constructor(
     token: string,
     config: ClientConfig,
     isUserProvidedToken = false
   ) {
-    const { apiKey="", clientId, orgId="", host, authUrl } = config;
+    const { apiKey="", clientId, orgId="", host, authUrl, isExcelAddIn=false } = config;
     this.token = token;
     this.clientId = clientId;
     if (isUserProvidedToken) {
@@ -31,11 +32,12 @@ export class Client {
       this.orgId = orgId;
     }
 
-    const exp = findExpireTime(token);
+    const exp = findExpiryTime(token);
     this.expiresAt = exp;
     this.domain = host ?? API_DOMAIN;
     this.tokenDomain = authUrl ?? TOKEN_GENERATION_API;
     this.isUserProvidedToken = isUserProvidedToken;
+    this.clientSource = isExcelAddIn === true ? CLIENT_SOURCE_EXCEL : CLIENT_SOURCE_SDK;
   }
 
   public static async getClient(config: ClientConfig): Promise<void> {
@@ -89,7 +91,7 @@ export class Client {
           authUrl: this.tokenDomain,
         });
         this.token = token;
-        this.expiresAt = findExpireTime(token);
+        this.expiresAt = findExpiryTime(token);
       }
     }
   }
@@ -97,8 +99,13 @@ export class Client {
   public getAuthHeader(): Record<string, string> {
     return { Authorization: `Bearer ${this.token}` };
   }
+  
   public getClientId(): string {
     return this.clientId;
+  }
+
+  public getClientSource() : string {
+    return this.clientSource;
   }
 
   private static async requestToken(config: ClientConfig): Promise<string> {
