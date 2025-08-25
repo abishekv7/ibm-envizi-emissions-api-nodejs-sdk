@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { RequestConfig } from "./interfaces/Config";
 import { Client } from "./Client";
+import { CLIENT_SOURCE_HEADER } from "./Constants";
 
 export async function makeApiRequest<T>(config: RequestConfig): Promise<T> {
   const client = Client.getInstance();
@@ -15,7 +16,8 @@ export async function makeApiRequest<T>(config: RequestConfig): Promise<T> {
       ...client.getAuthHeader(),
       ...config.headers,
       'Content-Type': 'application/json',
-      'X-IBM-Client-Id': `ghgemissions-${client.getClientId()}`
+      'X-IBM-Client-Id': `ghgemissions-${client.getClientId()}`,
+      [CLIENT_SOURCE_HEADER]: client.getClientSource()
     },
   };
 
