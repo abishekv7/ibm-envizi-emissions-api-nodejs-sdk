@@ -2,6 +2,8 @@ import axios, { Method } from "axios";
 import { makeApiRequest } from "../src/request";
 import { Client } from "../src/Client";
 import { RequestConfig } from "../src/interfaces/Config";
+import { get } from "http";
+import { CLIENT_SOURCE_HEADER } from "../src/Constants";
 
 jest.mock("axios");
 
@@ -9,6 +11,7 @@ describe("makeApiRequest", () => {
   const mockRefreshToken = jest.fn();
   const mockGetAuthHeader = jest.fn();
   const mockGetClientId = jest.fn();
+  const mockGetClientSource = jest.fn();
   const mockAxiosRequest = axios.request as jest.Mock;
 
   beforeEach(() => {
@@ -18,10 +21,12 @@ describe("makeApiRequest", () => {
       refreshToken: mockRefreshToken,
       getAuthHeader: mockGetAuthHeader,
       getClientId: mockGetClientId,
+      getClientSource : mockGetClientSource
     };
 
     mockGetAuthHeader.mockReturnValue({ Authorization: "Bearer mock-token" });
     mockGetClientId.mockReturnValue("mock-client-id");
+    mockGetClientSource.mockReturnValue("excel");
 
     jest.spyOn(Client, "getInstance").mockReturnValue(mockClient as any);
   });
@@ -43,6 +48,7 @@ describe("makeApiRequest", () => {
     expect(mockRefreshToken).toHaveBeenCalled();
     expect(mockGetAuthHeader).toHaveBeenCalled();
     expect(mockGetClientId).toHaveBeenCalled();
+    expect(mockGetClientSource).toHaveBeenCalled(); 
 
     expect(mockAxiosRequest).toHaveBeenCalledWith({
       method: "POST",
@@ -54,6 +60,7 @@ describe("makeApiRequest", () => {
         custom: "header",
         "Content-Type": "application/json",
         "X-IBM-Client-Id": "ghgemissions-mock-client-id",
+        [CLIENT_SOURCE_HEADER]: "excel"
       },
     });
 
@@ -80,6 +87,7 @@ describe("makeApiRequest", () => {
         Authorization: "Bearer mock-token",
         "Content-Type": "application/json",
         "X-IBM-Client-Id": "ghgemissions-mock-client-id",
+        [CLIENT_SOURCE_HEADER]: "excel"
       },
     });
 
