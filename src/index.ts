@@ -6,3 +6,4 @@ export * as StationaryEmission  from './api/StationaryEmission';
 export * as GenericCalculationEmission  from './api/GenericCalculation';
 export * as TransportationDistributionEmission  from './api/TransportationDistributionEmission';
 export * as Factors from './api/Factors';
+export { ClientConfig } from './interfaces/Config';
