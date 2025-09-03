@@ -16,19 +16,6 @@ export async function retrieveFactor(
   });
 }
 
-export async function getFactorById(
-    id: string
-  ): Promise<string> {
-  const client = Client.getInstance();
-  const path =`/${id}`;
-  const url =  client.getDomain() + FACTOR_API_PATH + path;
-
-  return makeApiRequest<string>({
-    method: GET,
-    url
-  });
-}
-
 export async function getFactorSets(
 ): Promise<string> {
 const client = Client.getInstance();
