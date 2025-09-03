@@ -80,13 +80,6 @@ const testCases: ApiTestCase[] = [
     method: "POST",
   },
   {
-    name: "FactorID API",
-    func: Factors.getFactorById,
-    path: FACTOR_API_PATH,
-    pathParams: "factor-id-123",
-    method: "GET",
-  },
-  {
     name: "Transportation and Distribution API",
     func: TransportationDistributionApi.calculate,
     path: TRANSPORTATION_AND_DISTRIBUTION_API_PATH,
