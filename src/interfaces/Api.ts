@@ -46,8 +46,6 @@ export interface FactorRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: FactorActivity;
-    factorSet? : string;
-    factorVersion? : string;
 }
 
 export interface FactorRequestWithFactorId {
