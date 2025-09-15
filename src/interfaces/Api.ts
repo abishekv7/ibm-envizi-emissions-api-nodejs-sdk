@@ -1,7 +1,6 @@
 import { Activity, Location , Time, CombinedUnitsActivity, FactorActivity, SearchActivity, Pagination, FactorActivityWithFactorId, CombinedUnitsActivityWithFactorId, ActivityWithFactorId } from "./common";
 
 
-
 type LocationActivity = Partial<Pick<Activity, 'type' | 'unit'>> & Pick<Activity, 'value'>;
 type LocationActivityWithFactorId = {
   factorId: number;
@@ -42,12 +41,11 @@ export interface GenericCalculationRequestWithFactorId {
     activity: CombinedUnitsActivityWithFactorId;
     includeDetails?: boolean;
 }
+
 export interface FactorRequestWithoutFactorId {
     location : Location;
     time?: Time;
     activity: FactorActivity;
-    factorSet? : string;
-    factorVersion? : string;
 }
 
 export interface FactorRequestWithFactorId {
