@@ -1,7 +1,7 @@
 {
-  "name": "ibm-ghg-sdk",
+  "name": "emissions-api-sdk",
   "version": "1.0.0",
-  "description": "sdk for IBM GHG APIs",
+  "description": "sdk for IBM Emission APIs",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
@@ -17,7 +17,13 @@
     "GHG",
     "IBMGHG",
     "SDK",
-    "IBM-SDK"
+    "IBM-SDK",
+    "EMISSIONS",
+    "EMISSIONS-API",
+    "IBM-GHG",
+    "SCOPE 3",
+    "SCOPE 2",
+    "SCOPE 1"
   ],
   "author": "steffan.taylor@uk.ibm.com,santhosh.ramalingam.t@ibm.com",
   "license": "Apache-2.0",
