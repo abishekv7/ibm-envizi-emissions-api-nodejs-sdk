@@ -1,51 +1,174 @@
+/**
+ * Represents a geographical location.
+ * @interface Location
+ */
 export interface Location {
-    country: string;
-    stateProvince?: string;
-    powerGrid?: string;
+  /**
+   * The country of the location.
+   */
+  country: string;
+  
+  /**
+   * Optional state or province within the country.
+   */
+  stateProvince?: string;
+  
+  /**
+   * Optional power grid identifier for the location.
+   */
+  powerGrid?: string;
 }
 
+/**
+ * Represents a point in time with date information.
+ * @interface Time
+ */
 export interface Time {
-    date: string
+  /**
+   * The date in string format.
+   */
+  date: string
 }
 
+/**
+ * Represents an activity with type, value, and unit of measurement.
+ * @interface Activity
+ */
 export interface Activity {
-    type: string;
-    value: number;
-    unit: string; 
+  /**
+   * The type or category of the activity.
+   */
+  type: string;
+  
+  /**
+   * The numerical value of the activity.
+   */
+  value: number;
+  
+  /**
+   * The unit of measurement for the activity value.
+   */
+  unit: string; 
 }
 
+/**
+ * Represents an activity identified by a factor ID instead of a type.
+ * @interface ActivityWithFactorId
+ */
 export interface ActivityWithFactorId {
-    factorId : number,
-    value: number;
-    unit: string; 
+  /**
+   * The unique identifier for the activity factor.
+   */
+  factorId: number;
+  
+  /**
+   * The numerical value of the activity.
+   */
+  value: number;
+  
+  /**
+   * The unit of measurement for the activity value.
+   */
+  unit: string; 
 }
 
+/**
+ * Represents an activity that can have single or multiple values and units.
+ * @interface CombinedUnitsActivity
+ */
 export interface CombinedUnitsActivity {
-    type: string;
-    value: number | number[];
-    unit: string | string[]; 
+  /**
+   * The type or category of the activity.
+   */
+  type: string;
+  
+  /**
+   * The numerical value(s) of the activity. Can be a single number or an array of numbers.
+   */
+  value: number | number[];
+  
+  /**
+   * The unit(s) of measurement for the activity value(s). Can be a single string or an array of strings.
+   */
+  unit: string | string[]; 
 }
 
+/**
+ * Represents an activity with factor ID that can have single or multiple values and units.
+ * @interface CombinedUnitsActivityWithFactorId
+ */
 export interface CombinedUnitsActivityWithFactorId {
-    factorId: number;
-    value: number | number[];
-    unit: string | string[]; 
+  /**
+   * The unique identifier for the activity factor.
+   */
+  factorId: number;
+  
+  /**
+   * The numerical value(s) of the activity. Can be a single number or an array of numbers.
+   */
+  value: number | number[];
+  
+  /**
+   * The unit(s) of measurement for the activity value(s). Can be a single string or an array of strings.
+   */
+  unit: string | string[]; 
 }
 
+/**
+ * Represents a factor activity with a type and optional unit.
+ * @interface FactorActivity
+ */
 export interface FactorActivity {
-    type: string;
-    unit?: string; 
+  /**
+   * The type or category of the factor activity.
+   */
+  type: string;
+  
+  /**
+   * Optional unit of measurement for the factor activity.
+   */
+  unit?: string; 
 }
 
+/**
+ * Represents a factor activity identified by a factor ID instead of a type.
+ * @interface FactorActivityWithFactorId
+ */
 export interface FactorActivityWithFactorId {
-    factorId: number;
-    unit?: string; 
+  /**
+   * The unique identifier for the factor activity.
+   */
+  factorId: number;
+  
+  /**
+   * Optional unit of measurement for the factor activity.
+   */
+  unit?: string; 
 }
-export interface SearchActivity {
-    search: string;
-}
-export interface Pagination {
-    page: number;
-    size: number
 
+/**
+ * Represents a search query for activities.
+ * @interface SearchActivity
+ */
+export interface SearchActivity {
+  /**
+   * The search query string.
+   */
+  search: string;
+}
+
+/**
+ * Represents pagination parameters for paginated results.
+ * @interface Pagination
+ */
+export interface Pagination {
+  /**
+   * The page number (1-based).
+   */
+  page: number;
+  
+  /**
+   * The number of items per page.
+   */
+  size: number
 }
