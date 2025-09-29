@@ -1,9 +1,10 @@
 export { Client } from './Client';
-export * as LocationEmission from './api/LocationEmission';
-export * as FugitiveEmission  from './api/FugitiveEmission';
-export * as MobileEmission  from './api/MobileEmission';
-export * as StationaryEmission  from './api/StationaryEmission';
-export * as GenericCalculationEmission  from './api/GenericCalculation';
-export * as TransportationDistributionEmission  from './api/TransportationDistributionEmission';
-export * as Factors from './api/Factors';
+export * as Location from './api/Location';
+export * as Fugitive  from './api/Fugitive';
+export * as Mobile from './api/Mobile';
+export * as Stationary from './api/Stationary';
+export * as Calculation  from './api/Calculation';
+export * as TransportationAndDistribution from './api/TransportationAndDistribution';
+export * as Factor from './api/Factor';
+export * as FactorSets from './api/FactorSets'
 export { ClientConfig } from './interfaces/Config';

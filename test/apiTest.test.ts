@@ -1,11 +1,12 @@
 import * as requestModule from "../src/request";
-import * as locationApi from "../src/api/LocationEmission";
-import * as fugitiveApi from "../src/api/FugitiveEmission";
-import * as mobileApi from "../src/api/MobileEmission";
-import * as stationaryApi from "../src/api/StationaryEmission";
-import * as GenericCalculation from "../src/api/GenericCalculation";
-import * as TransportationDistributionApi from "../src/api/TransportationDistributionEmission";
-import * as Factors from "../src/api/Factors";
+import * as locationApi from "../src/api/Location";
+import * as fugitiveApi from "../src/api/Fugitive";
+import * as mobileApi from "../src/api/Mobile";
+import * as stationaryApi from "../src/api/Stationary";
+import * as GenericCalculation from "../src/api/Calculation";
+import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
+import * as Factors from "../src/api/Factor";
+import * as FactorSets from "../src/api/FactorSets";
 
 import {
   LOCATION_API_PATH,
@@ -88,13 +89,13 @@ const testCases: ApiTestCase[] = [
   },
   {
     name: "FactorSet API",
-    func: Factors.getFactorSets,
+    func: FactorSets.get,
     path: FACTOR_SET_API_PATH,
     method: "GET",
   },
   {
     name: "Search API",
-    func: Factors.Search,
+    func: Factors.search,
     path: SEARCH_API_PATH,
     payload: SearchPayload,
     method: "POST",

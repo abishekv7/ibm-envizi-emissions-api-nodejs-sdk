@@ -279,9 +279,9 @@ export type FactorRequest = FactorRequestWithoutFactorId | FactorRequestWithFact
  * Union type representing either a generic calculation request with or without a specific factor ID.
  * Allows the API to handle both types of calculation requests with a single parameter type.
  * 
- * @typedef {GenericCalculationRequestWithoutFactorId | GenericCalculationRequestWithFactorId} GenericCalculationRequest
+ * @typedef {GenericCalculationRequestWithoutFactorId | GenericCalculationRequestWithFactorId} CalculationRequest
  */
-export type GenericCalculationRequest = GenericCalculationRequestWithoutFactorId | GenericCalculationRequestWithFactorId;
+export type CalculationRequest = GenericCalculationRequestWithoutFactorId | GenericCalculationRequestWithFactorId;
 
 /**
  * Union type representing either a common request with or without a specific factor ID.

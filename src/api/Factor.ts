@@ -1,5 +1,5 @@
 import { Client } from "../Client";
-import { FACTOR_API_PATH, FACTOR_SET_API_PATH, GET, POST, SEARCH_API_PATH } from "../Constants";
+import { FACTOR_API_PATH, POST, SEARCH_API_PATH } from "../Constants";
 import { FactorRequest, SearchRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
@@ -50,26 +50,6 @@ export async function retrieveFactor(
   });
 }
 
-/**
- * Retrieves factor sets by making a GET request to the factor set API endpoint.
- * 
- * @export
- * @return {Promise<string>} A promise that resolves to the factor sets string returned by the API
- * @throws {Error} May throw an error if the API request fails
- * 
- * @example
- * const factorSets = await getFactorSets();
- */
-export async function getFactorSets(
-): Promise<string> {
-const client = Client.getInstance();
-  const url = client.getDomain() + FACTOR_SET_API_PATH;
-
-  return makeApiRequest<string>({
-    method: GET,
-    url
-  });
-}
 
 /**
  * Performs a search operation by making a POST request to the search API endpoint.
@@ -90,9 +70,9 @@ const client = Client.getInstance();
       "country": "USA"
     }
   };
- * const results = await Search(searchRequest);
+ * const results = await search(searchRequest);
  */
-export async function Search(
+export async function search(
   payload: SearchRequest
 ): Promise<string> {
   const client = Client.getInstance();
