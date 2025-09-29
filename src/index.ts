@@ -4,7 +4,7 @@ export * as Fugitive  from './api/Fugitive';
 export * as Mobile from './api/Mobile';
 export * as Stationary from './api/Stationary';
 export * as Calculation  from './api/Calculation';
-export * as TransportationDistribution from './api/TransportationAndDistribution';
+export * as TransportationAndDistribution from './api/TransportationAndDistribution';
 export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
 export { ClientConfig } from './interfaces/Config';
