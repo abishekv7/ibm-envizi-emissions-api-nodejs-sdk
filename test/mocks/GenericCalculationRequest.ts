@@ -1,6 +1,6 @@
-import { GenericCalculationRequest } from "../../src/interfaces/Api";
+import { CalculationRequest } from "../../src/interfaces/Api";
 
-const GenericCalculationPayload: GenericCalculationRequest = {
+const GenericCalculationPayload: CalculationRequest = {
   location: {
     country: "usa",
   },

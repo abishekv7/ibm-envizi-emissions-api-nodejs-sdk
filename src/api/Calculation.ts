@@ -1,6 +1,6 @@
 import { Client } from "../Client";
 import { GENERIC_CALCULATION_API_PATH, POST } from "../Constants";
-import { GenericCalculationRequest } from "../interfaces/Api";
+import { CalculationRequest } from "../interfaces/Api";
 import { makeApiRequest } from "../request";
 
 
@@ -8,7 +8,7 @@ import { makeApiRequest } from "../request";
  * Performs emission calculations by making a POST request to the generic calculation API endpoint.
  * 
  * @export
- * @param {GenericCalculationRequest} payload - The calculation request data to be sent to the API
+ * @param {CalculationRequest} payload - The calculation request data to be sent to the API
  * @return {Promise<string>} A promise that resolves to the calculation result string returned by the API
  * @throws {Error} May throw an error if the API request fails
  * 
@@ -31,7 +31,7 @@ import { makeApiRequest } from "../request";
  * const result = await calculate(calculationRequest);
  */
 export async function calculate(
-  payload: GenericCalculationRequest
+  payload: CalculationRequest
 ): Promise<string> {
   const client = Client.getInstance();
   const url = client.getDomain() + GENERIC_CALCULATION_API_PATH;
