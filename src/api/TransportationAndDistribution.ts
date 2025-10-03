@@ -13,18 +13,18 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const request = {
-             "time" : {
-                "date": "2025-01-04"
-            },
-            "location": {
-                "country": "usa"
-            },
-            "activity": {
-            	"type": "Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt",
-							"unit": ["t","km"],
-							"value": [1.0,1.0]
-            },
-            "includeDetails": true
+    "time" : {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa"
+    },
+    "activity": {
+      "type": "Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt",
+      "unit": ["t","km"],
+      "value": [1.0,1.0]
+    },
+    "includeDetails": true
   };
  * const result = await calculate(request);
  */

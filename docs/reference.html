@@ -1,0 +1,1094 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Authentication" href="authentication.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+        <title>Reference - IBM Envizi - Emissions API Node.js SDK documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">IBM Envizi - Emissions API Node.js SDK  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">IBM Envizi - Emissions API Node.js SDK  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reference</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/reference.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">¶</a></h1>
+<dl class="js class">
+<dt class="sig sig-object js" id="Client">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="n"><span class="pre">Client</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUserProvidedToken=false</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client" title="Link to this definition">¶</a></dt>
+<dd><p><em>exported from</em> <a class="reference internal" href="#Client" title="Client"><code class="xref js js-mod docutils literal notranslate"><span class="pre">Client</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<span class="sphinx_js-type">string</span>)</p></li>
+<li><p><strong>config</strong> (<span class="sphinx_js-type">ClientConfig</span>)</p></li>
+<li><p><strong>isUserProvidedToken</strong> (<span class="sphinx_js-type">boolean</span>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getAuthHeader">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getAuthHeader</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAuthHeader" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the authorization header object with the Bearer token.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Record&lt;string, string&gt;</span> – An object containing the Authorization header with the Bearer token</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">...</span><span class="nx">client</span><span class="p">.</span><span class="nx">getAuthHeader</span><span class="p">()</span>
+<span class="p">};</span>
+<span class="c1">// headers = { &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Authorization&#39;: &#39;Bearer token...&#39; }</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getClientId">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getClientId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getClientId" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the client ID configured for this client instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">string</span> – The client ID string</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getClientId</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clientId</span><span class="p">);</span><span class="w"> </span><span class="c1">// e.g., &#39;client123&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getClientSource">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getClientSource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getClientSource" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the client source identifier for this client instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">string</span> – The client source string</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getClientSource</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span><span class="w"> </span><span class="c1">// e.g., &#39;web&#39;, &#39;mobile&#39;, &#39;sdk&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getDomain">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getDomain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getDomain" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the domain URL configured for the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">string</span> – The domain URL string</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">apiDomain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getDomain</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">apiDomain</span><span class="p">);</span><span class="w"> </span><span class="c1">// e.g., &#39;https://api.example.com&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.refreshToken">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">refreshToken</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.refreshToken" title="Link to this definition">¶</a></dt>
+<dd><p>Refreshes the authentication token if it’s about to expire.
+Only refreshes if the token was not provided by the user and is expiring within 60 seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;void&gt;</span> – A promise that resolves when the token refresh is complete</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="c1">// Ensure token is fresh before making API requests</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">refreshToken</span><span class="p">();</span>
+<span class="c1">// Proceed with API requests...</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getClient">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getClient</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getClient" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes and returns a Client instance with the provided configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<span class="sphinx_js-type">ClientConfig</span>) – The client configuration object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;void&gt;</span> – A promise that resolves when the client is initialized</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize with authentication URL</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://api.example.com&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">authUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://auth.example.com&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org456&#39;</span>
+<span class="p">});</span>
+
+<span class="c1">// Initialize with existing token</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;existing-jwt-token&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span>
+<span class="p">});</span>
+
+<span class="c1">// Initialize with API key</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your-api-key&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org456&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Client.getInstance">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getInstance" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the singleton instance of the Client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Client</span> – The singleton Client instance</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// First initialize the client</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org456&#39;</span>
+<span class="p">});</span>
+
+<span class="c1">// Then get the instance</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="c1">// Use the client...</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="request.makeApiRequest">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">makeApiRequest</span></span></span><span class="sig-paren"><</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#request.makeApiRequest" title="Link to this definition">¶</a></dt>
+<dd><p>Makes an API request with standardized headers and token refresh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The expected response data type</p>
+</dd>
+<dt class="field-even">Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>config</strong> (<span class="sphinx_js-type">RequestConfig</span>) – The request configuration including method, URL, data, params, and optional headers</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;T&gt;</span> – A promise that resolves to the response data of type T</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">UserData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">makeApiRequest</span><span class="o">&lt;</span><span class="nx">UserData</span><span class="o">&gt;</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://api.example.com/users/123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;X-Custom-Header&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Typed access to the response data</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="utils.findExpiryTime">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">utils</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">findExpiryTime</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.findExpiryTime" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts the expiration time from a JWT token and give the token expiry time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<span class="sphinx_js-type">string</span>) – The JWT token to extract the expiration time from</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">any</span> – The expiration time value from the token’s payload</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jwtToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;your-token&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">expiryTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">findExpiryTime</span><span class="p">(</span><span class="nx">jwtToken</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">expiryTime</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">());</span><span class="w"> </span><span class="c1">// Convert to date if it&#39;s a Unix timestamp</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
+<dl class="js function">
+<dt class="sig sig-object js" id="Factor.retrieveFactor">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Factor</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">retrieveFactor</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Factor.retrieveFactor" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves a factor details by making a POST request to the factor API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">FactorRequest</span>) – The factor request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the factor string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">factorRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;factorId&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">12345</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">};</span>
+
+<span class="w"> </span><span class="nx">OR</span>
+
+<span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">factorRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;new york&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;natural gas&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">retrieveFactor</span><span class="p">(</span><span class="nx">factorRequest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Fugitive.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Fugitive</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Fugitive.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs scope 1 fugitve emission calculations by making a POST request to the fugitive API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CommonRequest</span>) – The request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;R134A&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kg&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Calculation.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Calculation</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Calculation.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs emission calculations by making a POST request to the generic calculation API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CalculationRequest</span>) – The calculation request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">calculationRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;new york&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;Waste Combusted - Steel Cans:Default factor&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kg&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1223123.121</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">calculationRequest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Location.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Location</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Location.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs scope 2 purchased energy Emission calculations by making a POST request to the location API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">LocationRequest</span>) – The location request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the purchased energy emission result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">calculationRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;new york&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;electricity&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;kwh&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">14123143</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">calculationRequest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Mobile.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Mobile</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Mobile.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs Scope 1 mobile emissions related calculations by making a POST request to the mobile API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CommonRequest</span>) – The request data to be sent to the mobile API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2022-01-01&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;new york&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Diesel Fuel&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1500000</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;l&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Stationary.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Stationary</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Stationary.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs Scope 1 stationary calculations by making a POST request to the stationary API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CommonRequest</span>) – The request data to be sent to the stationary API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;stateProvince&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;new york&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;Coal - Lignite&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;KJ&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="TransportationAndDistribution.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">TransportationAndDistribution</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TransportationAndDistribution.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs Scope 2 transportation and distribution emission calculations by making a POST request to the transportation and distribution API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CalculationRequest</span>) – The calculation request data for transportation and distribution operations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Freight - Cargo Ship - Bulk Carrier - 0-9999 dwt&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;km&quot;</span><span class="p">],</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="interfaces">
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading">¶</a></h2>
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.LocationRequestWithoutFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for location-based calculations without specifying a factor ID.
+Used for calculating emissions or other metrics based on location data.</p>
+<blockquote>
+<div><p>LocationRequestWithoutFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.LocationRequestWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for location-based calculations with a specific factor ID.
+Used when the emission factor is already known and doesn’t need to be determined by location.</p>
+<blockquote>
+<div><p>LocationRequestWithFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.CommonRequestWithoutFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Common request parameters for calculations without specifying a factor ID.
+Used for general-purpose calculations based on location, time, and activity data.</p>
+<blockquote>
+<div><p>CommonRequestWithoutFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.CommonRequestWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Common request parameters for calculations with a specific factor ID.
+Used when the emission factor is already known and doesn’t need to be determined by location.</p>
+<blockquote>
+<div><p>CommonRequestWithFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.GenericCalculationRequestWithoutFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for generic calculations without specifying a factor ID.
+Used for calculations that may involve multiple units or complex activity data.</p>
+<blockquote>
+<div><p>GenericCalculationRequestWithoutFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.GenericCalculationRequestWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for generic calculations with a specific factor ID.
+Used for complex calculations where the emission factor is already known.</p>
+<blockquote>
+<div><p>GenericCalculationRequestWithFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.FactorRequestWithoutFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for retrieving factor information without specifying a factor ID.
+Used to look up appropriate emission factors based on location, time, and activity type.</p>
+<blockquote>
+<div><p>FactorRequestWithoutFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.FactorRequestWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for retrieving specific factor information by ID.
+Used when the exact factor to retrieve is already known.</p>
+<blockquote>
+<div><p>FactorRequestWithFactorId</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Api.SearchRequest">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchRequest</span></span></span><a class="headerlink" href="#Api.SearchRequest" title="Link to this definition">¶</a></dt>
+<dd><p>Request parameters for searching factors or activities.
+Used to find relevant factors or activities based on location, time, and search criteria.</p>
+<blockquote>
+<div><p>SearchRequest</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Api</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.Location">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Location</span></span></span><a class="headerlink" href="#common.Location" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents a geographical location.</dt><dd><p>Location</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.Time">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Time</span></span></span><a class="headerlink" href="#common.Time" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents a point in time with date information.</dt><dd><p>Time</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.Activity">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Activity</span></span></span><a class="headerlink" href="#common.Activity" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents an activity with type, value, and unit of measurement.</dt><dd><p>Activity</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.ActivityWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ActivityWithFactorId</span></span></span><a class="headerlink" href="#common.ActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents an activity identified by a factor ID instead of a type.</dt><dd><p>ActivityWithFactorId</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.CombinedUnitsActivity">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivity</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivity" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents an activity that can have single or multiple values and units.</dt><dd><p>CombinedUnitsActivity</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.CombinedUnitsActivityWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivityWithFactorId</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents an activity with factor ID that can have single or multiple values and units.</dt><dd><p>CombinedUnitsActivityWithFactorId</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.FactorActivity">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivity</span></span></span><a class="headerlink" href="#common.FactorActivity" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents a factor activity with a type and optional unit.</dt><dd><p>FactorActivity</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.FactorActivityWithFactorId">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivityWithFactorId</span></span></span><a class="headerlink" href="#common.FactorActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents a factor activity identified by a factor ID instead of a type.</dt><dd><p>FactorActivityWithFactorId</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.SearchActivity">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchActivity</span></span></span><a class="headerlink" href="#common.SearchActivity" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents a search query for activities.</dt><dd><p>SearchActivity</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="common.Pagination">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Pagination</span></span></span><a class="headerlink" href="#common.Pagination" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Represents pagination parameters for paginated results.</dt><dd><p>Pagination</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.common</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Config.RequestConfig">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RequestConfig</span></span></span><a class="headerlink" href="#Config.RequestConfig" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Configuration for making HTTP requests.</dt><dd><p>RequestConfig</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Config</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="Config.ClientConfig">
+<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ClientConfig</span></span></span><a class="headerlink" href="#Config.ClientConfig" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Configuration for initializing a client instance.</dt><dd><p>ClientConfig</p>
+</dd>
+</dl>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Config</span></code></p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="authentication.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Authentication</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, IBM Corporation
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reference</a><ul>
+<li><a class="reference internal" href="#Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul>
+<li><a class="reference internal" href="#Client.getAuthHeader"><code class="docutils literal notranslate"><span class="pre">Client.getAuthHeader()</span></code></a></li>
+<li><a class="reference internal" href="#Client.getClientId"><code class="docutils literal notranslate"><span class="pre">Client.getClientId()</span></code></a></li>
+<li><a class="reference internal" href="#Client.getClientSource"><code class="docutils literal notranslate"><span class="pre">Client.getClientSource()</span></code></a></li>
+<li><a class="reference internal" href="#Client.getDomain"><code class="docutils literal notranslate"><span class="pre">Client.getDomain()</span></code></a></li>
+<li><a class="reference internal" href="#Client.refreshToken"><code class="docutils literal notranslate"><span class="pre">Client.refreshToken()</span></code></a></li>
+<li><a class="reference internal" href="#Client.getClient"><code class="docutils literal notranslate"><span class="pre">Client.getClient()</span></code></a></li>
+<li><a class="reference internal" href="#Client.getInstance"><code class="docutils literal notranslate"><span class="pre">Client.getInstance()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#request.makeApiRequest"><code class="docutils literal notranslate"><span class="pre">request.makeApiRequest()</span></code></a></li>
+<li><a class="reference internal" href="#utils.findExpiryTime"><code class="docutils literal notranslate"><span class="pre">utils.findExpiryTime()</span></code></a></li>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#Factor.retrieveFactor"><code class="docutils literal notranslate"><span class="pre">Factor.retrieveFactor()</span></code></a></li>
+<li><a class="reference internal" href="#Fugitive.calculate"><code class="docutils literal notranslate"><span class="pre">Fugitive.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#Calculation.calculate"><code class="docutils literal notranslate"><span class="pre">Calculation.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#Location.calculate"><code class="docutils literal notranslate"><span class="pre">Location.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#Mobile.calculate"><code class="docutils literal notranslate"><span class="pre">Mobile.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#Stationary.calculate"><code class="docutils literal notranslate"><span class="pre">Stationary.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#TransportationAndDistribution.calculate"><code class="docutils literal notranslate"><span class="pre">TransportationAndDistribution.calculate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interfaces">Interfaces</a><ul>
+<li><a class="reference internal" href="#Api.LocationRequestWithoutFactorId"><code class="docutils literal notranslate"><span class="pre">Api.LocationRequestWithoutFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.LocationRequestWithFactorId"><code class="docutils literal notranslate"><span class="pre">Api.LocationRequestWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.CommonRequestWithoutFactorId"><code class="docutils literal notranslate"><span class="pre">Api.CommonRequestWithoutFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.CommonRequestWithFactorId"><code class="docutils literal notranslate"><span class="pre">Api.CommonRequestWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.GenericCalculationRequestWithoutFactorId"><code class="docutils literal notranslate"><span class="pre">Api.GenericCalculationRequestWithoutFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.GenericCalculationRequestWithFactorId"><code class="docutils literal notranslate"><span class="pre">Api.GenericCalculationRequestWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.FactorRequestWithoutFactorId"><code class="docutils literal notranslate"><span class="pre">Api.FactorRequestWithoutFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.FactorRequestWithFactorId"><code class="docutils literal notranslate"><span class="pre">Api.FactorRequestWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#Api.SearchRequest"><code class="docutils literal notranslate"><span class="pre">Api.SearchRequest</span></code></a></li>
+<li><a class="reference internal" href="#common.Location"><code class="docutils literal notranslate"><span class="pre">common.Location</span></code></a></li>
+<li><a class="reference internal" href="#common.Time"><code class="docutils literal notranslate"><span class="pre">common.Time</span></code></a></li>
+<li><a class="reference internal" href="#common.Activity"><code class="docutils literal notranslate"><span class="pre">common.Activity</span></code></a></li>
+<li><a class="reference internal" href="#common.ActivityWithFactorId"><code class="docutils literal notranslate"><span class="pre">common.ActivityWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#common.CombinedUnitsActivity"><code class="docutils literal notranslate"><span class="pre">common.CombinedUnitsActivity</span></code></a></li>
+<li><a class="reference internal" href="#common.CombinedUnitsActivityWithFactorId"><code class="docutils literal notranslate"><span class="pre">common.CombinedUnitsActivityWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#common.FactorActivity"><code class="docutils literal notranslate"><span class="pre">common.FactorActivity</span></code></a></li>
+<li><a class="reference internal" href="#common.FactorActivityWithFactorId"><code class="docutils literal notranslate"><span class="pre">common.FactorActivityWithFactorId</span></code></a></li>
+<li><a class="reference internal" href="#common.SearchActivity"><code class="docutils literal notranslate"><span class="pre">common.SearchActivity</span></code></a></li>
+<li><a class="reference internal" href="#common.Pagination"><code class="docutils literal notranslate"><span class="pre">common.Pagination</span></code></a></li>
+<li><a class="reference internal" href="#Config.RequestConfig"><code class="docutils literal notranslate"><span class="pre">Config.RequestConfig</span></code></a></li>
+<li><a class="reference internal" href="#Config.ClientConfig"><code class="docutils literal notranslate"><span class="pre">Config.ClientConfig</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

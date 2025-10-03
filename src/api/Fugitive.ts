@@ -13,18 +13,18 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const request = {
-      "time": {
-        "date": "2025-01-04"
-      },
-      "location": {
-        "country": "usa"
-      },
-      "activity": {
-        "type": "R134A",
-        "value": 150,
-        "unit": "kg"
-      },
-      "includeDetails": false
+    "time": {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa"
+    },
+    "activity": {
+      "type": "R134A",
+      "value": 150,
+      "unit": "kg"
+    },
+    "includeDetails": false
   };
  * const result = await calculate(request);
  */

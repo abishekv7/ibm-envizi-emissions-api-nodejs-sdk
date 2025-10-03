@@ -14,20 +14,20 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const request = {
-             "time" : {
-                "date": "2025-01-04"
-            },
-            "location": {
-                "country": "usa",
-								"stateProvince": "new york"
-            },
-            "activity": {
-							"type":"Coal - Lignite",
-							"unit": "KJ",
-							"value": 3
-            },
-            "includeDetails": true
-      };
+    "time" : {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa",
+      "stateProvince": "new york"
+    },
+    "activity": {
+      "type":"Coal - Lignite",
+      "unit": "KJ",
+      "value": 3
+    },
+    "includeDetails": true
+  };
  * const result = await calculate(request);
  */
 

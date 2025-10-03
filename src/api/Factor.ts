@@ -13,27 +13,26 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const factorRequest = {
-	
-	"activity": {
-		 "factorId": 12345
-	}
+    "activity": {
+      "factorId": 12345
+    }
   };
   
-  or
+  OR
 
   const factorRequest = {
-             "time" : {
-                "date": "2025-01-04"
-            },
-            "location": {
-                "country": "usa",
-								"stateProvince": "new york"
-            },
-            "activity": {
-							"type":"natural gas"
-            },
-            "includeDetails": true
-        };
+    "time" : {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa",
+      "stateProvince": "new york"
+    },
+    "activity": {
+      "type":"natural gas"
+    },
+    "includeDetails": true
+  };
  * const factor = await retrieveFactor(factorRequest);
  */
 
@@ -66,7 +65,7 @@ export async function retrieveFactor(
     },
     "activity": {
       "search" : "travel"},
-  "location": {
+    "location": {
       "country": "USA"
     }
   };

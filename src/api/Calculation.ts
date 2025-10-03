@@ -14,20 +14,20 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const calculationRequest = {
-             "time" : {
-                "date": "2025-01-04"
-            },
-            "location": {
-                "country": "usa",
-								"stateProvince": "new york"
-            },
-            "activity": {
-							"type":"Waste Combusted - Steel Cans:Default factor",
-							"unit": "kg",
-							"value": 1223123.121
-            },
-            "includeDetails": true
-        };
+    "time" : {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa",
+      "stateProvince": "new york"
+    },
+    "activity": {
+      "type":"Waste Combusted - Steel Cans:Default factor",
+      "unit": "kg",
+      "value": 1223123.121
+    },
+    "includeDetails": true
+  };
  * const result = await calculate(calculationRequest);
  */
 export async function calculate(
