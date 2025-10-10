@@ -1,4 +1,4 @@
-IBM Envizi - Carbon Engine Node.js SDK
+IBM Envizi - Emissions API Node.js SDK
 ======================================
 
 .. toctree::
@@ -12,9 +12,9 @@ IBM Envizi - Carbon Engine Node.js SDK
 Introduction
 ============
 
-The **IBM Envizi - Emissions API Node.js SDK** provides a simple way to work with the **IBM Envizi Emissions API**, enabling calculation of various greenhouse gas (GHG) emissions.
+IBM Envizi - Emissions API (Emissions API) is a managed factor database and calculation engine for embedding greenhouse gas (GHG) emissions calculations into operational decision making.
 
-Features include easy integration, automatic token management, support for multiple emission types, and robust error handling.
+The **emissions-api-sdk** is a Node.js SDK for using Emissions API in your projects.
 
 Supported Emission Types
 ------------------------

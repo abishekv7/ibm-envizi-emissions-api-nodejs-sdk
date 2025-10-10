@@ -9,13 +9,18 @@ The Client is the central component of the IBM Envizi - Emissions API Node.js SD
 
 .. code-block:: none
 
+   +----------------------+
+   | Application          |<-----------+
+   +----------------------+            |
+            |                          |
+            v                          |
+   +----------------------+            |
+   | Client               |<-----------+
+   +----------------------+            |
+            |                          |
+            v                          |
    +----------------------+     +----------------------+
-   | Application          |---->| Client Initialization|
-   +----------------------+     +----------------------+
-            |                             |
-            v                             v
-   +----------------------+     +----------------------+
-   | API Module Requests  |<----| Authentication       |
+   | Authentication       |---->| API Module Requests  |
    +----------------------+     +----------------------+
 
 Client Initialization

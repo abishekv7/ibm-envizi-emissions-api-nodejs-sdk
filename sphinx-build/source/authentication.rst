@@ -5,7 +5,7 @@ Authentication
 Overview
 --------
 
-The IBM Envizi - Emissions API Node.js SDK uses OAuth 2.0 for authentication. This page explains the authentication process, options, and security best practices in detail.
+The IBM Envizi - Emissions API Node.js SDK uses OAuth 2.0 Bearer Tokens for authentication. This page explains the authentication process, options, and security best practices in detail.
 
 Authentication Methods
 ----------------------

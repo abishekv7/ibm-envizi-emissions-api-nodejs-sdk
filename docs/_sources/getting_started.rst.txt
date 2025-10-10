@@ -16,7 +16,7 @@ Before using the SDK, ensure you have:
 Installation
 ------------
 
-You can install the SDK using npm or yarn:
+You can install the SDK using `npm <https://www.npmjs.com/package/emissions-api-sdk>`_ or `yarn <https://yarnpkg.com/package?q=emissions-api-sdk&name=emissions-api-sdk>`_:
 
 Using npm:
 

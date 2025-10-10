@@ -253,13 +253,18 @@
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <p>The Client is the central component of the IBM Envizi - Emissions API Node.js SDK. It handles authentication, maintains connections to the API, and provides a unified interface for all API operations.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+----------------------+     +----------------------+
-| Application          |----&gt;| Client Initialization|
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+----------------------+
+| Application          |&lt;-----------+
++----------------------+            |
+         |                          |
+         v                          |
++----------------------+            |
+| Client               |&lt;-----------+
++----------------------+            |
+         |                          |
+         v                          |
 +----------------------+     +----------------------+
-         |                             |
-         v                             v
-+----------------------+     +----------------------+
-| API Module Requests  |&lt;----| Authentication       |
+| Authentication       |----&gt;| API Module Requests  |
 +----------------------+     +----------------------+
 </pre></div>
 </div>
