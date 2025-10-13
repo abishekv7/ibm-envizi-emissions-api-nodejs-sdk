@@ -13,20 +13,20 @@ import { makeApiRequest } from "../request";
  * 
  * @example
  * const calculationRequest = {
-             "time" : {
-                "date": "2025-01-04"
-            },
-            "location": {
-                "country": "usa",
-								"stateProvince": "new york"
-            },
-            "activity": {
-							"type":"electricity",
-							"unit": "kwh",
-							"value": 14123143
-            },
-            "includeDetails": true
-        };
+    "time" : {
+      "date": "2025-01-04"
+    },
+    "location": {
+      "country": "usa",
+      "stateProvince": "new york"
+    },
+    "activity": {
+      "type":"electricity",
+      "unit": "kwh",
+      "value": 14123143
+    },
+    "includeDetails": true
+  };
  * const result = await calculate(calculationRequest);
  */
 export async function calculate(
