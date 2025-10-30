@@ -23,7 +23,7 @@ yarn install emissions-api-sdk
 ## Quick Start
 
 ```javascript
-import { Client, LocationEmission } from 'emissions-api-sdk';
+import { Client, Location } from 'emissions-api-sdk';
 
 // Initialize client
 await Client.getClient({
@@ -33,7 +33,7 @@ await Client.getClient({
 });
 
 // Calculate emissions
-const result = await LocationEmission.calculate({
+const result = await Location.calculate({
   "location": {
     "country": "USA",
     "stateProvince": "california"
