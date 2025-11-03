@@ -23,7 +23,7 @@ yarn install emissions-api-sdk
 ## Quick Start
 
 ```javascript
-import { Client, Location } from 'emissions-api-sdk';
+import { Client, LocationEmission } from 'emissions-api-sdk';
 
 // Initialize client
 await Client.getClient({
@@ -33,7 +33,7 @@ await Client.getClient({
 });
 
 // Calculate emissions
-const result = await Location.calculate({
+const result = await LocationEmission.calculate({
   "location": {
     "country": "USA",
     "stateProvince": "california"
@@ -44,6 +44,37 @@ const result = await Location.calculate({
     "unit": "kWh"
   }
 });
+```
+
+## Metadata APIs
+
+The SDK provides Metadata APIs to discover available emission types, geographical areas, and units:
+
+### Get Available Types
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get all available Location emission types
+const types = await LocationEmission.getTypes();
+```
+
+### Get Supported Areas
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get supported geographical areas
+const areas = await LocationEmission.getArea();
+```
+
+### Get Valid Units
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get valid units for a specific emission type
+const units = await LocationEmission.getUnits("electricity");
 ```
 
 ## Authentication
