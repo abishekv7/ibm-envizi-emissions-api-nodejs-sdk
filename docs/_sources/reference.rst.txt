@@ -27,6 +27,62 @@ API
 
 .. js:autofunction:: TransportationAndDistribution.calculate
 
+Metadata APIs
+===========
+
+getTypes
+--------
+
+.. js:autofunction:: Factor.getTypes
+
+.. js:autofunction:: Calculation.getTypes
+
+.. js:autofunction:: Location.getTypes
+
+.. js:autofunction:: Mobile.getTypes
+
+.. js:autofunction:: Stationary.getTypes
+
+.. js:autofunction:: TransportationAndDistribution.getTypes
+
+.. js:autofunction:: Fugitive.getTypes
+
+getArea
+-------
+
+.. js:autofunction:: Factor.getArea
+
+.. js:autofunction:: Factor.getSearchArea
+
+.. js:autofunction:: Calculation.getArea
+
+.. js:autofunction:: Location.getArea
+
+.. js:autofunction:: Mobile.getArea
+
+.. js:autofunction:: Stationary.getArea
+
+.. js:autofunction:: TransportationAndDistribution.getArea
+
+.. js:autofunction:: Fugitive.getArea
+
+getUnits
+--------
+
+.. js:autofunction:: Factor.getUnits
+
+.. js:autofunction:: Calculation.getUnits
+
+.. js:autofunction:: Location.getUnits
+
+.. js:autofunction:: Mobile.getUnits
+
+.. js:autofunction:: Stationary.getUnits
+
+.. js:autofunction:: TransportationAndDistribution.getUnits
+
+.. js:autofunction:: Fugitive.getUnits
+
 Interfaces
 ==========
 

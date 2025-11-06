@@ -46,6 +46,37 @@ const result = await LocationEmission.calculate({
 });
 ```
 
+## Metadata APIs
+
+The SDK provides Metadata APIs to discover available emission types, geographical areas, and units:
+
+### Get Available Types
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get all available Location emission types
+const types = await LocationEmission.getTypes();
+```
+
+### Get Supported Areas
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get supported geographical areas
+const areas = await LocationEmission.getArea();
+```
+
+### Get Valid Units
+
+```javascript
+import { LocationEmission } from 'emissions-api-sdk';
+
+// Get valid units for a specific emission type
+const units = await LocationEmission.getUnits("electricity");
+```
+
 ## Authentication
 
 The SDK supports two authentication methods:
