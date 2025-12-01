@@ -4,7 +4,7 @@ Troubleshooting Guide
 Overview
 --------
 
-This document lists all SDK-specific errors that can occur when using the Node.js SDK. These errors are related to SDK initialization and client management.
+This document lists all SDK-specific errors that can occur when using the Emissions API Node.js SDK. These errors are related to SDK initialization and client management.
 
 ----
 
