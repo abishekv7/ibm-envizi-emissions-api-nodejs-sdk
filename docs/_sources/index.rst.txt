@@ -8,6 +8,7 @@ IBM Envizi - Emissions API Node.js SDK
    getting_started
    sdk
    reference
+   troubleshooting
 
 Introduction
 ============
