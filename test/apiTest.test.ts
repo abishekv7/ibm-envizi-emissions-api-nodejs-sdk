@@ -50,7 +50,7 @@ import SearchPayload from "./mocks/SearchRequest";
 
 type ApiTestCase = {
   name: string;
-  func: (payload?: any) => Promise<string>;
+  func: (payload?: any) => Promise<any>;
   path: string;
   payload?: any;
   pathParams?: string | string[];
