@@ -8,3 +8,35 @@ export * as TransportationAndDistribution from './api/TransportationAndDistribut
 export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
 export { ClientConfig } from './interfaces/Config';
+
+// Response interfaces
+export { AreaResponse, Location as LocationInfo } from './interfaces/response/AreaResponse';
+export { EmissionResponse } from './interfaces/response/EmissionResponse';
+export {
+  EmissionResponseWithDetails,
+  UnitInfo,
+  AreaInfo,
+  AreaType,
+  FactorDataTypeCategory,
+  FactorSetInfo,
+  FactorSelectionDefault,
+  FactorDataTypeCode,
+  FactorSetVersion,
+  FactorValue,
+  FactorMetaData,
+  UnitConversion,
+  EmissionData
+} from './interfaces/response/EmissionResponseWithDetails';
+export { FactorResponse } from './interfaces/response/FactorResponse';
+export {
+  FactorSetResponse,
+  FactorSet
+} from './interfaces/response/FactorSetResponse';
+export {
+  SearchResponse,
+  Pagination,
+  PaginationBody,
+  SearchLink
+} from './interfaces/response/SearchResponse';
+export { TypeResponse } from './interfaces/response/TypeResponse';
+export { UnitResponse } from './interfaces/response/UnitResponse';
