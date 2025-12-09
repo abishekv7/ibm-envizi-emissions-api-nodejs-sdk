@@ -3,5 +3,5 @@
  */
 export interface UnitResponse {
   /** Array of string*/
-  units: String[];
+  units: string[];
 }

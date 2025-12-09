@@ -3,5 +3,5 @@
  */
 export interface TypeResponse {
   /** Array of string*/
-  types: String[];
+  types: string[];
 }
