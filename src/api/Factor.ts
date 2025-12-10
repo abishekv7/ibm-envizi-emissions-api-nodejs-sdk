@@ -1,6 +1,11 @@
 import { Client } from "../Client";
 import { FACTOR_API_AREA, FACTOR_API_PATH, FACTOR_API_TYPES, FACTOR_API_UNITS, GET, POST, SEARCH_API_AREA, SEARCH_API_PATH } from "../Constants";
 import { FactorRequest, SearchRequest } from "../interfaces/Api";
+import { AreaResponse } from "../interfaces/response/AreaResponse";
+import { FactorResponse } from "../interfaces/response/FactorResponse";
+import { SearchResponse } from "../interfaces/response/SearchResponse";
+import { TypeResponse } from "../interfaces/response/TypeResponse";
+import { UnitResponse } from "../interfaces/response/UnitResponse";
 import { makeApiRequest } from "../request";
 
 /**
@@ -8,7 +13,7 @@ import { makeApiRequest } from "../request";
  * 
  * @export
  * @param {FactorRequest} payload - The factor request data to be sent to the API
- * @return {Promise<string>} A promise that resolves to the factor string returned by the API
+ * @return {Promise<FactorResponse>} A promise that resolves to the FactorResponse returned by the API
  * @throws {Error} May throw an error if the API request fails
  * 
  * @example
@@ -38,11 +43,11 @@ import { makeApiRequest } from "../request";
 
 export async function retrieveFactor(
   payload: FactorRequest
-): Promise<string> {
+): Promise<FactorResponse> {
   const client = Client.getInstance();
   const url =  client.getDomain() + FACTOR_API_PATH;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<FactorResponse>({
     method: POST,
     url,
     data: payload,
@@ -52,14 +57,14 @@ export async function retrieveFactor(
 
 /**
  * Performs a search operation by making a POST request to the search API endpoint.
- * 
+ *
  * @export
  * @param {SearchRequest} payload - The search request data to be sent to the API
- * @return {Promise<string>} A promise that resolves to the search results string returned by the API
+ * @return {Promise<SearchResponse>} A promise that resolves to the search results returned by the API
  * @throws {Error} May throw an error if the API request fails
- * 
+ *
  * @example
- * const searchRequest = { 
+ * const searchRequest = {
     "time":{
       "date": "2020-06-10"
     },
@@ -73,11 +78,11 @@ export async function retrieveFactor(
  */
 export async function search(
   payload: SearchRequest
-): Promise<string> {
+): Promise<SearchResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + SEARCH_API_PATH;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<SearchResponse>({
     method: POST,
     url,
     data: payload,
@@ -88,18 +93,18 @@ export async function search(
  * Retrieves available emission factor types by making a GET request to the API endpoint.
  *
  * @export
- * @return {Promise<string>} A promise that resolves to a string containing the available emission factor types
+ * @return {Promise<TypeResponse>} A promise that resolves to a TypeResponse containing the available emission factor types
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
  * const types = await getTypes();
  */
 export async function getTypes(
-): Promise<string> {
+): Promise<TypeResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + FACTOR_API_TYPES;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<TypeResponse>({
     method: GET,
     url
   });
@@ -109,18 +114,18 @@ export async function getTypes(
  * Retrieves information about geographical areas supported by the factor search API.
  *
  * @export
- * @return {Promise<string>} A promise that resolves to a string containing the supported geographical areas
+ * @return {Promise<AreaResponse>} A promise that resolves to an AreaResponse containing the supported geographical areas
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
- * const areas = await getArea();
+ * const areas = await getSearchArea();
  */
 export async function getSearchArea(
-): Promise<string> {
+): Promise<AreaResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + SEARCH_API_AREA;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<AreaResponse>({
     method: GET,
     url
   });
@@ -130,17 +135,17 @@ export async function getSearchArea(
  * Retrieves information about geographical areas supported by the factor API.
  *
  * @export
- * @return {Promise<string>} A promise that resolves to a string containing the supported geographical areas
+ * @return {Promise<AreaResponse>} A promise that resolves to an AreaResponse containing the supported geographical areas
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
  * const areas = await getArea();
  */
-export async function getArea(): Promise<string> {
+export async function getArea(): Promise<AreaResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + FACTOR_API_AREA;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<AreaResponse>({
     method: GET,
     url
   });
@@ -151,7 +156,7 @@ export async function getArea(): Promise<string> {
  *
  * @export
  * @param {string} type - The emission factor type to get units for (e.g., "Natural Gas - Scope 3:AAA")
- * @return {Promise<string>} A promise that resolves to a string containing the available units
+ * @return {Promise<UnitResponse>} A promise that resolves to a UnitResponse containing the available units
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
@@ -163,11 +168,11 @@ export async function getArea(): Promise<string> {
  */
 export async function getUnits(
   type : string
-): Promise<string> {
+): Promise<UnitResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + FACTOR_API_UNITS;
 
-  return makeApiRequest<string>({
+  return makeApiRequest<UnitResponse>({
     method: GET,
     url,
     params : { type }
