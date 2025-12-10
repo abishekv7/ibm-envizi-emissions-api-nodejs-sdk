@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html"><link rel="prev" title="Authentication" href="authentication.html">
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html" /><link rel="prev" title="Authentication" href="authentication.html" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
         <title>Reference - IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -146,10 +146,14 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -159,7 +163,8 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
@@ -167,7 +172,8 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -175,7 +181,8 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
   </header>
@@ -195,7 +202,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
@@ -228,7 +235,8 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -236,7 +244,8 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -496,7 +505,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the factor string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;FactorResponse&gt;</span> – A promise that resolves to the FactorResponse returned by the API</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -539,7 +548,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -575,7 +584,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -612,7 +621,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the purchased energy emission result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -649,7 +658,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -686,7 +695,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -715,7 +724,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dl class="js function">
 <dt class="sig sig-object js" id="TransportationAndDistribution.calculate">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">TransportationAndDistribution</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TransportationAndDistribution.calculate" title="Link to this definition">¶</a></dt>
-<dd><p>Performs Scope 2 transportation and distribution emission calculations by making a POST request to the transportation and distribution API endpoint.</p>
+<dd><p>Performs Scope 3 transportation and distribution emission calculations by making a POST request to the transportation and distribution API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -723,7 +732,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to the calculation result string returned by the API</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -759,7 +768,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available emission factor types by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available emission factor types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available emission factor types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -776,7 +785,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available calculation types by making a GET request to the calculation types API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available calculation types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available calculation types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -793,7 +802,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available location-based calculation types by making a GET request to the location types API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available location-based calculation types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available location-based calculation types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -810,15 +819,13 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available mobile emission calculation types by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available mobile emission types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available mobile emission types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all available mobile emission types</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getTypes</span><span class="p">();</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">typesData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">types</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Available mobile emission types:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">typesData</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -830,7 +837,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available stationary emission calculation types by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available stationary emission types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available stationary emission types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -847,7 +854,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available transportation and distribution calculation types by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available transportation and distribution calculation types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available transportation and distribution calculation types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -864,7 +871,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves available fugitive emission calculation types by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available fugitive emission types</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available fugitive emission types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -884,7 +891,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the factor API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -901,12 +908,12 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the factor search API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getArea</span><span class="p">();</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getSearchArea</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -918,7 +925,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the calculation API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -935,7 +942,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the location-based calculation API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -952,7 +959,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the mobile emissions API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -969,7 +976,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the stationary emissions API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -986,7 +993,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the transportation and distribution API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1003,7 +1010,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dd><p>Retrieves information about geographical areas supported by the fugitive emissions API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the supported geographical areas</p>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1028,7 +1035,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1054,7 +1061,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1080,7 +1087,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1103,7 +1110,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1129,7 +1136,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1155,7 +1162,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -1181,7 +1188,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;string&gt;</span> – A promise that resolves to a string containing the available units</p>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
