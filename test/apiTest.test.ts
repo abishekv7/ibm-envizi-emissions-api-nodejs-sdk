@@ -5,6 +5,7 @@ import * as mobileApi from "../src/api/Mobile";
 import * as stationaryApi from "../src/api/Stationary";
 import * as GenericCalculation from "../src/api/Calculation";
 import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
+import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
 
@@ -40,6 +41,7 @@ import {
   GENERAL_API_UNITS,
   FACTOR_API_UNITS,
   TRANSPORTATION_AND_DISTRIBUTION_API_UNITS,
+  USAGE_API
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -54,7 +56,7 @@ type ApiTestCase = {
   path: string;
   payload?: any;
   pathParams?: string | string[];
-  queryParams?: Record<string, string>;
+  queryParams?: Record<string, string> | Record<string, boolean>;
   method: "GET" | "POST";
 };
 
@@ -262,6 +264,26 @@ const testCases: ApiTestCase[] = [
     queryParams: { type: "Business Travel - Cars:Diesel - Small" },
     method: "GET",
   },
+  {
+    name: "Usage API - getUsage",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    queryParams: { history: false },
+    method: "GET",
+  },
+  {
+    name: "Usage API - getUsage",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    queryParams: { history: true },
+    method: "GET",
+  },
+  {
+    name: "Usage API - getUsage",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    method: "GET",
+  }
 ];
 
 describe("API Test calculate functions", () => {
