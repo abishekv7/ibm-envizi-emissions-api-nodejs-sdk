@@ -265,23 +265,24 @@ const testCases: ApiTestCase[] = [
     method: "GET",
   },
   {
-    name: "Usage API - getUsage",
+    name: "Usage API - getUsage with history false",
     func: UsageApi.getUsage,
     path: USAGE_API,
     queryParams: { history: false },
     method: "GET",
   },
   {
-    name: "Usage API - getUsage",
+    name: "Usage API - getUsage with history true",
     func: UsageApi.getUsage,
     path: USAGE_API,
     queryParams: { history: true },
     method: "GET",
   },
   {
-    name: "Usage API - getUsage",
+    name: "Usage API - getUsage default",
     func: UsageApi.getUsage,
     path: USAGE_API,
+    queryParams: { history: false },
     method: "GET",
   }
 ];
@@ -322,9 +323,17 @@ describe("API Test calculate functions", () => {
         if (method === "POST") {
           result = await func(payload);
         } else {
-          // For GET requests with queryParams, pass the type value
+          // For GET requests with queryParams
           if (queryParams) {
-            result = await func(queryParams.type);
+            // Check if it's a Usage API call with history parameter
+            if (queryParams.hasOwnProperty('history')) {
+              result = await func(queryParams.history);
+            } else if (queryParams.type) {
+              // For other APIs that use type parameter
+              result = await func(queryParams.type);
+            } else {
+              result = await func();
+            }
           } else if (pathParams !== undefined) {
             result = await func(pathParams);
           } else {
