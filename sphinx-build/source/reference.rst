@@ -83,6 +83,12 @@ getUnits
 
 .. js:autofunction:: Fugitive.getUnits
 
+
+Usage API
+===========
+
+.. js:autofunction:: Usage.getUsage
+
 Interfaces
 ==========
 

@@ -77,6 +77,15 @@ import { LocationEmission } from 'emissions-api-sdk';
 const units = await LocationEmission.getUnits("electricity");
 ```
 
+### Get Organization Usage
+```javascript
+import { Usage } from 'emissions-api-sdk';
+
+// Retrieves current billing period or historical usage data for the Organization 
+// History Flag to retrieve current billing or historical usage data.
+const units = await Usage.getUsage(true);
+```
+
 ## Authentication
 
 The SDK supports two authentication methods:

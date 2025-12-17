@@ -5,6 +5,7 @@ export * as Mobile from './api/Mobile';
 export * as Stationary from './api/Stationary';
 export * as Calculation  from './api/Calculation';
 export * as TransportationAndDistribution from './api/TransportationAndDistribution';
+export * as Usage from './api/Usage'
 export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
 export { ClientConfig } from './interfaces/Config';
@@ -40,3 +41,4 @@ export {
 } from './interfaces/response/SearchResponse';
 export { TypeResponse } from './interfaces/response/TypeResponse';
 export { UnitResponse } from './interfaces/response/UnitResponse';
+export { UsageResponse } from './interfaces/response/UsageResponse';

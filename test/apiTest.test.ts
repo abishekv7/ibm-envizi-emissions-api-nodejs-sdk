@@ -5,6 +5,7 @@ import * as mobileApi from "../src/api/Mobile";
 import * as stationaryApi from "../src/api/Stationary";
 import * as GenericCalculation from "../src/api/Calculation";
 import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
+import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
 
@@ -40,6 +41,7 @@ import {
   GENERAL_API_UNITS,
   FACTOR_API_UNITS,
   TRANSPORTATION_AND_DISTRIBUTION_API_UNITS,
+  USAGE_API
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -54,7 +56,7 @@ type ApiTestCase = {
   path: string;
   payload?: any;
   pathParams?: string | string[];
-  queryParams?: Record<string, string>;
+  queryParams?: Record<string, string> | Record<string, boolean>;
   method: "GET" | "POST";
 };
 
@@ -262,6 +264,27 @@ const testCases: ApiTestCase[] = [
     queryParams: { type: "Business Travel - Cars:Diesel - Small" },
     method: "GET",
   },
+  {
+    name: "Usage API - getUsage with history false",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    queryParams: { history: false },
+    method: "GET",
+  },
+  {
+    name: "Usage API - getUsage with history true",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    queryParams: { history: true },
+    method: "GET",
+  },
+  {
+    name: "Usage API - getUsage default",
+    func: UsageApi.getUsage,
+    path: USAGE_API,
+    queryParams: { history: false },
+    method: "GET",
+  }
 ];
 
 describe("API Test calculate functions", () => {
@@ -300,9 +323,17 @@ describe("API Test calculate functions", () => {
         if (method === "POST") {
           result = await func(payload);
         } else {
-          // For GET requests with queryParams, pass the type value
+          // For GET requests with queryParams
           if (queryParams) {
-            result = await func(queryParams.type);
+            // Check if it's a Usage API call with history parameter
+            if (queryParams.hasOwnProperty('history')) {
+              result = await func(queryParams.history);
+            } else if (queryParams.type) {
+              // For other APIs that use type parameter
+              result = await func(queryParams.type);
+            } else {
+              result = await func();
+            }
           } else if (pathParams !== undefined) {
             result = await func(pathParams);
           } else {

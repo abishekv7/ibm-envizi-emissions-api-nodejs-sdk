@@ -35,6 +35,8 @@ export const GENERAL_API_UNITS = "/v3/carbon/calculation/units";
 export const FACTOR_API_UNITS = "/v3/carbon/factor/units";
 export const TRANSPORTATION_AND_DISTRIBUTION_API_UNITS = "/v3/carbon/transportation-and-distribution/units";
 
+export const USAGE_API = "/v3/carbon/usage";
+
 export const GET = "GET";
 export const POST = "POST";
 export const CLIENT_SOURCE_HEADER = "X-Client-Source";
