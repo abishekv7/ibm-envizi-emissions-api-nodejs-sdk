@@ -75,4 +75,10 @@ export interface FactorResponse {
   
   /** Unique factor identifier */
   factorId: number;
+
+  /** activity based or spend based */
+  methodology: string;
+
+  /** scopes data belongs to */
+	scope : string[];
 }
