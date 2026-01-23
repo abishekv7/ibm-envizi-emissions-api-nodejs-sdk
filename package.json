@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.ibm.com/fd4b-agrotech/ibm-envizi-carbon-engine-nodejs-sdk-internal"
+    "url": "https://github.ibm.com/fd4b-agrotech/ibm-envizi-emissions-api-nodejs-sdk-internal"
   },
   "keywords": [
     "EMISSIONS-API-SDK",
