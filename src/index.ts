@@ -8,6 +8,8 @@ export * as TransportationAndDistribution from './api/TransportationAndDistribut
 export * as Usage from './api/Usage'
 export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
+export * as EconomicActivity from './api/EconomicActivity';
+export * as RealEstate from './api/RealEstate';
 export { ClientConfig } from './interfaces/Config';
 
 // Response interfaces

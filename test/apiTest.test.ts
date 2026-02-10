@@ -5,6 +5,8 @@ import * as mobileApi from "../src/api/Mobile";
 import * as stationaryApi from "../src/api/Stationary";
 import * as GenericCalculation from "../src/api/Calculation";
 import * as TransportationDistributionApi from "../src/api/TransportationAndDistribution";
+import * as economicActivityApi from "../src/api/EconomicActivity";
+import * as realEstateApi from "../src/api/RealEstate";
 import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
@@ -41,7 +43,15 @@ import {
   GENERAL_API_UNITS,
   FACTOR_API_UNITS,
   TRANSPORTATION_AND_DISTRIBUTION_API_UNITS,
-  USAGE_API
+  USAGE_API,
+  ECONOMIC_ACTIVITY_API_PATH,
+  ECONOMIC_ACTIVITY_API_TYPES,
+  REAL_ESTATE_API_PATH,
+  REAL_ESTATE_API_TYPES,
+  ECONOMIC_ACTIVITY_API_AREA,
+  REAL_ESTATE_API_AREA,
+  ECONOMIC_ACTIVITY_API_UNITS,
+  REAL_ESTATE_API_UNITS
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -113,6 +123,20 @@ const testCases: ApiTestCase[] = [
     method: "POST",
   },
   {
+    name: "Economic activity API",
+    func: economicActivityApi.calculate,
+    path: ECONOMIC_ACTIVITY_API_PATH,
+    payload: commonpayload,
+    method: "POST",
+  },
+  {
+    name: "Real estate API",
+    func: realEstateApi.calculate,
+    path: REAL_ESTATE_API_PATH,
+    payload: commonpayload,
+    method: "POST",
+  },
+  {
     name: "FactorSet API",
     func: FactorSets.get,
     path: FACTOR_SET_API_PATH,
@@ -147,6 +171,18 @@ const testCases: ApiTestCase[] = [
     name: "Stationary API - getTypes",
     func: stationaryApi.getTypes,
     path: STATIONARY_API_TYPES,
+    method: "GET",
+  },
+  {
+    name: "Economic activity API - getTypes",
+    func: economicActivityApi.getTypes,
+    path: ECONOMIC_ACTIVITY_API_TYPES,
+    method: "GET",
+  },
+  {
+    name: "Real estate API - getTypes",
+    func: realEstateApi.getTypes,
+    path: REAL_ESTATE_API_TYPES,
     method: "GET",
   },
   {
@@ -189,6 +225,18 @@ const testCases: ApiTestCase[] = [
     name: "Stationary API - getArea",
     func: stationaryApi.getArea,
     path: STATIONARY_API_AREA,
+    method: "GET",
+  },
+  {
+    name: "Economic activity API - getArea",
+    func: economicActivityApi.getArea,
+    path: ECONOMIC_ACTIVITY_API_AREA,
+    method: "GET",
+  },
+  {
+    name: "Real estate API - getArea",
+    func: realEstateApi.getArea,
+    path: REAL_ESTATE_API_AREA,
     method: "GET",
   },
   {
@@ -241,6 +289,20 @@ const testCases: ApiTestCase[] = [
     func: stationaryApi.getUnits,
     path: STATIONARY_API_UNITS,
     queryParams: { type: "Jet Kerosene" },
+    method: "GET",
+  },
+  {
+    name: "Economic activity API - getUnits",
+    func: economicActivityApi.getUnits,
+    path: ECONOMIC_ACTIVITY_API_UNITS,
+    queryParams: { type: "accomodation" },
+    method: "GET",
+  },
+  {
+    name: "Real estate API - getUnits",
+    func: realEstateApi.getUnits,
+    path: REAL_ESTATE_API_UNITS,
+    queryParams: { type: "Commercial Real Estate:Hotel" },
     method: "GET",
   },
   {

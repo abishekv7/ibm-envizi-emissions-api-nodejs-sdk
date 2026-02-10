@@ -1,6 +1,6 @@
 {
   "name": "emissions-api-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "sdk for IBM Emissions APIs",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -35,7 +35,7 @@
   "author": "steffan.taylor@uk.ibm.com,santhosh.ramalingam.t@ibm.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^1.12.2"
+    "axios": "^1.13.5"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
