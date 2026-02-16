@@ -8,8 +8,6 @@ IBM Envizi - Emissions API Node.js SDK
    getting_started
    sdk
    reference
-   real_estate
-   economic_activity
    troubleshooting
 
 Introduction
