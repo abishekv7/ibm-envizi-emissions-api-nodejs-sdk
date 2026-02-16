@@ -748,6 +748,78 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </div>
 </dd></dl>
 
+<dl class="js function">
+<dt class="sig sig-object js" id="RealEstate.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs scope 3 Real estate emission calculations by making a POST request to the real estate API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CommonRequest</span>) – The request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Commercial Real Estate:Industrial distribution warehouse&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">17000.123</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;m2&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="EconomicActivity.calculate">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Performs scope 3 Spend based emission calculations by making a POST request to the economic activity API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">CommonRequest</span>) – The request data to be sent to the API</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;EmissionResponse | EmissionResponseWithDetails&gt;</span> – A promise that resolves to the emission calculation result. Returns EmissionResponseWithDetails if includeDetails is true, otherwise EmissionResponse</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;date&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-01-04&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usa&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;activity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;accomodation&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1500.12</span><span class="p">,</span>
+<span class="w">     </span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usd&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="s2">&quot;includeDetails&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">calculate</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
 </section>
 <section id="metadata-apis">
 <h2>Metadata APIs<a class="headerlink" href="#metadata-apis" title="Link to this heading">¶</a></h2>
@@ -863,6 +935,40 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available fugitive emission types</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getTypes</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="RealEstate.getTypes">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.getTypes" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available Real estate emission calculation types by making a GET request to the API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available Real estate emission types</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getTypes</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="EconomicActivity.getTypes">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.getTypes" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available economic activity emission calculation types by making a GET request to the API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available economic activity emission types</p>
 </dd>
 </dl>
 <div class="admonition-example admonition">
@@ -999,6 +1105,40 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <dt class="sig sig-object js" id="Fugitive.getArea">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Fugitive</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Fugitive.getArea" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves information about geographical areas supported by the fugitive emissions API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getArea</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="RealEstate.getArea">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.getArea" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves information about geographical areas supported by the real estate emissions API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getArea</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="EconomicActivity.getArea">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.getArea" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves information about geographical areas supported by the economic activity emissions API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the supported geographical areas</p>
@@ -1189,6 +1329,52 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <span class="c1">// Get units for the &quot;R-426A&quot; emission fugitive type without subtype</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s2">&quot;R-426A&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="RealEstate.getUnits">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.getUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available units for a specific Real estate emission type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The Real estate emission type to get units for (e.g., “R134A”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get units for the &quot;Commercial Real Estate:Industrial distribution warehouse&quot; emission real estate type with subtype</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s2">&quot;Commercial Real Estate:Industrial distribution warehouse&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="EconomicActivity.getUnits">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.getUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available units for a specific economic activity emission type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The economic activity emission type to get units for (e.g., “accomodation”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get units for the &quot;accomodation&quot; emission economic activity type without subtype</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s2">&quot;accomodation&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1521,6 +1707,8 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#Mobile.calculate"><code class="docutils literal notranslate"><span class="pre">Mobile.calculate()</span></code></a></li>
 <li><a class="reference internal" href="#Stationary.calculate"><code class="docutils literal notranslate"><span class="pre">Stationary.calculate()</span></code></a></li>
 <li><a class="reference internal" href="#TransportationAndDistribution.calculate"><code class="docutils literal notranslate"><span class="pre">TransportationAndDistribution.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#RealEstate.calculate"><code class="docutils literal notranslate"><span class="pre">RealEstate.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#EconomicActivity.calculate"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.calculate()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#metadata-apis">Metadata APIs</a><ul>
@@ -1532,6 +1720,8 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#Stationary.getTypes"><code class="docutils literal notranslate"><span class="pre">Stationary.getTypes()</span></code></a></li>
 <li><a class="reference internal" href="#TransportationAndDistribution.getTypes"><code class="docutils literal notranslate"><span class="pre">TransportationAndDistribution.getTypes()</span></code></a></li>
 <li><a class="reference internal" href="#Fugitive.getTypes"><code class="docutils literal notranslate"><span class="pre">Fugitive.getTypes()</span></code></a></li>
+<li><a class="reference internal" href="#RealEstate.getTypes"><code class="docutils literal notranslate"><span class="pre">RealEstate.getTypes()</span></code></a></li>
+<li><a class="reference internal" href="#EconomicActivity.getTypes"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.getTypes()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#getarea">getArea</a><ul>
@@ -1543,6 +1733,8 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#Stationary.getArea"><code class="docutils literal notranslate"><span class="pre">Stationary.getArea()</span></code></a></li>
 <li><a class="reference internal" href="#TransportationAndDistribution.getArea"><code class="docutils literal notranslate"><span class="pre">TransportationAndDistribution.getArea()</span></code></a></li>
 <li><a class="reference internal" href="#Fugitive.getArea"><code class="docutils literal notranslate"><span class="pre">Fugitive.getArea()</span></code></a></li>
+<li><a class="reference internal" href="#RealEstate.getArea"><code class="docutils literal notranslate"><span class="pre">RealEstate.getArea()</span></code></a></li>
+<li><a class="reference internal" href="#EconomicActivity.getArea"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.getArea()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#getunits">getUnits</a><ul>
@@ -1553,6 +1745,8 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#Stationary.getUnits"><code class="docutils literal notranslate"><span class="pre">Stationary.getUnits()</span></code></a></li>
 <li><a class="reference internal" href="#TransportationAndDistribution.getUnits"><code class="docutils literal notranslate"><span class="pre">TransportationAndDistribution.getUnits()</span></code></a></li>
 <li><a class="reference internal" href="#Fugitive.getUnits"><code class="docutils literal notranslate"><span class="pre">Fugitive.getUnits()</span></code></a></li>
+<li><a class="reference internal" href="#RealEstate.getUnits"><code class="docutils literal notranslate"><span class="pre">RealEstate.getUnits()</span></code></a></li>
+<li><a class="reference internal" href="#EconomicActivity.getUnits"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.getUnits()</span></code></a></li>
 </ul>
 </li>
 </ul>

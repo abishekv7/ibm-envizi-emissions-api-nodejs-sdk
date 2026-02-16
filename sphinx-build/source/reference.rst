@@ -27,6 +27,10 @@ API
 
 .. js:autofunction:: TransportationAndDistribution.calculate
 
+.. js:autofunction:: RealEstate.calculate
+
+.. js:autofunction:: EconomicActivity.calculate
+
 Metadata APIs
 ===========
 
@@ -47,6 +51,10 @@ getTypes
 
 .. js:autofunction:: Fugitive.getTypes
 
+.. js:autofunction:: RealEstate.getTypes
+
+.. js:autofunction:: EconomicActivity.getTypes
+
 getArea
 -------
 
@@ -66,6 +74,10 @@ getArea
 
 .. js:autofunction:: Fugitive.getArea
 
+.. js:autofunction:: RealEstate.getArea
+
+.. js:autofunction:: EconomicActivity.getArea
+
 getUnits
 --------
 
@@ -82,6 +94,10 @@ getUnits
 .. js:autofunction:: TransportationAndDistribution.getUnits
 
 .. js:autofunction:: Fugitive.getUnits
+
+.. js:autofunction:: RealEstate.getUnits
+
+.. js:autofunction:: EconomicActivity.getUnits
 
 
 Usage API
