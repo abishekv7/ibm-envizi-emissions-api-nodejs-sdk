@@ -45,6 +45,10 @@ export const ECONOMIC_ACTIVITY_API_UNITS = "/v3/carbon/economic-activity/units";
 
 export const USAGE_API = "/v3/carbon/usage";
 
+export const METADATA_TYPES_ENDPOINT = "/v3/carbon/metadata/types";
+export const METADATA_AREA_ENDPOINT = "/v3/carbon/metadata/area";
+export const METADATA_UNITS_ENDPOINT = "/v3/carbon/metadata/units";
+
 export const GET = "GET";
 export const POST = "POST";
 export const CLIENT_SOURCE_HEADER = "X-Client-Source";
