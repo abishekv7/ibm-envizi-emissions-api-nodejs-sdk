@@ -31,8 +31,10 @@ API
 
 .. js:autofunction:: EconomicActivity.calculate
 
-Metadata APIs
-===========
+Endpoint-Specific Metadata APIs
+================================
+
+Each calculation endpoint provides its own metadata methods to discover available types, geographical areas, and units.
 
 getTypes
 --------
@@ -98,6 +100,35 @@ getUnits
 .. js:autofunction:: RealEstate.getUnits
 
 .. js:autofunction:: EconomicActivity.getUnits
+
+
+Global Metadata API
+====================
+
+The global Metadata API provides a unified way to query metadata for any endpoint. This is useful when you need to dynamically discover metadata across different endpoints without calling endpoint-specific methods.
+
+**Supported endpoints**: ``calculation``, ``location``, ``stationary``, ``mobile``, ``fugitive``, ``factor``, ``search``, ``transportation-and-distribution``, ``economic-activity``, ``real-estate``
+
+getTypes
+--------
+
+.. js:autofunction:: Metadata.getTypes
+
+.. js:autofunction:: Metadata.postTypes
+
+getArea
+-------
+
+.. js:autofunction:: Metadata.getArea
+
+.. js:autofunction:: Metadata.postArea
+
+getUnits
+--------
+
+.. js:autofunction:: Metadata.getUnits
+
+.. js:autofunction:: Metadata.postUnits
 
 
 Usage API
