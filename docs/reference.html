@@ -821,8 +821,9 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dd></dl>
 
 </section>
-<section id="metadata-apis">
-<h2>Metadata APIs<a class="headerlink" href="#metadata-apis" title="Link to this heading">¶</a></h2>
+<section id="endpoint-specific-metadata-apis">
+<h2>Endpoint-Specific Metadata APIs<a class="headerlink" href="#endpoint-specific-metadata-apis" title="Link to this heading">¶</a></h2>
+<p>Each calculation endpoint provides its own metadata methods to discover available types, geographical areas, and units.</p>
 <section id="gettypes">
 <h3>getTypes<a class="headerlink" href="#gettypes" title="Link to this heading">¶</a></h3>
 <dl class="js function">
@@ -1382,6 +1383,184 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 </section>
 </section>
+<section id="global-metadata-api">
+<h2>Global Metadata API<a class="headerlink" href="#global-metadata-api" title="Link to this heading">¶</a></h2>
+<p>The global Metadata API provides a unified way to query metadata for any endpoint. This is useful when you need to dynamically discover metadata across different endpoints without calling endpoint-specific methods.</p>
+<p><strong>Supported endpoints</strong>: <code class="docutils literal notranslate"><span class="pre">calculation</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">stationary</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile</span></code>, <code class="docutils literal notranslate"><span class="pre">fugitive</span></code>, <code class="docutils literal notranslate"><span class="pre">factor</span></code>, <code class="docutils literal notranslate"><span class="pre">search</span></code>, <code class="docutils literal notranslate"><span class="pre">transportation-and-distribution</span></code>, <code class="docutils literal notranslate"><span class="pre">economic-activity</span></code>, <code class="docutils literal notranslate"><span class="pre">real-estate</span></code></p>
+<section id="id1">
+<h3>getTypes<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.getTypes">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getTypes" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available emission source types for a specific endpoint using GET request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve types for. Defaults to ‘calculation’ if not provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available types</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get types for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getTypes</span><span class="p">();</span>
+
+<span class="c1">// Get types for a specific endpoint</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">locationTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getTypes</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.postTypes">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postTypes" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available emission source types for a specific endpoint using POST request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve types for. Defaults to ‘calculation’ if not provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;TypeResponse&gt;</span> – A promise that resolves to a TypeResponse containing the available types</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get types for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postTypes</span><span class="p">();</span>
+
+<span class="c1">// Get types for a specific endpoint</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">stationaryTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postTypes</span><span class="p">(</span><span class="s1">&#39;stationary&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h3>getArea<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.getArea">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getArea" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available geographic locations for a specific endpoint using GET request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve locations for. Defaults to ‘calculation’ if not provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the available locations</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get areas for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getArea</span><span class="p">();</span>
+
+<span class="c1">// Get areas for a specific endpoint</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mobileAreas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getArea</span><span class="p">(</span><span class="s1">&#39;mobile&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.postArea">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postArea" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available geographic locations for a specific endpoint using POST request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve locations for. Defaults to ‘calculation’ if not provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;AreaResponse&gt;</span> – A promise that resolves to an AreaResponse containing the available locations</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get areas for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postArea</span><span class="p">();</span>
+
+<span class="c1">// Get areas for a specific endpoint</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fugitiveAreas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postArea</span><span class="p">(</span><span class="s1">&#39;fugitive&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>getUnits<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.getUnits">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available measurement units for a specific type and endpoint using GET request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve units for. Defaults to ‘calculation’ if not provided.</p></li>
+<li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The emission source type to retrieve units for. If not provided, returns the full UOM table.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">allUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">();</span>
+
+<span class="c1">// Get units for a specific type</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">naturalGasUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Natural Gas&#39;</span><span class="p">);</span>
+
+<span class="c1">// Get units for a specific endpoint and type</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">locationElectricityUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;electricity&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Metadata.postUnits">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available measurement units for a specific type and endpoint using POST request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve units for. Defaults to ‘calculation’ if not provided.</p></li>
+<li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The emission source type to retrieve units for. If not provided, returns the full UOM table.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;UnitResponse&gt;</span> – A promise that resolves to a UnitResponse containing the available units</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units for calculation endpoint (default)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">allUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">();</span>
+
+<span class="c1">// Get units for a specific type</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">jetKeroseneUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jet Kerosene&#39;</span><span class="p">);</span>
+
+<span class="c1">// Get units for a specific endpoint and type</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">stationaryNaturalGasUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">(</span><span class="s1">&#39;stationary&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Natural Gas&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+</section>
 <section id="usage-api">
 <h2>Usage API<a class="headerlink" href="#usage-api" title="Link to this heading">¶</a></h2>
 <dl class="js function">
@@ -1711,7 +1890,7 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#EconomicActivity.calculate"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.calculate()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#metadata-apis">Metadata APIs</a><ul>
+<li><a class="reference internal" href="#endpoint-specific-metadata-apis">Endpoint-Specific Metadata APIs</a><ul>
 <li><a class="reference internal" href="#gettypes">getTypes</a><ul>
 <li><a class="reference internal" href="#Factor.getTypes"><code class="docutils literal notranslate"><span class="pre">Factor.getTypes()</span></code></a></li>
 <li><a class="reference internal" href="#Calculation.getTypes"><code class="docutils literal notranslate"><span class="pre">Calculation.getTypes()</span></code></a></li>
@@ -1747,6 +1926,24 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#Fugitive.getUnits"><code class="docutils literal notranslate"><span class="pre">Fugitive.getUnits()</span></code></a></li>
 <li><a class="reference internal" href="#RealEstate.getUnits"><code class="docutils literal notranslate"><span class="pre">RealEstate.getUnits()</span></code></a></li>
 <li><a class="reference internal" href="#EconomicActivity.getUnits"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.getUnits()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-metadata-api">Global Metadata API</a><ul>
+<li><a class="reference internal" href="#id1">getTypes</a><ul>
+<li><a class="reference internal" href="#Metadata.getTypes"><code class="docutils literal notranslate"><span class="pre">Metadata.getTypes()</span></code></a></li>
+<li><a class="reference internal" href="#Metadata.postTypes"><code class="docutils literal notranslate"><span class="pre">Metadata.postTypes()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">getArea</a><ul>
+<li><a class="reference internal" href="#Metadata.getArea"><code class="docutils literal notranslate"><span class="pre">Metadata.getArea()</span></code></a></li>
+<li><a class="reference internal" href="#Metadata.postArea"><code class="docutils literal notranslate"><span class="pre">Metadata.postArea()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">getUnits</a><ul>
+<li><a class="reference internal" href="#Metadata.getUnits"><code class="docutils literal notranslate"><span class="pre">Metadata.getUnits()</span></code></a></li>
+<li><a class="reference internal" href="#Metadata.postUnits"><code class="docutils literal notranslate"><span class="pre">Metadata.postUnits()</span></code></a></li>
 </ul>
 </li>
 </ul>

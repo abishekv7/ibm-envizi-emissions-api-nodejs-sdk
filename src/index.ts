@@ -10,6 +10,7 @@ export * as Factor from './api/Factor';
 export * as FactorSets from './api/FactorSets'
 export * as EconomicActivity from './api/EconomicActivity';
 export * as RealEstate from './api/RealEstate';
+export * as Metadata from './api/Metadata';
 export { ClientConfig } from './interfaces/Config';
 
 // Response interfaces

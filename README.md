@@ -48,42 +48,61 @@ const result = await LocationEmission.calculate({
 
 ## Metadata APIs
 
-The SDK provides Metadata APIs to discover available emission types, geographical areas, and units:
+The SDK provides two types of Metadata APIs:
 
-### Get Available Types
+### 1. Endpoint-Specific Metadata APIs
 
-```javascript
-import { LocationEmission } from 'emissions-api-sdk';
-
-// Get all available Location emission types
-const types = await LocationEmission.getTypes();
-```
-
-### Get Supported Areas
+Each calculation endpoint has its own metadata methods to discover available types, areas, and units:
 
 ```javascript
-import { LocationEmission } from 'emissions-api-sdk';
+import { Location, Stationary, Mobile } from 'emissions-api-sdk';
 
-// Get supported geographical areas
-const areas = await LocationEmission.getArea();
+// Get types for a specific endpoint
+const locationTypes = await Location.getTypes();
+const stationaryTypes = await Stationary.getTypes();
+
+// Get supported areas for a specific endpoint
+const locationAreas = await Location.getArea();
+const mobileAreas = await Mobile.getArea();
+
+// Get valid units for a specific type
+const locationUnits = await Location.getUnits("electricity");
+const stationaryUnits = await Stationary.getUnits("Jet Kerosene");
 ```
 
-### Get Valid Units
+### 2. Global Metadata APIs
+
+The global Metadata API provides a unified way to query metadata for any endpoint:
 
 ```javascript
-import { LocationEmission } from 'emissions-api-sdk';
+import { Metadata } from 'emissions-api-sdk';
 
-// Get valid units for a specific emission type
-const units = await LocationEmission.getUnits("electricity");
+// Get types for any endpoint (defaults to 'calculation')
+const allTypes = await Metadata.getTypes();
+const locationTypes = await Metadata.getTypes('location');
+const stationaryTypes = await Metadata.postTypes('stationary');
+
+// Get areas for any endpoint
+const allAreas = await Metadata.getArea();
+const mobileAreas = await Metadata.getArea('mobile');
+const fugitiveAreas = await Metadata.postArea('fugitive');
+
+// Get units for any endpoint and type
+const allUnits = await Metadata.getUnits(); // All units
+const locationUnits = await Metadata.getUnits('location'); // Units for location endpoint
+const typeUnits = await Metadata.getUnits(undefined, 'Natural Gas'); // Units for specific type
+const specificUnits = await Metadata.getUnits('stationary', 'Jet Kerosene'); // Units for endpoint + type
 ```
+
+**Supported endpoints**: `calculation`, `location`, `stationary`, `mobile`, `fugitive`, `factor`, `search`, `transportation-and-distribution`, `economic-activity`, `real-estate`
 
 ### Get Organization Usage
 ```javascript
 import { Usage } from 'emissions-api-sdk';
 
-// Retrieves current billing period or historical usage data for the Organization 
+// Retrieves current billing period or historical usage data for the Organization
 // History Flag to retrieve current billing or historical usage data.
-const units = await Usage.getUsage(true);
+const usage = await Usage.getUsage(true);
 ```
 
 ## Authentication
