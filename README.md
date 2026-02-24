@@ -1,6 +1,6 @@
 # IBM Envizi - Emissions API Node.js SDK
 
-IBM Envizi - Emissions API (Emissions API) is a managed factor database and calculation engine for embedding greenhouse gas (GHG) emissions calculations into operational decision making.
+[IBM Envizi - Emissions API](https://www.ibm.com/products/envizi/emissions-api) (Emissions API) is a managed factor database and calculation engine for embedding greenhouse gas (GHG) emissions calculations into operational decision making.
 
 The `emissions-api-sdk` is a Node.js SDK for using Emissions API in your projects.
 
@@ -8,7 +8,7 @@ The `emissions-api-sdk` is a Node.js SDK for using Emissions API in your project
 
 To get started with the Emissions API follow these steps:
 
-- Sign up for the preview waitlist [IBMid sign up](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53659) page.
+- Sign up for the preview waitlist [IBMid sign up](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53999) page.
 - You will be sent an invite email to join to create an account.
 - Read the [Introduction](https://developer.ibm.com/apis/catalog/ghgemissions--ibm-envizi-emissions-api/Introduction) page to get an overview of the Emissions API.
 
