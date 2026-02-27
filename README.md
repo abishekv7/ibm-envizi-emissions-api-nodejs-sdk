@@ -87,11 +87,9 @@ const allAreas = await Metadata.getArea();
 const mobileAreas = await Metadata.getArea('mobile');
 const fugitiveAreas = await Metadata.postArea('fugitive');
 
-// Get units for any endpoint and type
+// Get units for any type
 const allUnits = await Metadata.getUnits(); // All units
-const locationUnits = await Metadata.getUnits('location'); // Units for location endpoint
-const typeUnits = await Metadata.getUnits(undefined, 'Natural Gas'); // Units for specific type
-const specificUnits = await Metadata.getUnits('stationary', 'Jet Kerosene'); // Units for endpoint + type
+const typeUnits = await Metadata.getUnits('Natural Gas'); // Units for specific type
 ```
 
 **Supported endpoints**: `calculation`, `location`, `stationary`, `mobile`, `fugitive`, `factor`, `search`, `transportation-and-distribution`, `economic-activity`, `real-estate`

@@ -9,7 +9,7 @@ import * as requestModule from "../src/request";
 
 type MetadataTestCase = {
   name: string;
-  func: (endpoint?: string, type?: string) => Promise<any>;
+  func: (arg?: string) => Promise<any>;
   path: string;
   endpoint?: string;
   type?: string;
@@ -123,15 +123,7 @@ const testCases: MetadataTestCase[] = [
     method: "GET",
   },
   {
-    name: "Metadata API - getUnits with endpoint only",
-    func: MetadataApi.getUnits,
-    path: METADATA_UNITS_ENDPOINT,
-    endpoint: "location",
-    queryParams: { endpoint: "location" },
-    method: "GET",
-  },
-  {
-    name: "Metadata API - getUnits with type only",
+    name: "Metadata API - getUnits with type",
     func: MetadataApi.getUnits,
     path: METADATA_UNITS_ENDPOINT,
     type: "Natural Gas",
@@ -139,21 +131,11 @@ const testCases: MetadataTestCase[] = [
     method: "GET",
   },
   {
-    name: "Metadata API - getUnits with endpoint and type",
+    name: "Metadata API - getUnits with type with subtype",
     func: MetadataApi.getUnits,
     path: METADATA_UNITS_ENDPOINT,
-    endpoint: "stationary",
-    type: "Jet Kerosene",
-    queryParams: { endpoint: "stationary", type: "Jet Kerosene" },
-    method: "GET",
-  },
-  {
-    name: "Metadata API - getUnits with factor endpoint and type with subtype",
-    func: MetadataApi.getUnits,
-    path: METADATA_UNITS_ENDPOINT,
-    endpoint: "factor",
     type: "Natural Gas - Scope 3:AAA",
-    queryParams: { endpoint: "factor", type: "Natural Gas - Scope 3:AAA" },
+    queryParams: { type: "Natural Gas - Scope 3:AAA" },
     method: "GET",
   },
   // POST Units Tests
@@ -165,15 +147,7 @@ const testCases: MetadataTestCase[] = [
     method: "POST",
   },
   {
-    name: "Metadata API - postUnits with endpoint only",
-    func: MetadataApi.postUnits,
-    path: METADATA_UNITS_ENDPOINT,
-    endpoint: "mobile",
-    requestBody: { endpoint: "mobile" },
-    method: "POST",
-  },
-  {
-    name: "Metadata API - postUnits with type only",
+    name: "Metadata API - postUnits with type",
     func: MetadataApi.postUnits,
     path: METADATA_UNITS_ENDPOINT,
     type: "electricity",
@@ -181,21 +155,11 @@ const testCases: MetadataTestCase[] = [
     method: "POST",
   },
   {
-    name: "Metadata API - postUnits with endpoint and type",
+    name: "Metadata API - postUnits with complex type",
     func: MetadataApi.postUnits,
     path: METADATA_UNITS_ENDPOINT,
-    endpoint: "fugitive",
-    type: "HFC-263fb",
-    requestBody: { endpoint: "fugitive", type: "HFC-263fb" },
-    method: "POST",
-  },
-  {
-    name: "Metadata API - postUnits with calculation endpoint and complex type",
-    func: MetadataApi.postUnits,
-    path: METADATA_UNITS_ENDPOINT,
-    endpoint: "calculation",
     type: "Business Travel - Cars:Diesel - Small",
-    requestBody: { endpoint: "calculation", type: "Business Travel - Cars:Diesel - Small" },
+    requestBody: { type: "Business Travel - Cars:Diesel - Small" },
     method: "POST",
   },
 ];
@@ -235,14 +199,8 @@ describe("Metadata API Tests", () => {
     "$name",
     ({ func, path, endpoint, type, queryParams, requestBody, method }) => {
       it("Should call makeApiRequest with correct parameters", async () => {
-        let result;
-        
-        if (method === "POST") {
-          result = await func(endpoint, type);
-        } else {
-          // GET request
-          result = await func(endpoint, type);
-        }
+        // For units tests, pass type; for types/area tests, pass endpoint
+        const result = await func(endpoint ?? type);
 
         const clientDomain = Client.getInstance().getDomain();
         const expectedUrl = `${clientDomain}${path}`;
