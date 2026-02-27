@@ -118,75 +118,57 @@ export async function postArea(
 }
 
 /**
- * Retrieves available measurement units for a specific type and endpoint using GET request.
+ * Retrieves available measurement units for a specific type using GET request.
  *
  * @export
- * @param {string} [endpoint] - The endpoint name to retrieve units for. Defaults to 'calculation' if not provided.
  * @param {string} [type] - The emission source type to retrieve units for. If not provided, returns the full UOM table.
  * @return {Promise<UnitResponse>} A promise that resolves to a UnitResponse containing the available units
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
- * // Get all units for calculation endpoint (default)
+ * // Get all units
  * const allUnits = await getUnits();
  *
  * // Get units for a specific type
- * const naturalGasUnits = await getUnits(undefined, 'Natural Gas');
- *
- * // Get units for a specific endpoint and type
- * const locationElectricityUnits = await getUnits('location', 'electricity');
+ * const naturalGasUnits = await getUnits('Natural Gas');
  */
 export async function getUnits(
-  endpoint?: string,
   type?: string
 ): Promise<UnitResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + METADATA_UNITS_ENDPOINT;
-
-  const params: Record<string, string> = {};
-  if (endpoint) params.endpoint = endpoint;
-  if (type) params.type = type;
 
   return makeApiRequest<UnitResponse>({
     method: GET,
     url,
-    params: Object.keys(params).length > 0 ? params : undefined,
+    params: type ? { type } : undefined,
   });
 }
 
 /**
- * Retrieves available measurement units for a specific type and endpoint using POST request.
+ * Retrieves available measurement units for a specific type using POST request.
  *
  * @export
- * @param {string} [endpoint] - The endpoint name to retrieve units for. Defaults to 'calculation' if not provided.
  * @param {string} [type] - The emission source type to retrieve units for. If not provided, returns the full UOM table.
  * @return {Promise<UnitResponse>} A promise that resolves to a UnitResponse containing the available units
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
- * // Get all units for calculation endpoint (default)
+ * // Get all units
  * const allUnits = await postUnits();
  *
  * // Get units for a specific type
- * const jetKeroseneUnits = await postUnits(undefined, 'Jet Kerosene');
- *
- * // Get units for a specific endpoint and type
- * const stationaryNaturalGasUnits = await postUnits('stationary', 'Natural Gas');
+ * const jetKeroseneUnits = await postUnits('Jet Kerosene');
  */
 export async function postUnits(
-  endpoint?: string,
   type?: string
 ): Promise<UnitResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + METADATA_UNITS_ENDPOINT;
 
-  const data: Record<string, string> = {};
-  if (endpoint) data.endpoint = endpoint;
-  if (type) data.type = type;
-
   return makeApiRequest<UnitResponse>({
     method: POST,
     url,
-    data,
+    data: type ? { type } : {},
   });
 }
