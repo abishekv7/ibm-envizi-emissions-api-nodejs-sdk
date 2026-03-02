@@ -35,9 +35,12 @@ API
 Global Metadata API
 ====================
 
-The global Metadata API provides a unified way to query metadata for any endpoint. This is useful when you need to dynamically discover metadata across different endpoints without calling endpoint-specific methods.
+The global Metadata API provides a unified way to query metadata across different endpoints without calling endpoint-specific methods.
 
-**Supported endpoints**: ``calculation``, ``location``, ``stationary``, ``mobile``, ``fugitive``, ``factor``, ``search``, ``transportation-and-distribution``, ``economic-activity``, ``real-estate``
+- **getTypes/postTypes** and **getArea/postArea**: Accept an optional ``endpoint`` parameter to query metadata for specific endpoints
+- **getUnits/postUnits**: Accept an optional ``type`` parameter to query units for specific emission types
+
+**Supported endpoints** (for getTypes/postTypes and getArea/postArea): ``calculation``, ``location``, ``stationary``, ``mobile``, ``fugitive``, ``factor``, ``search``, ``transportation-and-distribution``, ``economic-activity``, ``real-estate``
 
 getTypes
 --------

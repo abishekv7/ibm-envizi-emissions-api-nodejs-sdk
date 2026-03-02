@@ -36,7 +36,7 @@
   "license": "Apache-2.0",
   "resolutions": {
     "markdown-it": "^14.1.1",
-    "minimatch": "^10.2.1",
+    "minimatch": "^10.2.3",
     "test-exclude": "^7.0.1"
   },
   "dependencies": {

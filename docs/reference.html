@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html"><link rel="prev" title="Authentication" href="authentication.html">
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html" /><link rel="prev" title="Authentication" href="authentication.html" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
         <title>Reference - IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -146,10 +146,14 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -159,7 +163,8 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
@@ -167,7 +172,8 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -175,7 +181,8 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
   </header>
@@ -195,7 +202,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
@@ -228,7 +235,8 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -236,7 +244,8 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -823,10 +832,14 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </section>
 <section id="global-metadata-api">
 <h2>Global Metadata API<a class="headerlink" href="#global-metadata-api" title="Link to this heading">¶</a></h2>
-<p>The global Metadata API provides a unified way to query metadata for any endpoint. This is useful when you need to dynamically discover metadata across different endpoints without calling endpoint-specific methods.</p>
-<p><strong>Supported endpoints</strong>: <code class="docutils literal notranslate"><span class="pre">calculation</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">stationary</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile</span></code>, <code class="docutils literal notranslate"><span class="pre">fugitive</span></code>, <code class="docutils literal notranslate"><span class="pre">factor</span></code>, <code class="docutils literal notranslate"><span class="pre">search</span></code>, <code class="docutils literal notranslate"><span class="pre">transportation-and-distribution</span></code>, <code class="docutils literal notranslate"><span class="pre">economic-activity</span></code>, <code class="docutils literal notranslate"><span class="pre">real-estate</span></code></p>
-<section id="gettypes">
-<h3>getTypes<a class="headerlink" href="#gettypes" title="Link to this heading">¶</a></h3>
+<p>The global Metadata API provides a unified way to query metadata across different endpoints without calling endpoint-specific methods.</p>
+<ul class="simple">
+<li><p><strong>getTypes/postTypes</strong> and <strong>getArea/postArea</strong>: Accept an optional <code class="docutils literal notranslate"><span class="pre">endpoint</span></code> parameter to query metadata for specific endpoints</p></li>
+<li><p><strong>getUnits/postUnits</strong>: Accept an optional <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to query units for specific emission types</p></li>
+</ul>
+<p><strong>Supported endpoints</strong> (for getTypes/postTypes and getArea/postArea): <code class="docutils literal notranslate"><span class="pre">calculation</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">stationary</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile</span></code>, <code class="docutils literal notranslate"><span class="pre">fugitive</span></code>, <code class="docutils literal notranslate"><span class="pre">factor</span></code>, <code class="docutils literal notranslate"><span class="pre">search</span></code>, <code class="docutils literal notranslate"><span class="pre">transportation-and-distribution</span></code>, <code class="docutils literal notranslate"><span class="pre">economic-activity</span></code>, <code class="docutils literal notranslate"><span class="pre">real-estate</span></code></p>
+<section id="id1">
+<h3>getTypes<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getTypes">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getTypes" title="Link to this definition">¶</a></dt>
@@ -939,12 +952,11 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h3>getUnits<a class="headerlink" href="#getunits" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getUnits">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getUnits" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieves available measurement units for a specific type and endpoint using GET request.</p>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available measurement units for a specific type using GET request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve units for. Defaults to ‘calculation’ if not provided.</p></li>
 <li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The emission source type to retrieve units for. If not provided, returns the full UOM table.</p></li>
 </ul>
 </dd>
@@ -954,14 +966,11 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units for calculation endpoint (default)</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">allUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">();</span>
 
 <span class="c1">// Get units for a specific type</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">naturalGasUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Natural Gas&#39;</span><span class="p">);</span>
-
-<span class="c1">// Get units for a specific endpoint and type</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">locationElectricityUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;electricity&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">naturalGasUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnits</span><span class="p">(</span><span class="s1">&#39;Natural Gas&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -969,12 +978,11 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.postUnits">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postUnits" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieves available measurement units for a specific type and endpoint using POST request.</p>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves available measurement units for a specific type using POST request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<span class="sphinx_js-type">string</span>) – The endpoint name to retrieve units for. Defaults to ‘calculation’ if not provided.</p></li>
 <li><p><strong>type</strong> (<span class="sphinx_js-type">string</span>) – The emission source type to retrieve units for. If not provided, returns the full UOM table.</p></li>
 </ul>
 </dd>
@@ -984,14 +992,11 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dl>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units for calculation endpoint (default)</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all units</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">allUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">();</span>
 
 <span class="c1">// Get units for a specific type</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">jetKeroseneUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jet Kerosene&#39;</span><span class="p">);</span>
-
-<span class="c1">// Get units for a specific endpoint and type</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">stationaryNaturalGasUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">(</span><span class="s1">&#39;stationary&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Natural Gas&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">jetKeroseneUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">postUnits</span><span class="p">(</span><span class="s1">&#39;Jet Kerosene&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
