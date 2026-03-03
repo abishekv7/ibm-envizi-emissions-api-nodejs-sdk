@@ -48,31 +48,7 @@ const result = await LocationEmission.calculate({
 
 ## Metadata APIs
 
-The SDK provides two types of Metadata APIs:
-
-### 1. Endpoint-Specific Metadata APIs
-
-Each calculation endpoint has its own metadata methods to discover available types, areas, and units:
-
-```javascript
-import { Location, Stationary, Mobile } from 'emissions-api-sdk';
-
-// Get types for a specific endpoint
-const locationTypes = await Location.getTypes();
-const stationaryTypes = await Stationary.getTypes();
-
-// Get supported areas for a specific endpoint
-const locationAreas = await Location.getArea();
-const mobileAreas = await Mobile.getArea();
-
-// Get valid units for a specific type
-const locationUnits = await Location.getUnits("electricity");
-const stationaryUnits = await Stationary.getUnits("Jet Kerosene");
-```
-
-### 2. Global Metadata APIs
-
-The global Metadata API provides a unified way to query metadata for any endpoint:
+The Metadata API provides a unified way to query metadata for any endpoint:
 
 ```javascript
 import { Metadata } from 'emissions-api-sdk';
