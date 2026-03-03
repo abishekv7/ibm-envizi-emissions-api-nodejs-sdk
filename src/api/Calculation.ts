@@ -1,11 +1,8 @@
 import { Client } from "../Client";
-import { GENERIC_CALCULATION_API_PATH,CALCULATION_TYPES, POST, GET, GENERAL_API_AREA, GENERAL_API_UNITS } from "../Constants";
+import { GENERIC_CALCULATION_API_PATH, POST } from "../Constants";
 import { CalculationRequest } from "../interfaces/Api";
-import { AreaResponse } from "../interfaces/response/AreaResponse";
 import { EmissionResponse } from "../interfaces/response/EmissionResponse";
 import { EmissionResponseWithDetails } from "../interfaces/response/EmissionResponseWithDetails";
-import { TypeResponse } from "../interfaces/response/TypeResponse";
-import { UnitResponse } from "../interfaces/response/UnitResponse";
 import { makeApiRequest } from "../request";
 
 
@@ -48,71 +45,3 @@ export async function calculate(
   });
 }
 
-
-/**
- * Retrieves available calculation types by making a GET request to the calculation types API endpoint.
- *
- * @export
- * @return {Promise<TypeResponse>} A promise that resolves to a TypeResponse containing the available calculation types
- * @throws {Error} May throw an error if the API request fails
- *
- * @example
- * const types = await getTypes();
- */
-export async function getTypes(): Promise<TypeResponse> {
-  const client = Client.getInstance();
-  const url = client.getDomain() + CALCULATION_TYPES;
-
-  return makeApiRequest<TypeResponse>({
-    method: GET,
-    url
-  });
-}
-
-/**
- * Retrieves information about geographical areas supported by the calculation API.
- *
- * @export
- * @return {Promise<AreaResponse>} A promise that resolves to an AreaResponse containing the supported geographical areas
- * @throws {Error} May throw an error if the API request fails
- *
- * @example
- * const areas = await getArea();
- */
-export async function getArea(): Promise<AreaResponse> {
-  const client = Client.getInstance();
-  const url = client.getDomain() + GENERAL_API_AREA;
-
-  return makeApiRequest<AreaResponse>({
-    method: GET,
-    url
-  });
-}
-
-/**
- * Retrieves available units for a specific calculation type.
- *
- * @export
- * @param {string} type - The calculation type to get units for
- * @return {Promise<UnitResponse>} A promise that resolves to a UnitResponse containing the available units
- * @throws {Error} May throw an error if the API request fails
- *
- * @example
- * // Get units for the "Natural Gas - Scope 3:AAA" emission calculation type with subtype
- * const units = await getUnits("Natural Gas - Scope 3:AAA");
-
- * // Get units for the "HFC-263fb" emission calculation type without subtype
- * const units = await getUnits("HFC-263fb");
- */
-export async function getUnits(
-  type: string
-): Promise<UnitResponse> {
-  const client = Client.getInstance();
-  const url = client.getDomain() + GENERAL_API_UNITS;
-
-  return makeApiRequest<UnitResponse>({
-    method: GET,
-    url,
-    params : { type }
-  });
-}
