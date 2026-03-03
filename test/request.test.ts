@@ -2,7 +2,6 @@ import axios, { Method } from "axios";
 import { makeApiRequest } from "../src/request";
 import { Client } from "../src/Client";
 import { RequestConfig } from "../src/interfaces/Config";
-import { get } from "http";
 import { CLIENT_SOURCE_HEADER } from "../src/Constants";
 
 jest.mock("axios");
