@@ -9,7 +9,7 @@ The `emissions-api-sdk` is a Node.js SDK for using Emissions API in your project
 To get started with the Emissions API follow these steps:
 
 - Sign up at the [IBMid sign up](https://www.ibm.com/account/reg/us-en/signup?formid=urx-54311) page.
-- You will be sent an invite email to create an account.
+- You will be sent an invite email to join to create an account.
 - Read the [Introduction](https://developer.ibm.com/apis/catalog/ghgemissions--ibm-envizi-emissions-api/Introduction) page to get an overview of the Emissions API.
 
 ## Installation
