@@ -11,6 +11,7 @@ export * as FactorSets from './api/FactorSets'
 export * as EconomicActivity from './api/EconomicActivity';
 export * as RealEstate from './api/RealEstate';
 export * as Metadata from './api/Metadata';
+export * as VectorTypeSearch from './api/VectorTypeSearch';
 export { ClientConfig } from './interfaces/Config';
 
 // Response interfaces
