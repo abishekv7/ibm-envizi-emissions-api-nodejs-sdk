@@ -1,7 +1,7 @@
 import { Client } from "../Client";
-import { VECTOR_SEARCH_API_PATH, POST } from "../Constants";
+import { TYPE_RECOMMENDER_API_PATH, POST } from "../Constants";
 import { SearchRequest } from "../interfaces/Api";
-import { TypeResponse } from "../interfaces/response/TypeResponse";
+import { TypeRecommenderResponse } from "../interfaces/response/TypeRecommenderResponse";
 import { makeApiRequest } from "../request";
 
 /**
@@ -53,11 +53,11 @@ import { makeApiRequest } from "../request";
  */
 export async function search(
   payload: SearchRequest
-): Promise<TypeResponse> {
+): Promise<TypeRecommenderResponse> {
   const client = Client.getInstance();
-  const url = client.getDomain() + VECTOR_SEARCH_API_PATH;
+  const url = client.getDomain() + TYPE_RECOMMENDER_API_PATH;
 
-  return makeApiRequest<TypeResponse>({
+  return makeApiRequest<TypeRecommenderResponse>({
     method: POST,
     url,
     data: payload,

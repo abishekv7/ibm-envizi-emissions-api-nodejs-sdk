@@ -10,7 +10,7 @@ import * as realEstateApi from "../src/api/RealEstate";
 import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
-import * as VectorTypeSearch from "../src/api/VectorTypeSearch";
+import * as VectorTypeSearch from "../src/api/TypeRecommender";
 
 import {
   LOCATION_API_PATH,
@@ -25,7 +25,7 @@ import {
   USAGE_API,
   ECONOMIC_ACTIVITY_API_PATH,
   REAL_ESTATE_API_PATH,
-  VECTOR_SEARCH_API_PATH,
+  TYPE_RECOMMENDER_API_PATH,
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -147,7 +147,7 @@ const testCases: ApiTestCase[] = [
   {
     name: "VectorTypeSearch API",
     func: VectorTypeSearch.search,
-    path: VECTOR_SEARCH_API_PATH,
+    path: TYPE_RECOMMENDER_API_PATH,
     payload: SearchPayload,
     method: "POST",
   }

@@ -12,7 +12,7 @@ export const SEARCH_API_PATH = "/v3/carbon/factor/search";
 export const ECONOMIC_ACTIVITY_API_PATH = "/v3/carbon/economic-activity";
 export const REAL_ESTATE_API_PATH = "/v3/carbon/real-estate";
 
-export const VECTOR_SEARCH_API_PATH = "/v3/carbon/recommender/type/search";
+export const TYPE_RECOMMENDER_API_PATH = "/v3/carbon/recommender/type/search";
 
 export const USAGE_API = "/v3/carbon/usage";
 
