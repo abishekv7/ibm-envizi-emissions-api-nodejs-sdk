@@ -11,6 +11,7 @@ export * as FactorSets from './api/FactorSets'
 export * as EconomicActivity from './api/EconomicActivity';
 export * as RealEstate from './api/RealEstate';
 export * as Metadata from './api/Metadata';
+export * as TypeRecommender from './api/TypeRecommender';
 export { ClientConfig } from './interfaces/Config';
 
 // Response interfaces
@@ -45,3 +46,4 @@ export {
 export { TypeResponse } from './interfaces/response/TypeResponse';
 export { UnitResponse } from './interfaces/response/UnitResponse';
 export { UsageResponse } from './interfaces/response/UsageResponse';
+export { TypeRecommenderResponse, ActivityRequest } from './interfaces/response/TypeRecommenderResponse';
