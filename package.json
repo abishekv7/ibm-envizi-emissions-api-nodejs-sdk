@@ -35,8 +35,9 @@
   "author": "steffan.taylor@uk.ibm.com,santhosh.ramalingam.t@ibm.com",
   "license": "Apache-2.0",
   "resolutions": {
+    "handlebars": "^4.7.9",
     "markdown-it": "^14.1.1",
-    "minimatch": "^10.2.3",
+    "minimatch": "^10.2.5",
     "test-exclude": "^7.0.1"
   },
   "dependencies": {
@@ -46,10 +47,10 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.4",
     "axios-mock-adapter": "^2.1.0",
-    "jest": "^30.0.5",
+    "jest": "^30.3.0",
     "nock": "^14.0.6",
-    "ts-jest": "^29.4.0",
-    "typedoc": "^0.28.13",
+    "ts-jest": "^29.4.6",
+    "typedoc": "^0.28.18",
     "typescript": "^5.9.2"
   }
 }
