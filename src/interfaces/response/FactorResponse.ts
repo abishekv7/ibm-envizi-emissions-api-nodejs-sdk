@@ -36,6 +36,9 @@ export interface FactorResponse {
  NF3?: number;
 
   
+  /** Energy consumption in megawatt-hours (optional) */
+  'energy(MWh)'?: number;
+  
   /** Unit of measurement for emissions */
   unit?: string;
   
