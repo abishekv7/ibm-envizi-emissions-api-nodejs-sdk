@@ -35,6 +35,12 @@ export interface EmissionResponse {
   /** Nitrogen trifluoride emissions value (optional) */
   NF3?: number;
 
+  /** Energy consumption in megawatt-hours (optional) */
+  'energy(MWh)'?: number;
+
+  /** Asset turnover ratio (optional) */
+  assetTurnoverRatio?: number;
+
    /** Unit of measurement for emissions (required) */
   unit: string;
   
