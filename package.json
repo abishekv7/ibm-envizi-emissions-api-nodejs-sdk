@@ -41,7 +41,7 @@
     "test-exclude": "^7.0.1"
   },
   "dependencies": {
-    "axios": "1.13.5"
+    "axios": "1.15.0"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
