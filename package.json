@@ -35,6 +35,7 @@
   "author": "steffan.taylor@uk.ibm.com,santhosh.ramalingam.t@ibm.com",
   "license": "Apache-2.0",
   "resolutions": {
+    "follow-redirects": "^1.16.0",
     "handlebars": "^4.7.9",
     "markdown-it": "^14.1.1",
     "minimatch": "^10.2.5",
