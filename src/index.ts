@@ -19,18 +19,9 @@ export { AreaResponse, Location as LocationInfo } from './interfaces/response/Ar
 export { EmissionResponse } from './interfaces/response/EmissionResponse';
 export {
   EmissionResponseWithDetails,
-  UnitInfo,
-  AreaInfo,
-  AreaType,
-  FactorDataTypeCategory,
-  FactorSetInfo,
-  FactorSelectionDefault,
-  FactorDataTypeCode,
-  FactorSetVersion,
-  FactorValue,
-  FactorMetaData,
-  UnitConversion,
-  EmissionData
+  FactorDetails,
+  FactorSetDetails,
+  IncludeDetails
 } from './interfaces/response/EmissionResponseWithDetails';
 export { FactorResponse } from './interfaces/response/FactorResponse';
 export {
