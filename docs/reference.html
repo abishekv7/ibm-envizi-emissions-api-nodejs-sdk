@@ -400,6 +400,12 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">orgId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;org456&#39;</span>
 <span class="p">});</span>
+
+<span class="c1">// Initialize with PAT token</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">getClient</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">patToken</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;your-personal-access-token&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;client123&#39;</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>
@@ -838,8 +844,8 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <li><p><strong>getUnits/postUnits</strong>: Accept an optional <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to query units for specific emission types</p></li>
 </ul>
 <p><strong>Supported endpoints</strong> (for getTypes/postTypes and getArea/postArea): <code class="docutils literal notranslate"><span class="pre">calculation</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">stationary</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile</span></code>, <code class="docutils literal notranslate"><span class="pre">fugitive</span></code>, <code class="docutils literal notranslate"><span class="pre">factor</span></code>, <code class="docutils literal notranslate"><span class="pre">search</span></code>, <code class="docutils literal notranslate"><span class="pre">transportation-and-distribution</span></code>, <code class="docutils literal notranslate"><span class="pre">economic-activity</span></code>, <code class="docutils literal notranslate"><span class="pre">real-estate</span></code></p>
-<section id="id1">
-<h3>getTypes<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<section id="gettypes">
+<h3>getTypes<a class="headerlink" href="#gettypes" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getTypes">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getTypes" title="Link to this definition">¶</a></dt>
