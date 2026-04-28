@@ -27,9 +27,8 @@ import { Client, LocationEmission } from 'emissions-api-sdk';
 
 // Initialize client
 await Client.getClient({
-  apiKey: process.env.ENVIZI_API_KEY,
-  clientId: process.env.ENVIZI_CLIENT_ID,
-  orgId: process.env.ENVIZI_ORG_ID
+  patToken: process.env.ENVIZI_PAT_TOKEN,
+  clientId: process.env.ENVIZI_CLIENT_ID
 });
 
 // Calculate emissions
@@ -81,9 +80,22 @@ const usage = await Usage.getUsage(true);
 
 ## Authentication
 
-The SDK supports two authentication methods:
+The SDK supports three authentication methods:
 
-### API Key (Recommended)
+
+
+### Personal Access Token (PAT) (Recommended)
+
+```javascript
+await Client.getClient({
+  patToken: process.env.ENVIZI_PAT_TOKEN,
+  clientId: process.env.ENVIZI_CLIENT_ID
+});
+```
+
+**Note:** When using PAT token, do not provide `orgId`.
+
+### API Key 
 
 ```javascript
 await Client.getClient({
@@ -93,7 +105,7 @@ await Client.getClient({
 });
 ```
 
-### Pre-generated Token
+### Pre-generated JWT Token
 
 ```javascript
 await Client.getClient({
