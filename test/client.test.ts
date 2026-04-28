@@ -1,7 +1,7 @@
 import { Client } from "../src/Client";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { TOKEN_GENERATION_API } from "../src/Constants";
+import { TOKEN_GENERATION_API, PAT_TOKEN_EXCHANGE_API } from "../src/Constants";
 import { ClientConfig } from "../src/interfaces/Config";
 
 const mock = new MockAdapter(axios);
@@ -57,6 +57,27 @@ describe("Client initialization and Header Authorization", () => {
       'If apiKey is provided , "clientId" and "OrgId" must also be provided.'
     );
   });
+
+  it("Should throw validation error for missing clientId with patToken", async () => {
+    await expect(
+      Client.getClient({ patToken: "pat-token" } as unknown as ClientConfig)
+    ).rejects.toThrow(
+      'If patToken is provided, "clientId" must also be provided.'
+    );
+  });
+
+  it("Should throw validation error when orgId is provided with patToken", async () => {
+    await expect(
+      Client.getClient({
+        patToken: "pat-token",
+        clientId: "client123",
+        orgId: "org456"
+      } as ClientConfig)
+    ).rejects.toThrow(
+      'orgId should not be provided when using patToken.'
+    );
+  });
+
   it("should not call refresh token if userProvidedToken is set and set token to userProvided", async () => {
     const base64Header = Buffer.from(
       JSON.stringify({ alg: "HS256", typ: "JWT" })
@@ -78,5 +99,76 @@ describe("Client initialization and Header Authorization", () => {
       Authorization: `Bearer ${userToken}`,
     });
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("should initialize client with PAT token and return auth header", async () => {
+    const base64Header = Buffer.from(
+      JSON.stringify({ alg: "HS256", typ: "JWT" })
+    ).toString("base64url");
+    const base64Payload = Buffer.from(
+      JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 600 })
+    ).toString("base64url");
+    const mockToken = `${base64Header}.${base64Payload}.Signature`;
+
+    mock.onPost(PAT_TOKEN_EXCHANGE_API).reply(200, mockToken);
+
+    await Client.getClient({
+      patToken: "test-pat-token",
+      clientId: "test-client-id",
+    });
+
+    const instance = Client.getInstance();
+    expect(instance.getAuthHeader()).toEqual({
+      Authorization: `Bearer ${mockToken}`,
+    });
+  });
+
+  it("should initialize client with PAT token and custom authUrl", async () => {
+    const base64Header = Buffer.from(
+      JSON.stringify({ alg: "HS256", typ: "JWT" })
+    ).toString("base64url");
+    const base64Payload = Buffer.from(
+      JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 600 })
+    ).toString("base64url");
+    const mockToken = `${base64Header}.${base64Payload}.Signature`;
+
+    const customAuthUrl = "https://custom-auth.example.com/exchange";
+    mock.onPost(customAuthUrl).reply(200, mockToken);
+
+    await Client.getClient({
+      patToken: "test-pat-token",
+      clientId: "test-client-id",
+      authUrl: customAuthUrl,
+    });
+
+    const instance = Client.getInstance();
+    expect(instance.getAuthHeader()).toEqual({
+      Authorization: `Bearer ${mockToken}`,
+    });
+  });
+
+  it("should call requestTokenFromPAT with correct headers", async () => {
+    const base64Header = Buffer.from(
+      JSON.stringify({ alg: "HS256", typ: "JWT" })
+    ).toString("base64url");
+    const base64Payload = Buffer.from(
+      JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 600 })
+    ).toString("base64url");
+    const mockToken = `${base64Header}.${base64Payload}.Signature`;
+
+    mock.onPost(PAT_TOKEN_EXCHANGE_API).reply((config) => {
+      expect(config.headers?.["X-IBM-Client-Id"]).toBe("saascore-test-client-id");
+      expect(config.headers?.["X-IBM-Envizi-Pat"]).toBe("test-pat-token");
+      expect(config.headers?.["Accept"]).toBe("application/json");
+      return [200, mockToken];
+    });
+
+    await Client.getClient({
+      patToken: "test-pat-token",
+      clientId: "test-client-id",
+    });
+
+    const instance = Client.getInstance();
+    expect(instance).toBeDefined();
   });
 });
