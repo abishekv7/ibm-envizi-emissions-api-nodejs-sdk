@@ -1,4 +1,4 @@
-export const API_DOMAIN = "https://api.ibm.com/ghgemissions/run";
+export const API_DOMAIN = "https://api.envizi.ibm.com/ghgemissions/run";
 export const TOKEN_GENERATION_API = "https://api.ibm.com/saascore/run/authentication-retrieve/api-key";
 export const PAT_TOKEN_EXCHANGE_API = "https://api.ibm.com/saascore/run/envizi-auth/exchange";
 export const MOBILE_API_PATH = "/v3/carbon/mobile";
