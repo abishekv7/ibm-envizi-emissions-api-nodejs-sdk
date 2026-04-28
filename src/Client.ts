@@ -1,13 +1,14 @@
 import axios from "axios";
 import { ClientConfig } from "./interfaces/Config";
 import { findExpiryTime } from "./utils";
-import { API_DOMAIN, TOKEN_GENERATION_API, CLIENT_SOURCE_EXCEL, CLIENT_SOURCE_SDK } from "./Constants";
+import { API_DOMAIN, TOKEN_GENERATION_API, PAT_TOKEN_EXCHANGE_API, CLIENT_SOURCE_EXCEL, CLIENT_SOURCE_SDK } from "./Constants";
 
 export class Client {
   private static instance: Client | null = null;
 
   private token: string;
   private readonly apiKey: string;
+  private readonly patToken: string;
   private readonly clientId: string;
   private readonly orgId: string;
   private expiresAt: number;
@@ -21,28 +22,30 @@ export class Client {
     config: ClientConfig,
     isUserProvidedToken = false
   ) {
-    const { apiKey="", clientId, orgId="", host, authUrl, isExcelAddIn=false } = config;
+    const { apiKey="", patToken="", clientId, orgId="", host, authUrl, isExcelAddIn=false } = config;
     this.token = token;
     this.clientId = clientId;
     if (isUserProvidedToken) {
       this.apiKey = "";
+      this.patToken = "";
       this.orgId = "";
     } else {
       this.apiKey = apiKey;
+      this.patToken = patToken;
       this.orgId = orgId;
     }
 
     const exp = findExpiryTime(token);
     this.expiresAt = exp;
     this.domain = host ?? API_DOMAIN;
-    this.tokenDomain = authUrl ?? TOKEN_GENERATION_API;
+    this.tokenDomain = authUrl ?? (patToken ? PAT_TOKEN_EXCHANGE_API : TOKEN_GENERATION_API);
     this.isUserProvidedToken = isUserProvidedToken;
     this.clientSource = isExcelAddIn === true ? CLIENT_SOURCE_EXCEL : CLIENT_SOURCE_SDK;
   }
 
 /**
  * Initializes and returns a Client instance with the provided configuration.
- * 
+ *
  * @static
  * @param {ClientConfig} config - The client configuration object
  * @return {Promise<void>} A promise that resolves when the client is initialized
@@ -50,7 +53,8 @@ export class Client {
  *  - custom "host" is provided without "authUrl"
  *  - token is provided without "clientId"
  *  - apiKey is provided without "clientId" or "orgId"
- * 
+ *  - patToken is provided without "clientId" or with "orgId"
+ *
  * @example
  * // Initialize with authentication URL
  * await Client.getClient({
@@ -59,18 +63,24 @@ export class Client {
  *   clientId: 'client123',
  *   orgId: 'org456'
  * });
- * 
+ *
  * // Initialize with existing token
  * await Client.getClient({
  *   token: 'existing-jwt-token',
  *   clientId: 'client123'
  * });
- * 
+ *
  * // Initialize with API key
  * await Client.getClient({
  *   apiKey: 'your-api-key',
  *   clientId: 'client123',
  *   orgId: 'org456'
+ * });
+ *
+ * // Initialize with PAT token
+ * await Client.getClient({
+ *   patToken: 'your-personal-access-token',
+ *   clientId: 'client123'
  * });
  */
 
@@ -90,14 +100,28 @@ export class Client {
         'If apiKey is provided , "clientId" and "OrgId" must also be provided.'
       );
     }
+    if(config.patToken && !config.clientId){
+      throw new Error(
+        'If patToken is provided, "clientId" must also be provided.'
+      );
+    }
+    if(config.patToken && config.orgId){
+      throw new Error(
+        'orgId should not be provided when using patToken.'
+      );
+    }
     let token: string;
     let isUserProvidedToken = false;
 
     if (config.token && config.clientId) {
       token = config.token;
       isUserProvidedToken = true;
-    } else token = await Client.requestToken(config);
-    Client.instance = new Client(token, config,isUserProvidedToken);
+    } else if (config.patToken && config.clientId) {
+      token = await Client.requestTokenFromPAT(config);
+    } else {
+      token = await Client.requestToken(config);
+    }
+    Client.instance = new Client(token, config, isUserProvidedToken);
   }
 
   /**
@@ -158,12 +182,21 @@ export class Client {
       const now = Math.floor(Date.now() / 1000);
       if (this.expiresAt - now < 60) {
         console.log("[SDK] Refreshing token...");
-        const token = await Client.requestToken({
-          apiKey: this.apiKey,
-          clientId: this.clientId,
-          orgId: this.orgId,
-          authUrl: this.tokenDomain,
-        });
+        let token: string;
+        if (this.patToken) {
+          token = await Client.requestTokenFromPAT({
+            patToken: this.patToken,
+            clientId: this.clientId,
+            authUrl: this.tokenDomain,
+          });
+        } else {
+          token = await Client.requestToken({
+            apiKey: this.apiKey,
+            clientId: this.clientId,
+            orgId: this.orgId,
+            authUrl: this.tokenDomain,
+          });
+        }
         this.token = token;
         this.expiresAt = findExpiryTime(token);
       }
@@ -243,6 +276,37 @@ export class Client {
       },
       params: {
         orgId: config.orgId
+      }
+    });
+
+    if (!res.data) throw new Error("Token response is empty");
+    return String(res.data).trim();
+  }
+
+  /**
+   * Requests an authentication token by exchanging a Personal Access Token (PAT).
+   *
+   * @private
+   * @static
+   * @param {ClientConfig} config - The client configuration containing PAT and client details
+   * @return {Promise<string>} A promise that resolves to the authentication token string
+   * @throws {Error} Throws an error if the token response is empty
+   *
+   * @example
+   * // Internal usage within the Client class
+   * const token = await Client.requestTokenFromPAT({
+   *   patToken: 'your-personal-access-token',
+   *   clientId: 'client123',
+   *   authUrl: 'https://custom-auth.example.com/exchange'
+   * });
+   */
+  private static async requestTokenFromPAT(config: ClientConfig): Promise<string> {
+    const tokenUrl = config.authUrl ?? PAT_TOKEN_EXCHANGE_API;
+    const res = await axios.post(tokenUrl, null, {
+      headers: {
+        "X-IBM-Client-Id": `saascore-${config.clientId}`,
+        "X-IBM-Envizi-Pat": config.patToken,
+        accept: "application/json",
       }
     });
 
