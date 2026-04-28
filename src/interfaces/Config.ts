@@ -71,6 +71,13 @@ export interface ClientConfig {
   token?: string;
   
   /**
+   * Optional Personal Access Token (PAT) for authentication.
+   * If provided, it will be exchanged for a JWT token.
+   * Requires clientId to be provided.
+   */
+  patToken?: string;
+  
+  /**
    * Optional flag indicating whether the client is running as an Excel Add-In.
    * This may affect certain behaviors like authentication flows.
    */
