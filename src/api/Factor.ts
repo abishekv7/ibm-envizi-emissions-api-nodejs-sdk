@@ -61,17 +61,69 @@ export async function retrieveFactor(
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
+ * // Basic search
  * const searchRequest = {
     "time":{
       "date": "2020-06-10"
     },
     "activity": {
-      "search" : "travel"},
+      "search" : "travel"
+    },
     "location": {
       "country": "USA"
     }
   };
  * const results = await search(searchRequest);
+ *
+ * @example
+ * // Search with optional unit parameter
+ * const searchWithUnit = {
+    "time":{
+      "date": "2020-06-10"
+    },
+    "activity": {
+      "search": "electricity",
+      "unit": "kWh"
+    },
+    "location": {
+      "country": "USA"
+    }
+  };
+ * const results = await search(searchWithUnit);
+ *
+ * @example
+ * // Search with optional scope parameter
+ * const searchWithScope = {
+    "time":{
+      "date": "2020-06-10"
+    },
+    "activity": {
+      "search": "natural gas",
+      "scope": "1"
+    },
+    "location": {
+      "country": "USA"
+    }
+  };
+ * const results = await search(searchWithScope);
+ *
+ * @example
+ * // Search with both unit and scope parameters
+ * const searchWithBoth = {
+    "time":{
+      "date": "2020-06-10"
+    },
+    "activity": {
+      "search": "electricity",
+      "unit": "MWh",
+      "scope": "2"
+    },
+    "location": {
+      "country": "USA",
+      "stateProvince": "california"
+    }
+  };
+ * const results = await search(searchWithBoth);
  */
 export async function search(
   payload: SearchRequest
