@@ -13,6 +13,7 @@ import { makeApiRequest } from "../request";
  * @throws {Error} May throw an error if the API request fails
  *
  * @example
+ * // Basic search
  * const result = await search({
     "location": {
       "country": "usa"
@@ -23,6 +24,7 @@ import { makeApiRequest } from "../request";
   });
 
  * @example
+ * // Search with time and pagination
  * const result = await search({
     "location": {
       "country": "usa",
@@ -41,6 +43,7 @@ import { makeApiRequest } from "../request";
   });
  
  * @example
+ * // Search with power grid
  * const result = await search({
     "location": {
       "country": "usa",
@@ -48,6 +51,51 @@ import { makeApiRequest } from "../request";
     },
     "activity": {
       "search": "renewable energy"
+    }
+  });
+ *
+ * @example
+ * // Search with optional unit parameter
+ * const result = await search({
+    "location": {
+      "country": "usa"
+    },
+    "activity": {
+      "search": "electricity",
+      "unit": "kWh"
+    }
+  });
+ *
+ * @example
+ * // Search with optional scope parameter
+ * const result = await search({
+    "location": {
+      "country": "usa"
+    },
+    "activity": {
+      "search": "natural gas",
+      "scope": "1"
+    }
+  });
+ *
+ * @example
+ * // Search with both unit and scope parameters
+ * const result = await search({
+    "location": {
+      "country": "usa",
+      "stateProvince": "california"
+    },
+    "time": {
+      "date": "2025-06-10"
+    },
+    "activity": {
+      "search": "electricity",
+      "unit": "MWh",
+      "scope": "2"
+    },
+    "pagination": {
+      "page": 1,
+      "size": 10
     }
   });
  */

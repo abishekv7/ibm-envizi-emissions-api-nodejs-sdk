@@ -69,6 +69,123 @@ const typeUnits = await Metadata.getUnits('Natural Gas'); // Units for specific 
 
 **Supported endpoints**: `calculation`, `location`, `stationary`, `mobile`, `fugitive`, `factor`, `search`, `transportation-and-distribution`, `economic-activity`, `real-estate`
 
+
+## Type Recommender API
+
+Search for activity types using semantic search with optional unit and scope filtering:
+
+```javascript
+import { TypeRecommender } from 'emissions-api-sdk';
+
+// Basic search with natural language
+const types = await TypeRecommender.search({
+  "location": {
+    "country": "usa"
+  },
+  "activity": {
+    "search": "employee travelled by electric vehicle"
+  }
+});
+
+// Search with unit filter
+const typesWithUnit = await TypeRecommender.search({
+  "location": {
+    "country": "usa"
+  },
+  "activity": {
+    "search": "office consumed electricity",
+    "unit": "kWh"
+  }
+});
+
+// Search with scope filter
+const typesWithScope = await TypeRecommender.search({
+  "location": {
+    "country": "usa"
+  },
+  "activity": {
+    "search": "heating with natural gas",
+    "scope": "1"
+  }
+});
+
+// Search with pagination and filters
+const typesWithAll = await TypeRecommender.search({
+  "location": {
+    "country": "usa",
+    "stateProvince": "california"
+  },
+  "time": {
+    "date": "2025-06-10"
+  },
+  "activity": {
+    "search": "purchased electricity for data center",
+    "unit": "MWh",
+    "scope": "2"
+  },
+  "pagination": {
+    "page": 1,
+    "size": 10
+  }
+});
+```
+
+## Factor Search API
+
+Search for emission factors with optional unit and scope filtering:
+
+```javascript
+import { Factor } from 'emissions-api-sdk';
+
+// Basic search with natural language
+const results = await Factor.search({
+  "time": {
+    "date": "2020-06-10"
+  },
+  "activity": {
+    "search": "employee business travel by air"
+  },
+  "location": {
+    "country": "USA"
+  }
+});
+
+// Search with unit filter
+const resultsWithUnit = await Factor.search({
+  "activity": {
+    "search": "office electricity consumption",
+    "unit": "kWh"
+  },
+  "location": {
+    "country": "USA"
+  }
+});
+
+// Search with scope filter
+const resultsWithScope = await Factor.search({
+  "activity": {
+    "search": "facility heating with natural gas",
+    "scope": "1"
+  },
+  "location": {
+    "country": "USA"
+  }
+});
+
+// Search with both unit and scope
+const resultsWithBoth = await Factor.search({
+  "activity": {
+    "search": "purchased electricity for manufacturing",
+    "unit": "MWh",
+    "scope": "2"
+  },
+  "location": {
+    "country": "USA",
+    "stateProvince": "california"
+  }
+});
+```
+
 ### Get Organization Usage
 ```javascript
 import { Usage } from 'emissions-api-sdk';

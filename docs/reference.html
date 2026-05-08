@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html" /><link rel="prev" title="Authentication" href="authentication.html" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Troubleshooting Guide" href="troubleshooting.html"><link rel="prev" title="Authentication" href="authentication.html">
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2025.07.19 -->
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Reference - IBM Envizi - Emissions API Node.js SDK documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_js.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8d04aa46" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -146,14 +146,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -163,8 +159,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -172,8 +167,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -181,8 +175,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -202,7 +195,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of SDK</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sdk.html">SDK</a><input aria-label="Toggle navigation of SDK" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client.html">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 </ul>
@@ -235,8 +228,7 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -244,8 +236,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -253,7 +244,7 @@
 <h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">¶</a></h1>
 <dl class="js class">
 <dt class="sig sig-object js" id="Client">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="n"><span class="pre">Client</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUserProvidedToken=false</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="n"><span class="pre">Client</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUserProvidedToken</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">false</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client" title="Link to this definition">¶</a></dt>
 <dd><p><em>exported from</em> <a class="reference internal" href="#Client" title="Client"><code class="xref js js-mod docutils literal notranslate"><span class="pre">Client</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -345,7 +336,7 @@
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Client.refreshToken">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">refreshToken</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.refreshToken" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">refreshToken</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.refreshToken" title="Link to this definition">¶</a></dt>
 <dd><p>Refreshes the authentication token if it’s about to expire.
 Only refreshes if the token was not provided by the user and is expiring within 60 seconds.</p>
 <dl class="field-list simple">
@@ -366,7 +357,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Client.getClient">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getClient</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getClient" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getClient</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getClient" title="Link to this definition">¶</a></dt>
 <dd><p>Initializes and returns a Client instance with the provided configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -413,7 +404,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Client.getInstance">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getInstance" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getInstance" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the singleton instance of the Client.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -440,7 +431,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="request.makeApiRequest">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">makeApiRequest</span></span></span><span class="sig-paren"><</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#request.makeApiRequest" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">makeApiRequest</span></span></span><span class="sig-paren"><</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#request.makeApiRequest" title="Link to this definition">¶</a></dt>
 <dd><p>Makes an API request with standardized headers and token refresh.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type parameters<span class="colon">:</span></dt>
@@ -502,7 +493,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h2>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
 <dl class="js function">
 <dt class="sig sig-object js" id="Factor.retrieveFactor">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Factor</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">retrieveFactor</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Factor.retrieveFactor" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Factor</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">retrieveFactor</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Factor.retrieveFactor" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves a factor details by making a POST request to the factor API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -545,7 +536,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Fugitive.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Fugitive</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Fugitive.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Fugitive</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Fugitive.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs scope 1 fugitve emission calculations by making a POST request to the fugitive API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -581,7 +572,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Calculation.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Calculation</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Calculation.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Calculation</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Calculation.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs emission calculations by making a POST request to the generic calculation API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -618,7 +609,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Location.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Location</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Location.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Location</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Location.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs scope 2 purchased energy Emission calculations by making a POST request to the location API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -655,7 +646,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Mobile.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Mobile</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Mobile.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Mobile</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Mobile.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs Scope 1 mobile emissions related calculations by making a POST request to the mobile API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -692,7 +683,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Stationary.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Stationary</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Stationary.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Stationary</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Stationary.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs Scope 1 stationary calculations by making a POST request to the stationary API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -729,7 +720,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="TransportationAndDistribution.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">TransportationAndDistribution</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TransportationAndDistribution.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">TransportationAndDistribution</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TransportationAndDistribution.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs Scope 3 transportation and distribution emission calculations by making a POST request to the transportation and distribution API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -765,7 +756,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="RealEstate.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">RealEstate</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RealEstate.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs scope 3 Real estate emission calculations by making a POST request to the real estate API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -801,7 +792,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="EconomicActivity.calculate">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.calculate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">EconomicActivity</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">calculate</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#EconomicActivity.calculate" title="Link to this definition">¶</a></dt>
 <dd><p>Performs scope 3 Spend based emission calculations by making a POST request to the economic activity API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -848,7 +839,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h3>getTypes<a class="headerlink" href="#gettypes" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getTypes">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getTypes" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getTypes" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available emission source types for a specific endpoint using GET request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -874,7 +865,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.postTypes">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postTypes" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postTypes</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postTypes" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available emission source types for a specific endpoint using POST request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -903,7 +894,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h3>getArea<a class="headerlink" href="#getarea" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getArea">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getArea" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getArea" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available geographic locations for a specific endpoint using GET request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -929,7 +920,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.postArea">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postArea" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postArea" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available geographic locations for a specific endpoint using POST request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -958,7 +949,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h3>getUnits<a class="headerlink" href="#getunits" title="Link to this heading">¶</a></h3>
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.getUnits">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getUnits" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.getUnits" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available measurement units for a specific type using GET request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -984,7 +975,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Metadata.postUnits">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postUnits" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Metadata</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">postUnits</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Metadata.postUnits" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves available measurement units for a specific type using POST request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -1014,7 +1005,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h2>Usage API<a class="headerlink" href="#usage-api" title="Link to this heading">¶</a></h2>
 <dl class="js function">
 <dt class="sig sig-object js" id="Usage.getUsage">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Usage</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUsage</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history=false</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Usage.getUsage" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Usage</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getUsage</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">false</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Usage.getUsage" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves current billing period or historical usage data for the user by making a GET request to the API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments<span class="colon">:</span></dt>
@@ -1039,7 +1030,7 @@ Only refreshes if the token was not provided by the user and is expiring within 
 <h2>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading">¶</a></h2>
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.LocationRequestWithoutFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for location-based calculations without specifying a factor ID.
 Used for calculating emissions or other metrics based on location data.</p>
 <blockquote>
@@ -1050,7 +1041,7 @@ Used for calculating emissions or other metrics based on location data.</p>
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.LocationRequestWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">LocationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.LocationRequestWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for location-based calculations with a specific factor ID.
 Used when the emission factor is already known and doesn’t need to be determined by location.</p>
 <blockquote>
@@ -1061,7 +1052,7 @@ Used when the emission factor is already known and doesn’t need to be determin
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.CommonRequestWithoutFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Common request parameters for calculations without specifying a factor ID.
 Used for general-purpose calculations based on location, time, and activity data.</p>
 <blockquote>
@@ -1072,7 +1063,7 @@ Used for general-purpose calculations based on location, time, and activity data
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.CommonRequestWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CommonRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.CommonRequestWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Common request parameters for calculations with a specific factor ID.
 Used when the emission factor is already known and doesn’t need to be determined by location.</p>
 <blockquote>
@@ -1083,7 +1074,7 @@ Used when the emission factor is already known and doesn’t need to be determin
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.GenericCalculationRequestWithoutFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for generic calculations without specifying a factor ID.
 Used for calculations that may involve multiple units or complex activity data.</p>
 <blockquote>
@@ -1094,7 +1085,7 @@ Used for calculations that may involve multiple units or complex activity data.<
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.GenericCalculationRequestWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GenericCalculationRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.GenericCalculationRequestWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for generic calculations with a specific factor ID.
 Used for complex calculations where the emission factor is already known.</p>
 <blockquote>
@@ -1105,7 +1096,7 @@ Used for complex calculations where the emission factor is already known.</p>
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.FactorRequestWithoutFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithoutFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithoutFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for retrieving factor information without specifying a factor ID.
 Used to look up appropriate emission factors based on location, time, and activity type.</p>
 <blockquote>
@@ -1116,7 +1107,7 @@ Used to look up appropriate emission factors based on location, time, and activi
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.FactorRequestWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorRequestWithFactorId</span></span></span><a class="headerlink" href="#Api.FactorRequestWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for retrieving specific factor information by ID.
 Used when the exact factor to retrieve is already known.</p>
 <blockquote>
@@ -1127,7 +1118,7 @@ Used when the exact factor to retrieve is already known.</p>
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Api.SearchRequest">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchRequest</span></span></span><a class="headerlink" href="#Api.SearchRequest" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Api</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchRequest</span></span></span><a class="headerlink" href="#Api.SearchRequest" title="Link to this definition">¶</a></dt>
 <dd><p>Request parameters for searching factors or activities.
 Used to find relevant factors or activities based on location, time, and search criteria.</p>
 <blockquote>
@@ -1138,7 +1129,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.Location">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Location</span></span></span><a class="headerlink" href="#common.Location" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Location</span></span></span><a class="headerlink" href="#common.Location" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents a geographical location.</dt><dd><p>Location</p>
 </dd>
@@ -1148,7 +1139,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.Time">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Time</span></span></span><a class="headerlink" href="#common.Time" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Time</span></span></span><a class="headerlink" href="#common.Time" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents a point in time with date information.</dt><dd><p>Time</p>
 </dd>
@@ -1158,7 +1149,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.Activity">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Activity</span></span></span><a class="headerlink" href="#common.Activity" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Activity</span></span></span><a class="headerlink" href="#common.Activity" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents an activity with type, value, and unit of measurement.</dt><dd><p>Activity</p>
 </dd>
@@ -1168,7 +1159,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.ActivityWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ActivityWithFactorId</span></span></span><a class="headerlink" href="#common.ActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ActivityWithFactorId</span></span></span><a class="headerlink" href="#common.ActivityWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents an activity identified by a factor ID instead of a type.</dt><dd><p>ActivityWithFactorId</p>
 </dd>
@@ -1178,7 +1169,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.CombinedUnitsActivity">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivity</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivity" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivity</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivity" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents an activity that can have single or multiple values and units.</dt><dd><p>CombinedUnitsActivity</p>
 </dd>
@@ -1188,7 +1179,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.CombinedUnitsActivityWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivityWithFactorId</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CombinedUnitsActivityWithFactorId</span></span></span><a class="headerlink" href="#common.CombinedUnitsActivityWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents an activity with factor ID that can have single or multiple values and units.</dt><dd><p>CombinedUnitsActivityWithFactorId</p>
 </dd>
@@ -1198,7 +1189,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.FactorActivity">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivity</span></span></span><a class="headerlink" href="#common.FactorActivity" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivity</span></span></span><a class="headerlink" href="#common.FactorActivity" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents a factor activity with a type and optional unit.</dt><dd><p>FactorActivity</p>
 </dd>
@@ -1208,7 +1199,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.FactorActivityWithFactorId">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivityWithFactorId</span></span></span><a class="headerlink" href="#common.FactorActivityWithFactorId" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FactorActivityWithFactorId</span></span></span><a class="headerlink" href="#common.FactorActivityWithFactorId" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents a factor activity identified by a factor ID instead of a type.</dt><dd><p>FactorActivityWithFactorId</p>
 </dd>
@@ -1218,7 +1209,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.SearchActivity">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchActivity</span></span></span><a class="headerlink" href="#common.SearchActivity" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SearchActivity</span></span></span><a class="headerlink" href="#common.SearchActivity" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents a search query for activities.</dt><dd><p>SearchActivity</p>
 </dd>
@@ -1228,7 +1219,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="common.Pagination">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Pagination</span></span></span><a class="headerlink" href="#common.Pagination" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Pagination</span></span></span><a class="headerlink" href="#common.Pagination" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Represents pagination parameters for paginated results.</dt><dd><p>Pagination</p>
 </dd>
@@ -1238,7 +1229,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Config.RequestConfig">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RequestConfig</span></span></span><a class="headerlink" href="#Config.RequestConfig" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RequestConfig</span></span></span><a class="headerlink" href="#Config.RequestConfig" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Configuration for making HTTP requests.</dt><dd><p>RequestConfig</p>
 </dd>
@@ -1248,7 +1239,7 @@ Used to find relevant factors or activities based on location, time, and search 
 
 <dl class="js interface">
 <dt class="sig sig-object js" id="Config.ClientConfig">
-<em class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ClientConfig</span></span></span><a class="headerlink" href="#Config.ClientConfig" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Config</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ClientConfig</span></span></span><a class="headerlink" href="#Config.ClientConfig" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Configuration for initializing a client instance.</dt><dd><p>ClientConfig</p>
 </dd>
@@ -1397,8 +1388,8 @@ Used to find relevant factors or activities based on location, time, and search 
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

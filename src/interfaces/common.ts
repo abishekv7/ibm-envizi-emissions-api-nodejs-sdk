@@ -155,6 +155,18 @@ export interface SearchActivity {
    * The search query string.
    */
   search: string;
+
+  /**
+   * Optional unit (symbol) for search activity.
+   */
+  unit?: string;
+
+  /**
+   * Optional scope(1,2,3,3.1 to 3.15) for search activity.
+   */
+
+  scope?: string;
+   
 }
 
 /**
