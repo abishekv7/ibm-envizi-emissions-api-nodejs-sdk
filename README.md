@@ -69,6 +69,7 @@ const typeUnits = await Metadata.getUnits('Natural Gas'); // Units for specific 
 
 **Supported endpoints**: `calculation`, `location`, `stationary`, `mobile`, `fugitive`, `factor`, `search`, `transportation-and-distribution`, `economic-activity`, `real-estate`
 
+
 ## Type Recommender API
 
 Search for activity types using semantic search with optional unit and scope filtering:
