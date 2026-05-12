@@ -4,9 +4,10 @@ import { AuditLogRequest, AuditLogResponse } from "../interfaces/response/AuditL
 import { Client } from "../Client";
 
 /**
- * Retrieves the current audit log configuration.
- * The Audit Log API allows organizations to control whether API requests and responses should be audited/logged.
- * If your organization doesn't need requests and responses to be stored for audit purposes, you can disable logging to reduce storage overhead.
+ * Retrieves the audit log configuration for the organization.
+ *
+ * Controls whether the organization's API requests and responses are stored for auditing.
+ * Organizations can disable this if they don't need their API calls to be audited.
  *
  * @export
  * @return {Promise<AuditLogResponse>} Current audit log configuration
@@ -15,7 +16,7 @@ import { Client } from "../Client";
  * const config = await getConfig();
  * // Output: { logRequest: true, logResponse: false }
  */
-export async function getConfig(): Promise<AuditLogResponse> {
+export async function getAuditConfig(): Promise<AuditLogResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + AUDIT_LOG_API_PATH;
 
@@ -26,10 +27,10 @@ export async function getConfig(): Promise<AuditLogResponse> {
 }
 
 /**
- * Updates the audit log configuration.
- * The Audit Log API allows organizations to control whether API requests and responses should be audited/logged.
- * If your organization doesn't need requests and responses to be stored for audit purposes, you can disable logging to reduce storage overhead.
+ * Updates the audit log configuration for the organization.
  *
+ *Controls whether the organization's API requests and responses are stored for auditing.
+ * Organizations can disable this if they don't need their API calls to be audited.
  *
  * @export
  * @param {AuditLogRequest} payload - Audit log configuration
@@ -38,7 +39,7 @@ export async function getConfig(): Promise<AuditLogResponse> {
  * @example
  * const result = await update({ logRequest: false, logResponse: false });
  */
-export async function update(
+export async function updateAuditConfig(
   payload: AuditLogRequest
 ): Promise<AuditLogResponse> {
   const client = Client.getInstance();

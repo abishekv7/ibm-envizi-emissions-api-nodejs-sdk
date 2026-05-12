@@ -827,6 +827,55 @@ Only refreshes if the token was not provided by the user and is expiring within 
 </dd></dl>
 
 </section>
+<section id="audit-log-api">
+<h2>Audit Log API<a class="headerlink" href="#audit-log-api" title="Link to this heading">¶</a></h2>
+<p>Controls whether the organization’s API requests and responses are stored for auditing.
+Organizations can disable storage if they don’t need their API calls to be audited.</p>
+<dl class="js function">
+<dt class="sig sig-object js" id="AuditLog.getConfig">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.getConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves the audit log configuration for the organization.</p>
+<p>Controls whether the organization’s API requests and responses are stored for auditing.
+Organizations can disable this if they don’t need their API calls to be audited.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_js-type">Promise&lt;AuditLogResponse&gt;</span> – Current audit log configuration</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getConfig</span><span class="p">();</span>
+<span class="c1">// Output: { logRequest: true, logResponse: false }</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="AuditLog.update">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLog</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AuditLog.update" title="Link to this definition">¶</a></dt>
+<dd><p>Updates the audit log configuration for the organization.</p>
+<p>Controls whether the organization’s API requests and responses are stored for auditing.
+Organizations can disable this if they don’t need their API calls to be audited.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payload</strong> (<span class="sphinx_js-type">AuditLogRequest</span>) – Audit log configuration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_js-type">Promise&lt;AuditLogResponse&gt;</span> – Updated configuration</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">logRequest</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="nx">logResponse</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
 <section id="global-metadata-api">
 <h2>Global Metadata API<a class="headerlink" href="#global-metadata-api" title="Link to this heading">¶</a></h2>
 <p>The global Metadata API provides a unified way to query metadata across different endpoints without calling endpoint-specific methods.</p>
@@ -1247,6 +1296,28 @@ Used to find relevant factors or activities based on location, time, and search 
 <p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.Config</span></code></p>
 </dd></dl>
 
+<dl class="js interface">
+<dt class="sig sig-object js" id="AuditLogResponse.AuditLogResponse">
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLogResponse</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AuditLogResponse</span></span></span><a class="headerlink" href="#AuditLogResponse.AuditLogResponse" title="Link to this definition">¶</a></dt>
+<dd><p>Response interface for audit log configuration.
+Contains settings for logging requests and responses.</p>
+<blockquote>
+<div><p>AuditLogResponse</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.response.AuditLogResponse</span></code></p>
+</dd></dl>
+
+<dl class="js interface">
+<dt class="sig sig-object js" id="AuditLogResponse.AuditLogRequest">
+<span class="property"><span class="k"><span class="pre">interface</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">AuditLogResponse</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AuditLogRequest</span></span></span><a class="headerlink" href="#AuditLogResponse.AuditLogRequest" title="Link to this definition">¶</a></dt>
+<dd><p>Request interface for updating audit log configuration.
+Used to configure which parts of API interactions should be logged.</p>
+<blockquote>
+<div><p>AuditLogRequest</p>
+</div></blockquote>
+<p><em>exported from</em> <code class="xref js js-mod docutils literal notranslate"><span class="pre">interfaces.response.AuditLogResponse</span></code></p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -1330,6 +1401,11 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#EconomicActivity.calculate"><code class="docutils literal notranslate"><span class="pre">EconomicActivity.calculate()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#audit-log-api">Audit Log API</a><ul>
+<li><a class="reference internal" href="#AuditLog.getConfig"><code class="docutils literal notranslate"><span class="pre">AuditLog.getConfig()</span></code></a></li>
+<li><a class="reference internal" href="#AuditLog.update"><code class="docutils literal notranslate"><span class="pre">AuditLog.update()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#global-metadata-api">Global Metadata API</a><ul>
 <li><a class="reference internal" href="#gettypes">getTypes</a><ul>
 <li><a class="reference internal" href="#Metadata.getTypes"><code class="docutils literal notranslate"><span class="pre">Metadata.getTypes()</span></code></a></li>
@@ -1374,6 +1450,8 @@ Used to find relevant factors or activities based on location, time, and search 
 <li><a class="reference internal" href="#common.Pagination"><code class="docutils literal notranslate"><span class="pre">common.Pagination</span></code></a></li>
 <li><a class="reference internal" href="#Config.RequestConfig"><code class="docutils literal notranslate"><span class="pre">Config.RequestConfig</span></code></a></li>
 <li><a class="reference internal" href="#Config.ClientConfig"><code class="docutils literal notranslate"><span class="pre">Config.ClientConfig</span></code></a></li>
+<li><a class="reference internal" href="#AuditLogResponse.AuditLogResponse"><code class="docutils literal notranslate"><span class="pre">AuditLogResponse.AuditLogResponse</span></code></a></li>
+<li><a class="reference internal" href="#AuditLogResponse.AuditLogRequest"><code class="docutils literal notranslate"><span class="pre">AuditLogResponse.AuditLogRequest</span></code></a></li>
 </ul>
 </li>
 </ul>
