@@ -155,13 +155,13 @@ const testCases: ApiTestCase[] = [
   },
   {
     name: "AuditLog API - getAuditLogConfig",
-    func: AuditLogApi.getAuditLogConfig,
+    func: AuditLogApi.getAuditConfig,
     path: AUDIT_LOG_API_PATH,
     method: "GET",
   },
   {
     name: "AuditLog API - updateAuditLogConfig",
-    func: AuditLogApi.updateAuditLogConfig,
+    func: AuditLogApi.updateAuditConfig,
     path: AUDIT_LOG_API_PATH,
     payload: { logRequest: true, logResponse: false },
     method: "PUT",
