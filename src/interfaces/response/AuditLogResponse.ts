@@ -25,6 +25,19 @@ export interface AuditLogResponse {
  * @interface AuditLogRequest
  */
 export interface AuditLogRequest {
+
+
+
+  /**
+   * Unique identifier for the audit log configuration.
+   */
+  id: number;
+
+  /**
+   * Unique identifier for the associated organization.
+   */
+  orgId: string;
+
   /**
    * Whether to log API requests.
    * When true, all incoming requests will be logged.
@@ -36,4 +49,6 @@ export interface AuditLogRequest {
    * When true, all outgoing responses will be logged.
    */
   logResponse: boolean;
+
+  message: string;
 }
