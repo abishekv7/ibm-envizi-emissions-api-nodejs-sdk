@@ -5,6 +5,38 @@ import { AuditLogRequest, AuditLogResponse } from "../interfaces/response/AuditL
 import { Client } from "../Client";
 
 /**
+ * Handles common error responses for audit log API calls.
+ *
+ * @param {unknown} error - The error to handle
+ * @param {boolean} handle409 - Whether to handle 409 Conflict status (returns data instead of throwing)
+ * @return {AuditLogResponse | never} Returns response data for 409, otherwise throws error
+ */
+function handleAuditLogError(error: unknown, handle409: boolean = false): AuditLogResponse | never {
+  if (axios.isAxiosError(error) && error.response) {
+    const status = error.response.status;
+    const responseData = error.response.data;
+    
+    // Handle 409 Conflict - configuration is already set to the requested values
+    if (status === 409 && handle409) {
+      return responseData as AuditLogResponse;
+    }
+    
+    // Handle 400 Bad Request - invalid payload
+    if (status === 400) {
+      throw new Error(responseData?.message);
+    }
+    
+    // Handle 403 Forbidden - insufficient permissions
+    if (status === 403) {
+      throw new Error(responseData?.message);
+    }
+  }
+  
+  // Re-throw any other errors
+  throw error;
+}
+
+/**
  * Retrieves the audit log configuration for the organization.
  *
  * Controls whether the organization's API requests and responses are stored for auditing.
@@ -12,6 +44,7 @@ import { Client } from "../Client";
  *
  * @export
  * @return {Promise<AuditLogResponse>} Current audit log configuration
+ * @throws {Error} Throws error for 403 (Forbidden) or other failures
  *
  * @example
  * const config = await getConfig();
@@ -21,10 +54,14 @@ export async function getAuditConfig(): Promise<AuditLogResponse> {
   const client = Client.getInstance();
   const url = client.getDomain() + AUDIT_LOG_API_PATH;
 
-  return makeApiRequest<AuditLogResponse>({
-    method: GET,
-    url,
-  });
+  try {
+    return await makeApiRequest<AuditLogResponse>({
+      method: GET,
+      url,
+    });
+  } catch (error) {
+    return handleAuditLogError(error);
+  }
 }
 
 /**
@@ -40,6 +77,7 @@ export async function getAuditConfig(): Promise<AuditLogResponse> {
  * @export
  * @param {AuditLogRequest} payload - Audit log configuration
  * @return {Promise<AuditLogResponse>} Updated configuration or current configuration if no change
+ * @throws {Error} Throws error for 400 (Bad Request), 403 (Forbidden), or other failures
  *
  * @example
  * const result = await update({ logRequest: false, logResponse: false });
@@ -59,12 +97,6 @@ export async function updateAuditConfig(
       data: payload,
     });
   } catch (error) {
-    // Handle 409 Conflict - configuration is already set to the requested values
-    if (axios.isAxiosError(error) && error.response?.status === 409) {
-      // Return the response data which includes the current configuration and message
-      return error.response.data as AuditLogResponse;
-    }
-    // Re-throw any other errors
-    throw error;
+    return handleAuditLogError(error, true);
   }
 }

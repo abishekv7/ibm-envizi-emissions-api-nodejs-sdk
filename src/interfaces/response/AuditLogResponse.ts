@@ -7,16 +7,6 @@
 export interface AuditLogResponse {
 
   /**
-   * Unique identifier for the audit log configuration.
-   */
-  id: number;
-  
-  /**
-   * Unique identifier for the associated organization.
-   */
-  orgId: string;
-
-  /**
    * Whether to log API requests.
    * When true, all incoming requests will be logged.
    */
