@@ -11,6 +11,7 @@ import * as UsageApi from "../src/api/Usage";
 import * as Factors from "../src/api/Factor";
 import * as FactorSets from "../src/api/FactorSets";
 import * as VectorTypeSearch from "../src/api/TypeRecommender";
+import * as AuditLogApi from "../src/api/AuditLog";
 
 import {
   LOCATION_API_PATH,
@@ -26,6 +27,7 @@ import {
   ECONOMIC_ACTIVITY_API_PATH,
   REAL_ESTATE_API_PATH,
   TYPE_RECOMMENDER_API_PATH,
+  AUDIT_LOG_API_PATH,
 } from "../src/Constants";
 import locationPayload from "./mocks/LocationRequest";
 import commonpayload from "./mocks/CommonRequest";
@@ -41,7 +43,7 @@ type ApiTestCase = {
   payload?: any;
   pathParams?: string | string[];
   queryParams?: Record<string, string> | Record<string, boolean>;
-  method: "GET" | "POST";
+  method: "GET" | "POST" | "PUT";
 };
 
 const mockResp = "mock-success-response";
@@ -150,6 +152,19 @@ const testCases: ApiTestCase[] = [
     path: TYPE_RECOMMENDER_API_PATH,
     payload: SearchPayload,
     method: "POST",
+  },
+  {
+    name: "AuditLog API - getAuditLogConfig",
+    func: AuditLogApi.getAuditConfig,
+    path: AUDIT_LOG_API_PATH,
+    method: "GET",
+  },
+  {
+    name: "AuditLog API - updateAuditLogConfig",
+    func: AuditLogApi.updateAuditConfig,
+    path: AUDIT_LOG_API_PATH,
+    payload: { logRequest: true, logResponse: false },
+    method: "PUT",
   }
 ];
 
@@ -186,7 +201,7 @@ describe("API Test calculate functions", () => {
     ({ func, path, payload, pathParams, queryParams, method }) => {
       it("Should call makeApiRequest with API url", async () => {
         let result;
-        if (method === "POST") {
+        if (method === "POST" || method === "PUT") {
           result = await func(payload);
         } else {
           // For GET requests with queryParams
@@ -222,7 +237,7 @@ describe("API Test calculate functions", () => {
           method,
           url: expectedUrl,
         };
-        if (method === "POST") expectedRequest.data = payload;
+        if (method === "POST" || method === "PUT") expectedRequest.data = payload;
         if (method === "GET" && queryParams) expectedRequest.params = queryParams;
         expect(spy).toHaveBeenCalledWith(expectedRequest);
         expect(result).toBe(mockResp);

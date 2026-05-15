@@ -32,6 +32,17 @@ API
 .. js:autofunction:: EconomicActivity.calculate
 
 
+Audit Log API
+=============
+
+Controls whether the organization's API requests and responses are stored for auditing.
+Organizations can disable storage if they don't need their API calls to be audited.
+
+.. js:autofunction:: AuditLog.getConfig
+
+.. js:autofunction:: AuditLog.update
+
+
 Global Metadata API
 ====================
 
@@ -113,3 +124,7 @@ Interfaces
 .. js:autoclass:: Config.RequestConfig
 
 .. js:autoclass:: Config.ClientConfig
+
+.. js:autoclass:: AuditLogResponse.AuditLogResponse
+
+.. js:autoclass:: AuditLogResponse.AuditLogRequest

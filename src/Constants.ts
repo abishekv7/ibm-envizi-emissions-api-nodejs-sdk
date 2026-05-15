@@ -12,6 +12,7 @@ export const FACTOR_SET_API_PATH = "/v3/carbon/factorset";
 export const SEARCH_API_PATH = "/v3/carbon/factor/search";
 export const ECONOMIC_ACTIVITY_API_PATH = "/v3/carbon/economic-activity";
 export const REAL_ESTATE_API_PATH = "/v3/carbon/real-estate";
+export const AUDIT_LOG_API_PATH = "/v3/carbon/admin/audit-log";
 
 export const TYPE_RECOMMENDER_API_PATH = "/v3/carbon/recommender/type/search";
 
@@ -23,6 +24,7 @@ export const METADATA_UNITS_ENDPOINT = "/v3/carbon/metadata/units";
 
 export const GET = "GET";
 export const POST = "POST";
+export const PUT = "PUT";
 export const CLIENT_SOURCE_HEADER = "X-Client-Source";
 export const CLIENT_SOURCE_EXCEL = "excel";
 export const CLIENT_SOURCE_SDK = "node-sdk";

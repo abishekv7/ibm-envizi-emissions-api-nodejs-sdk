@@ -195,6 +195,24 @@ import { Usage } from 'emissions-api-sdk';
 const usage = await Usage.getUsage(true);
 ```
 
+## Audit Log API
+
+Controls whether the organization's API requests and responses are stored for auditing. Organizations can disable storage if they don't need their API calls to be audited.
+
+```javascript
+import { AuditLog } from 'emissions-api-sdk';
+
+// Get current configuration
+const config = await AuditLog.getConfig();
+console.log(config); // { logRequest: true, logResponse: true }
+
+// Disable storage
+await AuditLog.update({ logRequest: false, logResponse: false });
+
+// Enable only request storage
+await AuditLog.update({ logRequest: true, logResponse: false });
+```
+
 ## Authentication
 
 The SDK supports three authentication methods:

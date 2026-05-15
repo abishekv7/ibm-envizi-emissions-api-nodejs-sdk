@@ -12,6 +12,7 @@ export * as EconomicActivity from './api/EconomicActivity';
 export * as RealEstate from './api/RealEstate';
 export * as Metadata from './api/Metadata';
 export * as TypeRecommender from './api/TypeRecommender';
+export * as AuditLog from './api/AuditLog';
 export { ClientConfig } from './interfaces/Config';
 
 // Response interfaces
@@ -38,3 +39,4 @@ export { TypeResponse } from './interfaces/response/TypeResponse';
 export { UnitResponse } from './interfaces/response/UnitResponse';
 export { UsageResponse } from './interfaces/response/UsageResponse';
 export { TypeRecommenderResponse, ActivityRequest } from './interfaces/response/TypeRecommenderResponse';
+export { AuditLogResponse, AuditLogRequest } from './interfaces/response/AuditLogResponse';
